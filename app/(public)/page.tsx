@@ -1,5 +1,3 @@
-import Image from 'next/image'
-
 export default function Home () {
-  return <div>main page for public</div>
+  return <main></main>
 }

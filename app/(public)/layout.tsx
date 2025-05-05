@@ -1,41 +1,20 @@
-import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
-import '../globals.css'
-import { ThemeProvider } from 'next-themes'
+import Navbar from "@/components/shared/navbar/navbar";
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin']
-})
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin']
-})
-
-export const metadata: Metadata = {
-  title: 'Morshed | Portfolio',
-  description: 'Welcome to Morshed’s personal portfolio. Explore projects, skills, and professional experience.'
-}
-
-
-export default function RootLayout ({
-  children
+export default function PublicLayout({
+  children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
-    <html lang='en' suppressHydrationWarning>
-     <body>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            {children}
-          </ThemeProvider>
-        </body>
-    </html>
-  )
+    <main className="container mx-auto px-2 lg:px-4 min-h-screen">
+    {/* navbar */}
+    <Navbar />
+
+    {/* main content */}
+    <div className="min-h-screen">{children}</div>
+
+    {/* footer */}
+    {/* <Footer /> */}
+  </main>
+  );
 }

@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { useTheme } from "next-themes"
 
 
-export default function Navigation() {
+export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const { theme, setTheme } = useTheme()
