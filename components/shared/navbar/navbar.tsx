@@ -14,11 +14,14 @@ import {
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { useTheme } from 'next-themes'
+import { cn } from '@/lib/utils'
+import { navLinks } from '@/constants/navLinks'
 
 export default function Navbar () {
   const [mounted, setMounted] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
   const { theme, setTheme } = useTheme()
 
   // * Listen for scroll events to update sticky behavior.
@@ -41,29 +44,17 @@ export default function Navbar () {
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
-  const handleMenuToggle = () => {
-    setIsMobile(!isMobile)
-  }
-
-  const navLinks = [
-    { name: 'Home', href: '#' },
-    { name: 'About', href: '#about' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Contact', href: '#contact' }
-  ]
-
   return (
     <header
-      className={`sticky w-full z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-zinc-900/90 backdrop-blur-md py-3 shadow-md'
-          : 'bg-transparent py-5'
-      }`}
+      className={cn(
+        'sticky top-2 z-[9999] transition-all scroll-smooth transform ease-in-out duration-500 my-3',
+        !isMobile && scrolled ? 'scale-90' : 'scale-100'
+      )}
     >
-      <div className='container mx-auto px-4 flex justify-between items-center'>
+      <div className='container mx-auto md:px-4 px-0 flex justify-between items-center'>
         <Link href='#' className='flex items-center gap-2 text-xl font-bold'>
-          <div className='clip-path-icon-box bg-emerald-500/20 p-1'>
-            <Frame className='h-8 w-8 text-emerald-500' />
+          <div className='clip-path-icon-box bg-brand/20 p-1'>
+            <Frame className='h-8 w-8 text-brand' />
           </div>
           <span className='bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-teal-600'>
             Morshed Alam
@@ -71,18 +62,18 @@ export default function Navbar () {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className='hidden md:flex items-center gap-8'>
+        <nav className='hidden md:flex items-center gap-6'>
           {navLinks.map((link, index) => (
             <Link
               key={link.name}
               href={link.href}
-              className={`text-zinc-300 hover:text-emerald-400 transition-colors relative overflow-hidden
+              className={`text-primary dark:text-primary dark:font-light  hover:text-emerald-400 transition-colors relative overflow-hidden
                 ${
                   index % 2 === 0
                     ? 'after:clip-path-button-1'
                     : 'after:clip-path-button-2'
                 }
-                after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-emerald-500
+                after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-brand
                 hover:after:w-full after:transition-all after:duration-300
               `}
             >
@@ -108,18 +99,7 @@ export default function Navbar () {
             Download CV
           </Button>
         </nav>
-
-        {/* Mobile Menu Button */}
-        <button
-          className='md:hidden text-white focus:outline-none'
-          onClick={handleMenuToggle}
-          aria-label='Toggle menu'
-        >
-          {isMobile ? <X size={24} /> : <Menu size={24} />}
-        </button>
       </div>
-
-      {/* Mobile Navigation */}
     </header>
   )
 }
