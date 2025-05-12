@@ -16,11 +16,14 @@ import { Button } from '@/components/ui/button'
 import { useTheme } from 'next-themes'
 import { cn } from '@/lib/utils'
 import { navLinks } from '@/constants/navLinks'
+import { usePathname } from 'next/navigation'
 
 export default function Navbar () {
   const [mounted, setMounted] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const pathname = usePathname()
+  console.log(pathname)
 
   const { theme, setTheme } = useTheme()
 
@@ -67,14 +70,20 @@ export default function Navbar () {
             <Link
               key={link.name}
               href={link.href}
-              className={`text-primary dark:text-primary dark:font-light  hover:text-emerald-400 transition-colors relative overflow-hidden
+              className={`${
+                pathname === link.href
+                  ? 'text-emerald-500 dark:text-emerald-400 font-light after:w-full'
+                  : 'text-primary dark:text-primary dark:font-light'
+              } hover:text-emerald-400 transition-colors relative overflow-hidden
                 ${
                   index % 2 === 0
                     ? 'after:clip-path-button-1'
                     : 'after:clip-path-button-2'
                 }
-                after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-brand
-                hover:after:w-full after:transition-all after:duration-300
+                after:absolute after:bottom-0 after:left-0 ${
+                  pathname === link.href ? 'after:w-full' : 'after:w-0'
+                } after:h-0.5 after:bg-brand dark:after:bg-brand/80
+                hover:after:w-full after:transition-all after:duration-400
               `}
             >
               {link.name}
