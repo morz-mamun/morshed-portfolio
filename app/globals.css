@@ -6,6 +6,9 @@
 @theme inline {
   /* custom color */
   --color-brand: var(--brand);
+ 
+  --color-textPrimary: var(--textPrimary);  /* this is for light mode primary text color */
+
 
 
   --color-background: var(--background);
@@ -50,6 +53,8 @@
 :root {
   /* custom color */
   --brand: #10b981;
+  --textPrimary: #52525b;
+
 
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -88,8 +93,8 @@
 .dark {
   /* custom color */
   --brand: #10b981;
-
-
+  --textPrimary: #a1a1aa; /* this is for dark mode primary text color */
+ 
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
