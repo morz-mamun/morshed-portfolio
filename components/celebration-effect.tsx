@@ -66,62 +66,62 @@ export default function CelebrationEffect() {
 
   return (
     <div className="fixed inset-0 pointer-events-none z-50 overflow-hidden">
-      {particles.map((particle) => (
+      {particles?.map((particle) => (
         <motion.div
-          key={particle.id}
+          key={particle?.id}
           initial={{
             y: -100,
-            x: `${particle.x}vw`,
+            x: `${particle?.x}vw`,
             opacity: 1,
-            rotate: particle.rotation,
+            rotate: particle?.rotation,
           }}
           animate={{
             y: "100vh",
-            rotate: particle.rotation + 360,
+            rotate: particle?.rotation + 360,
             opacity: [1, 1, 0.8, 0.5, 0],
           }}
           transition={{
-            duration: particle.duration,
-            delay: particle.delay,
+            duration: particle?.duration,
+            delay: particle?.delay,
             ease: "easeOut",
           }}
           className="absolute top-0"
-          style={{ width: particle.size, height: particle.size }}
+          style={{ width: particle?.size, height: particle?.size }}
         >
-          {particle.type === "circle" && (
-            <div className="w-full h-full rounded-full" style={{ backgroundColor: particle.color }} />
+          {particle?.type === "circle" && (
+            <div className="w-full h-full rounded-full" style={{ backgroundColor: particle?.color }} />
           )}
 
-          {particle.type === "square" && (
-            <div className="w-full h-full rotate-45" style={{ backgroundColor: particle.color }} />
+          {particle?.type === "square" && (
+            <div className="w-full h-full rotate-45" style={{ backgroundColor: particle?.color }} />
           )}
 
-          {particle.type === "triangle" && (
+          {particle?.type === "triangle" && (
             <div
               className="w-0 h-0 border-solid"
               style={{
-                borderLeftWidth: particle.size / 2,
-                borderRightWidth: particle.size / 2,
-                borderBottomWidth: particle.size,
+                borderLeftWidth: particle?.size / 2,
+                borderRightWidth: particle?.size / 2,
+                borderBottomWidth: particle?.size,
                 borderLeftColor: "transparent",
                 borderRightColor: "transparent",
-                borderBottomColor: particle.color,
+                borderBottomColor: particle?.color,
               }}
             />
           )}
 
-          {particle.type === "star" && (
+          {particle?.type === "star" && (
             <div className="relative">
               <svg
-                width={particle.size}
-                height={particle.size}
+                width={particle?.size}
+                height={particle?.size}
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
                   d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
-                  fill={particle.color}
+                  fill={particle?.color}
                 />
               </svg>
             </div>
