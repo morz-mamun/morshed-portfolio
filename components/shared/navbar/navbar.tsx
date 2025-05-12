@@ -50,11 +50,11 @@ export default function Navbar () {
   return (
     <header
       className={cn(
-        'sticky top-2 z-[9999] transition-all scroll-smooth transform ease-in-out duration-500 my-3',
+        'sticky top-2 z-[9999] transition-all transform ease-in-out duration-500 my-3',
         !isMobile && scrolled ? 'scale-90' : 'scale-100'
       )}
     >
-      <div className='container mx-auto md:px-4 px-0 flex justify-between items-center'>
+      <div className='container mx-auto md:px-0 px-0 flex justify-between items-center'>
         <Link href='#' className='flex items-center gap-2 text-xl font-bold'>
           <div className='clip-path-icon-box bg-brand/20 p-1'>
             <Frame className='h-8 w-8 text-brand' />

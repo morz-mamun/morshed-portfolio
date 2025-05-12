@@ -1,3 +1,5 @@
+"use client"
+import Footer from '@/components/shared/footer'
 import MobileNavbar from '@/components/shared/navbar/mobileNavbar'
 import Navbar from '@/components/shared/navbar/navbar'
 
@@ -25,7 +27,7 @@ export default function PublicLayout ({
       {/* mobile navbar */}
       <MobileNavbar />
       {/* footer */}
-      {/* <Footer /> */}
+      <Footer />
     </main>
   )
 }
