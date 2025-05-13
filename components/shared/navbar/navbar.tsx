@@ -55,10 +55,10 @@ export default function Navbar () {
     >
       <div className='container mx-auto md:px-0 px-0 flex justify-between items-center'>
         <Link href="/"  className='flex items-center gap-2 text-xl font-bold'>
-          <div className='clip-path-icon-box bg-brand/20 p-1'>
-            <Frame className='h-8 w-8 text-brand' />
+          <div className='clip-path-icon-box bg- p-1'>
+            <Frame className='h-8 w-8 text-primary dark:text-brand' />
           </div>
-          <span className='bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-teal-600'>
+          <span className='text-primary dark:text-[#08D9FE] font-bold'>
             Morshed Alam
           </span>
         </Link>
@@ -71,9 +71,9 @@ export default function Navbar () {
               href={link.href}
               className={`${
                 pathname === link.href
-                  ? 'text-emerald-500 dark:text-emerald-400 after:w-full'
-                  : 'text-textPrimary dark:text-textPrimary '
-              } hover:text-emerald-400 transition-colors relative overflow-hidden
+                  ? 'text-primary dark:text-brand after:w-full'
+                  : 'text-primary dark:text-textPrimary '
+              } hover:text-[#000] transition-colors relative overflow-hidden
                 ${
                   index % 2 === 0
                     ? 'after:clip-path-button-1'
@@ -103,7 +103,7 @@ export default function Navbar () {
               <Moon size={20} />
             )}
           </Button>
-          <Button className='bg-emerald-600 hover:bg-emerald-700 text-white clip-path-button-1'>
+          <Button className='cursor-pointer text-brand bg-brand/10 hover:bg-brand/20 text-sm px-4 py-[7px] rounded-full font-medium clip-path-badge'>
             Download CV
           </Button>
         </nav>

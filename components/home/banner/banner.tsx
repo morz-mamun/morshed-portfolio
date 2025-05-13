@@ -47,7 +47,7 @@ export default function Hero() {
             resolvedTheme === "dark" ? "from-white to-gray-400" : "from-gray-900 to-gray-600"
           }`}
         >
-          Hi, I'm <span className="text-emerald-500">Morshed Alam</span>
+          Hi, I'm <span className="text-brand">Morshed Alam</span>
           <br />
           MERN Stack Developer
         </motion.h1>
@@ -68,7 +68,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
-          <Button className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-6 clip-path-button-1">
+          <Button className="cursor-pointer bg-brand/70 hover:bg-brand/30 text-white px-8 py-6 clip-path-button-1">
             View My Work
           </Button>
           <Button
@@ -77,7 +77,7 @@ export default function Hero() {
               resolvedTheme === "dark"
                 ? "border-zinc-700 text-white hover:bg-zinc-800"
                 : "border-zinc-300 text-zinc-800 hover:bg-zinc-100"
-            } px-8 py-6 clip-path-button-2`}
+            } px-8 py-6 clip-path-button-2 cursor-pointer`}
           >
             Contact Me
           </Button>

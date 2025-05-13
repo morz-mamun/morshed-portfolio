@@ -52,7 +52,8 @@
 
 :root {
   /* custom color */
-  --brand: #10b981;
+  /* --brand: #10b981; */
+  --brand: #08D9FE;
   --textPrimary: #52525b;
 
 
@@ -92,7 +93,8 @@
 
 .dark {
   /* custom color */
-  --brand: #10b981;
+  /* --brand: #10b981; */
+  --brand: #08D9FE;
   --textPrimary: #a1a1aa; /* this is for dark mode primary text color */
  
   --background: oklch(0.145 0 0);
