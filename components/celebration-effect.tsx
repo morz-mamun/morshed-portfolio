@@ -36,7 +36,7 @@ export default function CelebrationEffect() {
       newParticles.push({
         id: i,
         x: Math.random() * 100, // random horizontal position (0-100%)
-        size: Math.random() * 15 + 5, // random size (5-20px)
+        size: Math.random() * 10 + 5, // random size (5-20px)
         color: colors[Math.floor(Math.random() * colors.length)],
         delay: Math.random() * 1, // random delay (0-1s)
         duration: Math.random() * 3 + 2, // random duration (2-5s)
