@@ -23,19 +23,18 @@ export default function Navbar () {
   const [isMobile, setIsMobile] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const pathname = usePathname()
-  console.log(pathname)
 
   const { theme, setTheme } = useTheme()
 
   // * Listen for scroll events to update sticky behavior.
-  useEffect(() => {
-    setMounted(true)
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  // useEffect(() => {
+  //   setMounted(true)
+  //   const handleScroll = () => {
+  //     setScrolled(window.scrollY > 50)
+  //   }
+  //   window.addEventListener('scroll', handleScroll)
+  //   return () => window.removeEventListener('scroll', handleScroll)
+  // }, [])
 
   // * Update window width state.
   useEffect(() => {
@@ -51,11 +50,11 @@ export default function Navbar () {
     <header
       className={cn(
         'sticky top-2 z-[9999] transition-all transform ease-in-out duration-500 my-3',
-        !isMobile && scrolled ? 'scale-90' : 'scale-100'
+        // !isMobile && scrolled ? 'scale-90' : 'scale-100'
       )}
     >
       <div className='container mx-auto md:px-0 px-0 flex justify-between items-center'>
-        <Link href='#' className='flex items-center gap-2 text-xl font-bold'>
+        <Link href="/"  className='flex items-center gap-2 text-xl font-bold'>
           <div className='clip-path-icon-box bg-brand/20 p-1'>
             <Frame className='h-8 w-8 text-brand' />
           </div>
@@ -72,8 +71,8 @@ export default function Navbar () {
               href={link.href}
               className={`${
                 pathname === link.href
-                  ? 'text-emerald-500 dark:text-emerald-400 font-light after:w-full'
-                  : 'text-primary dark:text-primary dark:font-light'
+                  ? 'text-emerald-500 dark:text-emerald-400 after:w-full'
+                  : 'text-textPrimary dark:text-textPrimary '
               } hover:text-emerald-400 transition-colors relative overflow-hidden
                 ${
                   index % 2 === 0
