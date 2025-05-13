@@ -1,11 +1,11 @@
 import CelebrationEffect from "@/components/celebration-effect"
+import WelcomeModal from "@/components/welcome-modal"
 
 export default function Home () {
   return (
-    <main>
+    <main className="min-h-screen">
       <CelebrationEffect />
-      {/* <div className="h-screen bg-gradient-to-b from-emerald-400 to-teal-600"></div> */}
-      <h1>hello</h1>
+      <WelcomeModal />
     </main>
   )
 }
