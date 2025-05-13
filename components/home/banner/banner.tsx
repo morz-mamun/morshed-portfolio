@@ -7,6 +7,9 @@ import { Button } from "@/components/ui/button"
 import { useTheme } from "next-themes"
 import { BackgroundBeams } from "../../ui/background-beams"
 import SparklesPreview from "./sparklesPreview"
+import { AuroraText } from "@/components/magicui/aurora-text"
+import { TypingAnimation } from "@/components/magicui/typing-animation"
+import { Typewriter } from "react-simple-typewriter"
 
 export default function Hero() {
   const [scrollY, setScrollY] = useState(0)
@@ -47,9 +50,18 @@ export default function Hero() {
             resolvedTheme === "dark" ? "from-white to-gray-400" : "from-gray-900 to-gray-600"
           }`}
         >
-          Hi, I'm <span className="text-brand">Morshed Alam</span>
+          Hi, I'm <span className="text-brand/50">Morshed Alam</span>
           <br />
-          MERN Stack Developer
+          <span className="text-4xl font-normal text-zinc-400">
+            <Typewriter
+          words={["Frontend Developer", "MERN Stack Developer"]}
+          loop={Infinity}
+          cursor
+          typeSpeed={100}
+          deleteSpeed={50}
+          delaySpeed={1000}
+        />
+          </span>
         </motion.h1>
 
         <motion.p

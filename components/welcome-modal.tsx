@@ -17,7 +17,7 @@ export default function WelcomeModal() {
       // Auto-hide after 8 seconds
       const hideTimer = setTimeout(() => {
         setIsVisible(false)
-      }, 8000)
+      }, 3000) // 3 seconds
 
       return () => clearTimeout(hideTimer)
     }, 1500) // Show after confetti starts

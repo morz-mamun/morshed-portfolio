@@ -7,10 +7,8 @@ export default function Home () {
   return (
     <main className="min-h-screen">
       <CelebrationEffect />
-      <Navbar />
-      {/* <BannerTwo /> */}
-      <Banner />
       <WelcomeModal />
+      <Banner />
     </main>
   )
 }

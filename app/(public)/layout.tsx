@@ -11,7 +11,7 @@ export default function PublicLayout ({
   return (
     <main className='min-h-screen mx-auto px-2 lg:px-4 '>
       {/* navbar */}
-      {/* <Navbar /> */}
+      <Navbar />
 
       {/* main content */}
       <div className='min-h-screen'>{children}</div>
