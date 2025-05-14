@@ -3,6 +3,7 @@ import CelebrationEffect from "@/components/celebration-effect"
 import WelcomeModal from "@/components/welcome-modal"
 import AboutMe from "@/components/home/aboutMe/aboutMe"
 import Experience from "@/components/home/experience/experience"
+import TerminalWidget from "@/components/terminal-widget/terminal-widget"
 
 export default function Home () {
   return (
@@ -12,6 +13,7 @@ export default function Home () {
       <Banner />
       <AboutMe />
       <Experience />
+      <TerminalWidget />
     </main>
   )
 }
