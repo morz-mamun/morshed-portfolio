@@ -1,8 +1,7 @@
-import { MagicCard } from "@/components/magicui/magic-card";
+
 import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
 import { words } from "@/constants/aboutme/aboutMe";
 import { skills } from "@/constants/aboutme/cardConstants";
-import { Palette } from "lucide-react";
 import Card from "./card";
 
 export default function AboutMe() {

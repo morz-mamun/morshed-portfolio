@@ -1,4 +1,5 @@
 "use client";
+import { Calendar } from "lucide-react";
 import {
   useMotionValueEvent,
   useScroll,
@@ -38,9 +39,12 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       ref={containerRef}
     >
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-lg md:text-4xl mb-4 text-black dark:text-white max-w-4xl">
-         Professional Timeline
-        </h2>
+        <div className="flex items-center gap-2 mb-4">
+          <Calendar className="h-7 w-7 text-brand dark:text-brand" />
+          <h1 className="text-xl md:text-3xl font-bold text-black dark:text-white">
+            Professional Timeline
+          </h1>
+        </div>
         <p className="text-textPrimary dark:text-textPrimary text-sm md:text-base max-w-sm">
          With almost a year and a half in tech, here are highlights from my journey. I'm always eager for new challenges and collaborations—feel free to reach out!
         </p>
