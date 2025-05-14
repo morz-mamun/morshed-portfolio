@@ -5,10 +5,11 @@ import { skills } from "@/constants/aboutme/cardConstants";
 import Card from "./card";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/moving-border";
+import { Marquee } from "@/components/magicui/marquee";
 
 export default function AboutMe() {
     const firstRow = skills.slice(0, skills.length / 2);
-const secondRow = skills.slice(skills.length / 2);
+    const secondRow = skills.slice(skills.length / 2);
 
     return (
         <section className="container mx-auto flex items-center justify-center mb-20">
@@ -35,19 +36,34 @@ const secondRow = skills.slice(skills.length / 2);
                                     <p>Each line of code I write is a step forward in a journey shaped by resilience, purpose, and a love for creating meaningful web experiences.</p>
                                 </div>
                             </div>
-                           <div>
-                             <Button>
-                                <div></div>
-                            </Button>
-                           </div>
+                            <div>
+                                <Button>
+                                    <div></div>
+                                </Button>
+                            </div>
+
+                            <div className="relative flex h-[520px] w-full flex-row items-center justify-center overflow-hidden rounded-lg bg-background/10 p-4 shadow-md">
+                                <Marquee pauseOnHover vertical className="[--duration:20s]">
+                                    {firstRow?.map((skill, index) => (
+                                        <Card key={index} skill={skill}  />
+                                    ))}
+                                </Marquee>
+                               <Marquee reverse  pauseOnHover vertical className="[--duration:20s]">
+                                    {secondRow?.map((skill, index) => (
+                                        <Card key={index} skill={skill}  />
+                                    ))}
+                                </Marquee>
+                                <div className="pointer-events-none absolute inset-x-0 top-0 h-1/4 bg-gradient-to-b from-background"></div>
+                                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-background"></div>
+                            </div>
                             {/* cards */}
-                            <div className=" mt-8 columns-1 md:columns-2 gap-4 space-y-4">
+                            {/* <div className=" mt-8 columns-1 md:columns-2 gap-4 space-y-4">
                                 {skills?.map((skill, index) => (
                                     <div key={index} className="break-inside-avoid">
                                         <Card skill={skill} />
                                     </div>
                                 ))}
-                            </div>
+                            </div> */}
                         </div>
                     </div>
 
