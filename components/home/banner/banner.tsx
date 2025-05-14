@@ -7,8 +7,6 @@ import { Button } from "@/components/ui/button"
 import { useTheme } from "next-themes"
 import { BackgroundBeams } from "../../ui/background-beams"
 import SparklesPreview from "./sparklesPreview"
-import { AuroraText } from "@/components/magicui/aurora-text"
-import { TypingAnimation } from "@/components/magicui/typing-animation"
 import { Typewriter } from "react-simple-typewriter"
 
 export default function Hero() {
@@ -50,7 +48,7 @@ export default function Hero() {
             resolvedTheme === "dark" ? "from-white to-gray-400" : "from-gray-900 to-gray-600"
           }`}
         >
-          Hi, I'm <span className="text-brand/50">Morshed Alam</span>
+          Hi, I'm <span className="text-brand/70">Morshed Alam</span>
           <br />
           <span className="text-4xl font-normal text-zinc-400">
             <Typewriter
@@ -129,7 +127,7 @@ export default function Hero() {
           opacity: { duration: 0.3 },
         }}
       >
-        <ArrowDown className="text-zinc-400" size={24} />
+        <ArrowDown className="text-brand" size={24} />
       </motion.div>
     </section>
   )
