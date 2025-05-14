@@ -66,7 +66,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-lg md:text-xl text-zinc-400 mb-8 max-w-2xl mx-auto"
+          className="text-lg md:text-xl text-textPrimary dark:text-textPrimary mb-8 max-w-2xl mx-auto"
         >
           Full-stack developer specializing in MongoDB, Express, React, and Node.js. Creating responsive, performant,
           and beautiful web applications.

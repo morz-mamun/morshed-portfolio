@@ -38,12 +38,12 @@ export default function WelcomeModal() {
           exit={{ y: -100, opacity: 0 }}
           transition={{ duration: 0.5 }}
           className={`fixed top-20 left-1/2 transform -translate-x-1/2 z-50 px-6 py-3 rounded-lg shadow-lg ${
-            theme === "dark" ? "bg-zinc-800 border-t-2 border-emerald-500/30" : "bg-white border-t-2 border-emerald-500/30"
+            theme === "dark" ? "bg-zinc-800 border-t-2 border-brand" : "bg-white border-t-2 border-brand"
           } max-w-md w-full mx-auto`}
         >
           <div className="flex items-start justify-between">
             <div className="flex-1 pr-4">
-              <h3 className="font-bold text-lg mb-1 text-emerald-500">Welcome to my portfolio!</h3>
+              <h3 className="font-bold text-lg mb-1 text-brand">Welcome to my portfolio!</h3>
               <p className={`text-sm ${theme === "dark" ? "text-zinc-300" : "text-zinc-700"}`}>
                 Thanks for visiting! Feel free to explore my projects and get in touch if you'd like to work together.
               </p>

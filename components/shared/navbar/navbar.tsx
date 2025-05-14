@@ -58,7 +58,7 @@ export default function Navbar () {
           <div className='clip-path-icon-box bg- p-1'>
             <Frame className='h-8 w-8 text-primary dark:text-brand' />
           </div>
-          <span className='text-primary dark:text-[#08D9FE] font-bold'>
+          <span className='text-primary dark:text-brand font-bold'>
             Morshed Alam
           </span>
         </Link>

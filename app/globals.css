@@ -75,6 +75,7 @@
   /* custom color */
   /* --brand: #10b981; */
   --brand: #08D9FE;
+;
   --textPrimary: #52525b;
 
   --radius: 0.625rem;
@@ -115,6 +116,8 @@
   /* custom color */
   /* --brand: #10b981; */
   --brand: #08D9FE;
+  
+;
   --textPrimary: #a1a1aa; /* this is for dark mode primary text color */
 
   --background: oklch(0.145 0 0);
@@ -149,6 +152,8 @@
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
 }
+
+
 
 @layer base {
   * {

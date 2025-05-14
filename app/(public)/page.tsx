@@ -1,7 +1,7 @@
 import Banner from "@/components/home/banner/banner"
 import CelebrationEffect from "@/components/celebration-effect"
-import Navbar from "@/components/shared/navbar/navbar"
 import WelcomeModal from "@/components/welcome-modal"
+import AboutMe from "@/components/home/aboutMe/aboutMe"
 
 export default function Home () {
   return (
@@ -9,6 +9,7 @@ export default function Home () {
       <CelebrationEffect />
       <WelcomeModal />
       <Banner />
+      <AboutMe />
     </main>
   )
 }
