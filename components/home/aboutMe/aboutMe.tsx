@@ -10,9 +10,8 @@ export default function AboutMe() {
         <section className="container mx-auto flex items-center justify-center mb-20">
             <div className="relative w-full max-w-6xl">
                 <div className="absolute inset-0 h-full w-full scale-[0.9] transform rounded-full bg-red-500 bg-gradient-to-r from-blue-500 to-teal-500 blur-3xl" />
-                <div className="relative h-full ">
-
-                    <div className="flex flex-col items-center overflow-hidden rounded-2xl border border-gray-800 bg-gray-900 px-4 py-8 shadow-xl">
+                <div className="relative h-full overflow-hidden rounded-2xl border border-gray-800 bg-gray-900 px-4 py-8 shadow-xl">
+                    <div className="flex flex-col items-center">
                         {/*HEADING  */}
                         <TypewriterEffectSmooth cursorClassName="bg-brand" words={words} />
                         {/* description */}
@@ -25,6 +24,7 @@ export default function AboutMe() {
                     </div>
 
                 </div>
+                
             </div>
         </section>
     )

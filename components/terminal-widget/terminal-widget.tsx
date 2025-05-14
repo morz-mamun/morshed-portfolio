@@ -92,7 +92,7 @@ export default function TerminalWidget() {
             }}
           >
             <motion.div
-              className="bg-black bg-opacity-50 absolute inset-0"
+              className="absolute inset-0"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}

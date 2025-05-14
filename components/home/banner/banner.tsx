@@ -28,7 +28,7 @@ export default function Hero() {
   if (!mounted) return null
 
   return (
-    <section className="relative h-[calc(100vh-5rem)] flex flex-col justify-center items-center px-4 overflow-hidden">
+    <section className="relative h-[calc(100vh-6rem)] flex flex-col justify-center items-center px-4 overflow-hidden">
       {/* Content */}
       <div className="z-10 text-center max-w-4xl">
         <motion.div
