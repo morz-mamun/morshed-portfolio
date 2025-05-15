@@ -42,6 +42,10 @@ export function SkillsAnimation({
   const div5Ref = useRef<HTMLDivElement>(null);
   const div6Ref = useRef<HTMLDivElement>(null);
   const div7Ref = useRef<HTMLDivElement>(null);
+  const div8Ref = useRef<HTMLDivElement>(null);
+  const div9Ref = useRef<HTMLDivElement>(null);
+  const div10Ref = useRef<HTMLDivElement>(null);
+  const div11Ref = useRef<HTMLDivElement>(null);
 
   return (
     <div
@@ -68,26 +72,26 @@ export function SkillsAnimation({
           <Circle ref={div5Ref}>
             <Icons.remix />
           </Circle>
-          <Circle ref={div5Ref}>
+          <Circle ref={div6Ref}>
             <Icons.tailwindcss />
           </Circle>
-          <Circle ref={div5Ref}>
+          <Circle ref={div7Ref}>
             <Icons.nodejs />
           </Circle>
-          <Circle ref={div5Ref}>
+          <Circle ref={div8Ref}>
             <Icons.expressjs />
           </Circle>
-          <Circle ref={div5Ref}>
+          <Circle ref={div9Ref}>
             <Icons.github />
           </Circle>
         </div>
         <div className="flex flex-col justify-center">
-          <Circle ref={div6Ref} className="size-16">
+          <Circle ref={div10Ref} className="size-16">
             <Icons.vscode />
           </Circle>
         </div>
         <div className="flex flex-col justify-center">
-          <Circle ref={div7Ref}>
+          <Circle ref={div11Ref}>
             <Icons.user />
           </Circle>
         </div>
@@ -96,32 +100,52 @@ export function SkillsAnimation({
       <AnimatedBeam
         containerRef={containerRef}
         fromRef={div1Ref}
-        toRef={div6Ref}
+        toRef={div10Ref}
       />
       <AnimatedBeam
         containerRef={containerRef}
         fromRef={div2Ref}
-        toRef={div6Ref}
+        toRef={div10Ref}
       />
       <AnimatedBeam
         containerRef={containerRef}
         fromRef={div3Ref}
-        toRef={div6Ref}
+        toRef={div10Ref}
       />
       <AnimatedBeam
         containerRef={containerRef}
         fromRef={div4Ref}
-        toRef={div6Ref}
+        toRef={div10Ref}
       />
       <AnimatedBeam
         containerRef={containerRef}
         fromRef={div5Ref}
-        toRef={div6Ref}
+        toRef={div10Ref}
       />
       <AnimatedBeam
         containerRef={containerRef}
         fromRef={div6Ref}
-        toRef={div7Ref}
+        toRef={div10Ref}
+      />
+      <AnimatedBeam
+        containerRef={containerRef}
+        fromRef={div7Ref}
+        toRef={div10Ref}
+      />
+      <AnimatedBeam
+        containerRef={containerRef}
+        fromRef={div8Ref}
+        toRef={div10Ref}
+      />
+      <AnimatedBeam
+        containerRef={containerRef}
+        fromRef={div9Ref}
+        toRef={div10Ref}
+      />
+      <AnimatedBeam
+        containerRef={containerRef}
+        fromRef={div10Ref}
+        toRef={div11Ref}
       />
     </div>
   );
