@@ -93,9 +93,9 @@ export default function MySkills() {
                 <h2 className="text-4xl md:text-5xl font-bold">Skill Highlights</h2>
             </div>
             {/* content */}
-            <div className="flex justify-betwen item-center gap-4">
+            <div className="flex justify-betwen item-center gap-x-4">
                 {/* skills cards */}
-                <div className="mt-8 columns-1 md:columns-2 gap-4 space-y-4">
+                <div className="mt-2 columns-1 md:columns-2 gap-3 space-y-6">
                     {skillCategories?.map((category) => (
                         <div key={category.name} className="break-inside-avoid">
                             <div
@@ -127,7 +127,7 @@ export default function MySkills() {
                     ))}
                 </div>
                 {/*  */}
-                <div className="w-full">
+                <div className="w-full flex items-center justify-center">
                     <SkillsAnimation />
                 </div>
             </div>

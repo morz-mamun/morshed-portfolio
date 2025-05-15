@@ -8,9 +8,6 @@ export default function Experience() {
 
         <div className="relative w-full overflow-clip  pt-20">
             <Timeline data={data} />
-            {/* <div className="absolute inset-0 z-0">
-                <BackgroundBeams />
-            </div> */}
         </div>
     )
 }
