@@ -37,7 +37,7 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
           className="mb-6"
         >
-         <SparklesPreview />
+         <SparklesPreview title={"MERN Stack Developer"} />
         </motion.div>
 
         <motion.h1

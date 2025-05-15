@@ -6,6 +6,7 @@ import { FaNodeJs, FaReact } from "react-icons/fa";
 import { SiNextdotjs, SiRemix, SiTailwindcss, SiRedux, SiAntdesign, SiFramer, SiShadcnui, SiExpress, SiMongodb, SiMongoose, SiJavascript, SiTypescript, SiNpm, SiPnpm, SiGithub, SiPostman } from "react-icons/si";
 import { TbApi } from "react-icons/tb";
 import { VscCode } from "react-icons/vsc";
+import SparklesPreview from "../banner/sparklesPreview";
 
 interface Skill {
     name: string
@@ -87,8 +88,7 @@ export default function MySkills() {
         <div className="w-full text-white py-16 px-4 md:px-8">
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-12">
-                    <div className="inline-block px-4 py-1 rounded-full bg-[#1a1f2e] text-sm font-medium mb-4">My Skills</div>
-                    {/* <LampDemo /> */}
+                    <SparklesPreview title={"My technical skills"} />
                     <h2 className="text-4xl md:text-5xl font-bold">Skill Highlights</h2>
                 </div>
 

@@ -5,19 +5,17 @@ import { SparklesCore } from "@/components/ui/sparkles";
 import { useTheme } from "next-themes";
 import React from "react";
 
-export default function SparklesPreview() {
+
+export default function SparklesPreview({title} : any) {
     const { resolvedTheme } = useTheme();
     return (
         <div className=" w-full dark:bg-black flex flex-col items-center justify-center overflow-hidden rounded-md">
             {/* moving border button */}
            <div>
              <Button className="text-sm px-4 py-[7px] rounded-full font-medium bg-emerald-500/10 text-textPrimary dark:text-textPrimary border border-emerald-500/20 clip-path-badge inline-block">
-               <HyperText className="text-sm"> MERN Stack Developer</HyperText>
+               <HyperText className="text-sm">{title}</HyperText>
             </Button>
            </div>
-            {/* <span className="px-4 py-2 rounded-full text-sm font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 clip-path-badge inline-block">
-                MERN Stack Developer
-            </span> */}
             <div className="w-[40rem] h-24 relative">
                 {/* Gradients */}
                 <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
