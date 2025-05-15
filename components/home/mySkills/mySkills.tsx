@@ -7,6 +7,8 @@ import { SiNextdotjs, SiRemix, SiTailwindcss, SiRedux, SiAntdesign, SiFramer, Si
 import { TbApi } from "react-icons/tb";
 import SparklesPreview from "../banner/sparklesPreview";
 import { SkillsAnimation } from "./skillsAnimation";
+import SkillCard from "./skillCard";
+import { BorderBeam } from "@/components/magicui/border-beam";
 
 interface Skill {
     name: string
@@ -93,38 +95,22 @@ export default function MySkills() {
                 <h2 className="text-4xl md:text-5xl font-bold">Skill Highlights</h2>
             </div>
             {/* content */}
-            <div className="flex justify-betwen item-center gap-x-4">
+            <div className="flex justify-betwen item-center">
                 {/* skills cards */}
-                <div className="mt-2 columns-1 md:columns-2 gap-3 space-y-6">
-                    {skillCategories?.map((category) => (
-                        <div key={category.name} className="break-inside-avoid">
-                            <div
-                                className="bg-[#0f1524] rounded-xl p-6 transition-all duration-300 hover:bg-[#151b2e]"
-                                onMouseEnter={() => handleCategoryHover(category.name)}
-                                onMouseLeave={handleCategoryLeave}
-                            >
-                                <div className="flex items-center gap-3 mb-5">
-                                    <div className="text-blue-400">{category.icon}</div>
-                                    <h3 className="text-xl font-semibold">{category.name}</h3>
-                                </div>
-
-                                <div className="flex flex-wrap gap-2">
-                                    {category.skills.map((skill) => (
-                                        <div
-                                            key={`${category.name}-${skill.name}`}
-                                            className={`flex items-center gap-2 p-3 rounded-md bg-[#1a1f2e] transition-all duration-300 ${activeCategory === category.name ? "opacity-100" : "opacity-90"
-                                                }`}
-                                        >
-                                            <div className={`flex items-center justify-center w-6 h-6 rounded ${skill.color || ""}`}>
-                                                {skill.icon}
-                                            </div>
-                                            <span className="text-sm">{skill.name}</span>
-                                        </div>
-                                    ))}
-                                </div>
+                <div className="relative overflow-hidden rounded-xl">
+                    <div className="columns-1 md:columns-2 gap-3 space-y-6 pt-2 px-2">
+                        {skillCategories?.map((category) => (
+                            <div key={category.name} className="break-inside-avoid">
+                                <SkillCard category={category} />
                             </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
+                    <BorderBeam
+                        duration={10}
+                        delay={3}
+                        size={200}
+                        className="from-transparent via-blue-500 to-transparent"
+                    />
                 </div>
                 {/*  */}
                 <div className="w-full flex items-center justify-center">
