@@ -101,7 +101,7 @@ export default function Projects() {
               <h2 className="text-4xl md:text-5xl font-bold">Featured Projects</h2>
             </div>
           </motion.div>
-
+        {/* Tabs */}
           <div className="flex flex-wrap justify-center gap-3 mb-12">
             {filters.map((filterName) => (
               <Button
@@ -109,8 +109,8 @@ export default function Projects() {
                 variant={filter === filterName ? "default" : "outline"}
                 className={
                   filter === filterName
-                    ? "bg-emerald-600 hover:bg-emerald-700 border-none"
-                    : "border-zinc-300 text-zinc-600 hover:text-zinc-900 hover:bg-zinc-200"
+                    ? "bg-brand hover:bg-brand/70 border-none"
+                    : "border-zinc-300 text-textPrimary hover:text-brand"
                 }
                 onClick={() => setFilter(filterName)}
               >
@@ -162,7 +162,7 @@ export default function Projects() {
                   </div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2 group-hover:text-emerald-400 transition-colors">
+                  <h3 className="text-xl font-bold mb-2 group-hover:text-brand transition-colors">
                     {project.title}
                   </h3>
                   <p className={`mb-4 line-clamp-3`}>
