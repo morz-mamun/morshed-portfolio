@@ -5,8 +5,8 @@ import AboutMe from "@/components/home/aboutMe/aboutMe"
 import Experience from "@/components/home/experience/experience"
 import TerminalWidget from "@/components/terminal-widget/terminal-widget"
 import MySkills from "@/components/home/mySkills/mySkills"
-import MyWork from "@/components/home/my-works/myWorks"
-import Projects from "@/components/home/my-works/projects"
+import Projects, { projects } from "@/components/home/my-works/projects"
+
 
 export default function Home () {
   return (
@@ -18,7 +18,6 @@ export default function Home () {
       <Experience />
       <TerminalWidget />
       <MySkills />
-      {/* <MyWork /> */}
       <Projects />
     </main>
   )

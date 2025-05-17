@@ -90,9 +90,9 @@ export default function MySkills() {
     return (
         <section className="py-16 max-w-7xl mx-auto">
             {/* Section heading */}
-            <div className="text-center mb-12">
-                <SparklesPreview title={"My technical skills"} />
-                <h2 className="text-4xl md:text-5xl font-bold">Skill Highlights</h2>
+            <div className="relative text-center mb-12">
+                <SparklesPreview title={"My Technical Skills"} />
+                <h2 className="absolute top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-4xl md:text-5xl font-bold">Skill Highlights</h2>
             </div>
             {/* content */}
             <div className="flex justify-betwen item-center">

@@ -7,16 +7,19 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision"
 import SparklesPreview from "../banner/sparklesPreview"
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import ProjectCarousel from "./project-carousel"
+import ProjectCarouselWithThumbnails from "./project-carousel-with-thumbnails.tsx"
 
 
-const projects = [
+export const projects = [
   {
     id: 1,
     title: "E-Commerce Platform",
     description:
       "A full-featured e-commerce platform with product management, cart functionality, user authentication, and payment processing.",
     image: "/ss4.png",
-    tags: ["MongoDB", "Express", "React", "Node.js", "Redux", "Stripe"],
+    tags: ["MongoDB", "Express", "React", "Node.js", "JWT", "Stripe", "emailjs"],
     liveLink: "#",
     githubLink: "#",
     featured: true,
@@ -27,7 +30,7 @@ const projects = [
     description:
       "A collaborative task management application with real-time updates, team workspaces, and progress tracking.",
     image: "/ss3.png",
-    tags: ["MongoDB", "Express", "React", "Node.js", "Socket.io", "JWT"],
+    tags: ["MongoDB", "Express", "React", "Node.js", "JWT"],
     liveLink: "#",
     githubLink: "#",
     featured: true,
@@ -37,7 +40,7 @@ const projects = [
     title: "Social Media Dashboard",
     description: "A dashboard that aggregates and displays social media metrics and analytics from multiple platforms.",
     image: "/ss2.png",
-    tags: ["MongoDB", "Express", "React", "Node.js", "Chart.js", "OAuth"],
+    tags: ["MongoDB", "Express", "React", "Node.js"],
     liveLink: "#",
     githubLink: "#",
     featured: false,
@@ -75,114 +78,110 @@ const projects = [
 ]
 
 export default function Projects() {
-  const [filter, setFilter] = useState("all")
-  const filteredProjects =
-    filter === "all"
-      ? projects
-      : filter === "featured"
-        ? projects.filter((project) => project.featured)
-        : projects.filter((project) => project.tags.includes(filter))
-
-  const filters = ["all", "featured", "MongoDB", "Express", "React", "Node.js"]
+  const [viewMode, setViewMode] = useState<"carousel" | "thumbnails" | "grid">("carousel")
 
   return (
-    <BackgroundBeamsWithCollision >
-      <section id="projects" className="">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <div className="text-center mb-12">
-              <SparklesPreview title={"My works"} />
-              <h2 className="text-4xl md:text-5xl font-bold">Featured Projects</h2>
-            </div>
-          </motion.div>
-        {/* Tabs */}
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
-            {filters.map((filterName) => (
-              <Button
-                key={filterName}
-                variant={filter === filterName ? "default" : "outline"}
-                className={
-                  filter === filterName
-                    ? "bg-brand hover:bg-brand/70 border-none"
-                    : "border-zinc-300 text-textPrimary hover:text-brand"
-                }
-                onClick={() => setFilter(filterName)}
-              >
-                {filterName.charAt(0).toUpperCase() + filterName.slice(1)}
-              </Button>
-            ))}
+    <BackgroundBeamsWithCollision>
+      <section id="projects" className="max-w-7xl mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <div className="relative text-center mb-12">
+            <SparklesPreview title={"My works"} />
+            <h2 className="absolute top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-4xl md:text-5xl font-bold">Featured Projects</h2>
+            <p className="text-xs text-textPrimary dark:text-textSecondary"> Browse through all my projects and see my work</p>
           </div>
+        </motion.div>
+        {/* view change tabs */}
+        <Tabs defaultValue="carousel" onValueChange={(value) => setViewMode(value as any)}>
+          <TabsList>
+            <TabsTrigger value="carousel">Carousel</TabsTrigger>
+            <TabsTrigger value="thumbnails">With Thumbnails</TabsTrigger>
+            <TabsTrigger value="grid">Grid</TabsTrigger>
+          </TabsList>
+        </Tabs>
 
-          {/* all projects */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProjects?.map((project, index) => (
-              <motion.div
-                key={project.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`rounded-xl overflow-hidden border group`}
-              >
-                <div className="relative overflow-hidden">
-                  <motion.img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-3 overflow-hidden"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-between p-4">
-                    <div className="flex gap-3">
-                      {project.githubLink && (
-                        <a
-                          href={project.githubLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="bg-zinc-800/80 p-2 rounded-full hover:bg-emerald-600 transition-colors"
-                        >
-                          <Github className="h-5 w-5" />
-                        </a>
-                      )}
-                      {project.liveLink && (
-                        <a
-                          href={project.liveLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="bg-zinc-800/80 p-2 rounded-full hover:bg-emerald-600 transition-colors"
-                        >
-                          <ExternalLink className="h-5 w-5" />
-                        </a>
-                      )}
+
+        <div className="">
+          {viewMode === "carousel" && <ProjectCarousel projects={projects} filteredProjects={projects} />}
+
+          {/* all projects show with thumbnails */}
+          {viewMode === "thumbnails" && (
+            <ProjectCarouselWithThumbnails projects={projects} filteredProjects={projects} />
+          )}
+
+          {/* all projects show as grid */}
+          {viewMode === 'grid' && (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {projects?.map((project, index) => (
+                <motion.div
+                  key={project.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className={`rounded-xl overflow-hidden border group`}
+                >
+                  <div className="relative overflow-hidden">
+                    <div className="w-full h-48">
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-3 overflow-hidden"
+                      />
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-between p-4">
+                      <div className="flex gap-3">
+                        {project.githubLink && (
+                          <a
+                            href={project.githubLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-zinc-800/80 p-2 rounded-full hover:bg-brand hover:text-black transition-colors"
+                          >
+                            <Github className="h-5 w-5" />
+                          </a>
+                        )}
+                        {project.liveLink && (
+                          <a
+                            href={project.liveLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-zinc-800/80 p-2 rounded-full hover:bg-brand hover:text-black transition-colors"
+                          >
+                            <ExternalLink className="h-5 w-5" />
+                          </a>
+                        )}
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2 group-hover:text-brand transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className={`mb-4 line-clamp-3`}>
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <Badge
-                        key={tag}
-                        variant="outline"
-                        className={`bg-zinc-700/30 text-zinc-300 border-zinc-600 hover:bg-emerald-500/10 hover:text-emerald-400 hover:border-emerald-500/30 transition-colors`}
-                      >
-                        {tag}
-                      </Badge>
-                    ))}
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold mb-2 group-hover:text-brand transition-colors">
+                      {project.title}
+                    </h3>
+                    <p className={`mb-4 text-textPrimary dark:text-textPrimary`}>
+                      {project.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.tags.map((tag) => (
+                        <Badge
+                          key={tag}
+                          variant="outline"
+                          className={`bg-brand/10 text-textPrimary dark:textPrimary border-border hover:bg-brand/20 hover:text-brand hover:border-brand/50 transition-colors px-2 py-1`}
+                        >
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+                </motion.div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
     </BackgroundBeamsWithCollision>
