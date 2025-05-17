@@ -7,7 +7,8 @@
   /* custom color */
   --color-brand: var(--brand);
 
-  --color-textPrimary: var(--textPrimary);  /* this is for light mode primary text color */
+  --color-textPrimary: var(--textPrimary);
+  /* this is for light mode primary text color */
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -47,47 +48,63 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   --animate-aurora: aurora 8s ease-in-out infinite alternate;
+
   @keyframes aurora {
-  0% {
-    background-position: 0% 50%;
-    transform: rotate(-5deg) scale(0.9);
+    0% {
+      background-position: 0% 50%;
+      transform: rotate(-5deg) scale(0.9);
     }
-  25% {
-    background-position: 50% 100%;
-    transform: rotate(5deg) scale(1.1);
+
+    25% {
+      background-position: 50% 100%;
+      transform: rotate(5deg) scale(1.1);
     }
-  50% {
-    background-position: 100% 50%;
-    transform: rotate(-3deg) scale(0.95);
+
+    50% {
+      background-position: 100% 50%;
+      transform: rotate(-3deg) scale(0.95);
     }
-  75% {
-    background-position: 50% 0%;
-    transform: rotate(3deg) scale(1.05);
+
+    75% {
+      background-position: 50% 0%;
+      transform: rotate(3deg) scale(1.05);
     }
-  100% {
-    background-position: 0% 50%;
-    transform: rotate(-5deg) scale(0.9);
+
+    100% {
+      background-position: 0% 50%;
+      transform: rotate(-5deg) scale(0.9);
     }
   }
+
   --animate-marquee: marquee var(--duration) infinite linear;
-  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite
-;
+  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+
   @keyframes marquee {
-  from {
-    transform: translateX(0);}
-  to {
-    transform: translateX(calc(-100% - var(--gap)));}}
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+
   @keyframes marquee-vertical {
-  from {
-    transform: translateY(0);}
-  to {
-    transform: translateY(calc(-100% - var(--gap)));}}}
+    from {
+      transform: translateY(0);
+    }
+
+    to {
+      transform: translateY(calc(-100% - var(--gap)));
+    }
+  }
+}
 
 :root {
   /* custom color */
   /* --brand: #10b981; */
   --brand: #08D9FE;
-;
+  
   --textPrimary: #52525b;
 
   --radius: 0.625rem;
@@ -129,8 +146,9 @@
   /* --brand: #10b981; */
   --brand: #08D9FE;
 
-;
-  --textPrimary: #a1a1aa; /* this is for dark mode primary text color */
+  ;
+  --textPrimary: #a1a1aa;
+  /* this is for dark mode primary text color */
 
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
@@ -169,6 +187,7 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }

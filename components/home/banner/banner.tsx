@@ -8,6 +8,8 @@ import { useTheme } from "next-themes"
 import { BackgroundBeams } from "../../ui/background-beams"
 import SparklesPreview from "./sparklesPreview"
 import { Typewriter } from "react-simple-typewriter"
+import { ConfettiButton } from "@/components/magicui/confetti"
+import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button"
 
 export default function Hero() {
   const [scrollY, setScrollY] = useState(0)
@@ -37,28 +39,27 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
           className="mb-6"
         >
-         <SparklesPreview title={"MERN Stack Developer"} />
+          <SparklesPreview title={"MERN Stack Developer"} />
         </motion.div>
 
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className={`text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r ${
-            resolvedTheme === "dark" ? "from-white to-gray-400" : "from-gray-900 to-gray-600"
-          }`}
+          className={`text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r ${resolvedTheme === "dark" ? "from-white to-gray-400" : "from-gray-900 to-gray-600"
+            }`}
         >
           Hi, I'm <span className="text-brand/70">Morshed Alam</span>
           <br />
           <span className="text-4xl font-normal text-zinc-400">
             <Typewriter
-          words={["Frontend Developer", "MERN Stack Developer"]}
-          loop={Infinity}
-          cursor
-          typeSpeed={100}
-          deleteSpeed={50}
-          delaySpeed={1000}
-        />
+              words={["Frontend Developer", "MERN Stack Developer"]}
+              loop={Infinity}
+              cursor
+              typeSpeed={100}
+              deleteSpeed={50}
+              delaySpeed={1000}
+            />
           </span>
         </motion.h1>
 
@@ -78,19 +79,19 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
-          <Button className="cursor-pointer bg-brand/70 hover:bg-brand/30 text-white px-8 py-6 clip-path-button-1">
-            View My Work
-          </Button>
-          <Button
+          <div className="relative">
+            <ConfettiButton> View My Work</ConfettiButton>
+          </div>
+          <ConfettiButton>Contact Me</ConfettiButton>
+          {/* <Button
             variant="outline"
-            className={`${
-              resolvedTheme === "dark"
-                ? "border-zinc-700 text-white hover:bg-zinc-800"
-                : "border-zinc-300 text-zinc-800 hover:bg-zinc-100"
-            } px-8 py-6 clip-path-button-2 cursor-pointer`}
+            className={`${resolvedTheme === "dark"
+              ? "border-zinc-700 text-white hover:bg-zinc-800"
+              : "border-zinc-300 text-zinc-800 hover:bg-zinc-100"
+              } px-8 py-6 clip-path-button-2 cursor-pointer`}
           >
             Contact Me
-          </Button>
+          </Button> */}
         </motion.div>
 
         <motion.div
