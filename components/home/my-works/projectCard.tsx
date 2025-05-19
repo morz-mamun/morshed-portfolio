@@ -18,16 +18,16 @@ export default function ProjectCard({ project, index }: any) {
       <div className="relative overflow-hidden">
         <div className="w-full h-48">
           <img
-            src={project.image}
+            src={project.images[0]}
             alt={project.title}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-3 overflow-hidden"
+            className="w-full h-full transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-3 overflow-hidden"
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-between p-4">
           <div className="flex gap-3">
-            {project.githubLink && (
+            {project.repositoryLink && (
               <a
-                href={project.githubLink}
+                href={project.repositoryLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-zinc-800/80 p-2 rounded-full hover:bg-brand hover:text-black transition-colors"
@@ -53,26 +53,26 @@ export default function ProjectCard({ project, index }: any) {
           {project.title}
         </h3>
         <p className={`mb-4 text-textPrimary dark:text-textPrimary`}>
-          {project.description}
+          {project.shortDescription }
         </p>
-        {/* Tags */}
+        {/* Core Technologies */}
         <div className="flex justify-between items-center">
           <div className="flex flex-wrap gap-2">
-            {project?.tags?.slice(0, 2).map((tag: string) => (
+            {project?.coreTechnology?.slice(0, 2).map((tech: string) => (
               <Badge
-                key={tag}
+                key={tech}
                 variant="outline"
                 className={`bg-brand/10 text-textPrimary dark:textPrimary border-border hover:bg-brand/20 hover:text-brand hover:border-brand/50 transition-colors px-2 py-1`}
               >
-                {tag}
+                {tech}
               </Badge>
             ))}
-            {project?.tags?.length > 2 && (
+            {project?.coreTechnology?.length > 2 && (
               <Badge
                 variant="outline"
                 className={`bg-brand/10 text-textPrimary dark:textPrimary border-border hover:bg-brand/20 hover:text-brand hover:border-brand/50 transition-colors px-2 py-1`}
               >
-                +{project?.tags?.length - 2}
+                +{project?.coreTechnology?.length - 2}
               </Badge>
             )}
           </div>
