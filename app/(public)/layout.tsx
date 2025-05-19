@@ -14,7 +14,7 @@ export default function PublicLayout ({
       <Navbar />
 
       {/* main content */}
-      <div className='min-h-screen'>{children}</div>
+      <div className=''>{children}</div>
 
       {/* scroll to top button */}
       {/* <button
