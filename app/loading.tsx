@@ -7,12 +7,12 @@ export default function Loading() {
         {/* Animated logo/avatar */}
         <div className="relative w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent animate-spin-slow" />
-          <span className="text-3xl font-bold text-primary">SH</span>
+          <span className="text-3xl font-bold text-primary">MA</span>
         </div>
 
         {/* Loading text with animation */}
         <h2 className="text-2xl font-bold animate-pulse">
-          Loading Portfolio...
+          Loading...
         </h2>
 
         {/* Progress bar */}
