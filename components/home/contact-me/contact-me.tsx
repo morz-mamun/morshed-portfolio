@@ -9,13 +9,15 @@ import ContactForm from "./contactForm";
 import { FaFacebookSquare, FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiFacebook, SiFacebooklive } from "react-icons/si";
 import SparklesPreview from "../banner/sparklesPreview";
+import { contactItemData } from "@/constants/contact-me-data";
+import ContactItem from "./contact-item";
 
 export default function ContactMe() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   return (
     <section id="contact" className="py-20 px-4 md:px-8">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -25,7 +27,9 @@ export default function ContactMe() {
         >
           <div className="relative text-center mb-12">
             <SparklesPreview title={"Get In Touch"} />
-            <h2 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-4xl md:text-5xl font-bold">Contact me</h2>
+            <h2 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-4xl md:text-5xl font-bold">
+              Contact me
+            </h2>
             <p className="max-w-xl mx-auto text-sm text-textPrimary dark:text-textSecondary">
               Have a project in mind or want to discuss a potential
               collaboration? Feel free to reach out to me using the contact form
@@ -50,40 +54,24 @@ export default function ContactMe() {
             className="lg:col-span-1 space-y-8"
           >
             <div className="space-y-5">
-              <h1 className="uppercase font-bold text-2xl">Contact Info</h1>
-              <div className="flex gap-5 items-center">
-                <div className="h-fit p-2 bg-brand rounded-full shadow-2xl space-y-5">
-                  <Mail className="text-black" />
-                </div>
-                <div>
-                  <p className="uppercase">MAIL</p>
-                  <a className="text-textPrimary dark:text-textSecondary text-sm" href="">morzmamun@gmail.com</a>
-                </div>
-              </div>
-              <div className="flex gap-5 items-center">
-                <div className="h-fit p-2 bg-brand rounded-full shadow-2xl flex items-center justify-center text-3xl">
-                  <Phone className="text-black" />
-                </div>
-                <div className="space-y-1">
-                  <p className="uppercase">Contact Number</p>
-                  <p className="text-textPrimary dark:text-textSecondary text-sm">
-                    +8801851-565648
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-5">
-                <div className="h-fit p-2 bg-brand rounded-full shadow-2xl flex items-center justify-center shadow-2xl text-3xl">
-                  <MapPin className="text-black" />
-                </div>
-                <div>
-                  <p className="uppercase">Location</p>
-                  <p className="text-textPrimary dark:text-textSecondary text-sm">Chattogram, Bangladesh.</p>
-                </div>
-              </div>
+              <h1 className="text-textPrimary dark:text-textSecondary uppercase font-bold text-2xl">
+                Contact Info
+              </h1>
+              {contactItemData.map((item) => (
+                <ContactItem
+                  key={item.id}
+                  icon={item.icon}
+                  title={item.title}
+                  content={item.content}
+                  isLink={item.isLink}
+                />
+              ))}
             </div>
-            <div className="space-y-5">
-              <h1 className="uppercase font-bold text-2xl">Social Info</h1>
+            {/* Social Links */}
+            <div className="space-y-5 pt-10">
+              <h1 className="text-textPrimary dark:text-textSecondary uppercase font-bold text-2xl">
+                Social Info
+              </h1>
               <div className="flex gap-10">
                 <a
                   className=""

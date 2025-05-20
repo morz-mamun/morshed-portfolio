@@ -52,7 +52,7 @@ export default function ContactForm() {
 
   return (
     <form
-      className="space-y-[26px] w-full md:w-[676px] mx-auto"
+      className="space-y-[26px] w-full mx-auto"
       ref={formRef}
       onSubmit={handleSubmit}
     >
