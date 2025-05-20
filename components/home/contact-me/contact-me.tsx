@@ -11,6 +11,7 @@ import { SiFacebook, SiFacebooklive } from "react-icons/si";
 import SparklesPreview from "../banner/sparklesPreview";
 import { contactItemData } from "@/constants/contact-me-data";
 import ContactItem from "./contact-item";
+import { BorderBeam } from "@/components/magicui/border-beam";
 
 export default function ContactMe() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -97,10 +98,16 @@ export default function ContactMe() {
             className="lg:col-span-2"
           >
             <div
-              className={`bg-zinc-800/50 border-zinc-700/50 rounded-xl p-6 md:p-8 border`}
+              className={`relative bg-zinc-800/50 border-zinc-700/50 rounded-xl p-6 md:p-8 border`}
             >
               <h3 className="text-xl font-bold mb-6">Send Me a Message</h3>
               <ContactForm />
+              <BorderBeam
+                duration={8}
+                delay={3}
+                size={200}
+                className="from-transparent via-blue-500 to-transparent"
+              />
             </div>
           </motion.div>
         </div>

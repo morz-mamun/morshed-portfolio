@@ -5,6 +5,8 @@ import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { ShimmerButton } from "@/components/magicui/shimmer-button";
+import { ArrowBigDown, ArrowBigRight } from "lucide-react";
 // import toast from "react-hot-toast";
 // import { ErrorSVG } from "../svg/toast/ErrorSVG";
 // import { SuccessSVG } from "../svg/toast/SuccessSVG";
@@ -59,28 +61,34 @@ export default function ContactForm() {
       {/* Form Fields */}
       <div className="grid grid-cols-2 gap-3 md:gap-4 items-center">
         <div>
-          <label className="text-sm font-semibold">Full name</label>
+          <label className="text-textPrimary dark:text-textPrimary text-sm font-semibold">
+            Full name
+          </label>
           <Input required type="text" name="name" className="mt-2" />
         </div>
         <div className="space-y-2">
-          <label className="text-sm font-semibold">Subject</label>
+          <label className="text-textPrimary dark:text-textPrimary text-sm font-semibold">
+            Subject
+          </label>
           <Input required type="text" name="subject" className="mt-2" />
         </div>
       </div>
 
       <div className="space-y-2">
-        <label className="text-sm font-semibold">Write your message here</label>
+        <label className="text-textPrimary dark:text-textPrimary text-sm font-semibold">
+          Write your message here
+        </label>
         <Textarea required name="message" className="mt-2" />
       </div>
 
       {/* Submit Button */}
       <div className="flex justify-center pt-5">
-        <button
-          type="submit"
-          className="px-5 py-3 w-[112px] h-[46px] bg-black/10 rounded-[10px] text-base text-primary-text font-bold font-gabarito leading-6 hover:text-[15px] hover:scale-90 transition-all duration-300 ease-in-out"
-        >
-          Submit
-        </button>
+        <ShimmerButton className="shadow-xl">
+          <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-brand dark:to-brand/50 lg:text-lg">
+            Sent
+            <ArrowBigRight className="inline-block ml-1" size={20} />
+          </span>
+        </ShimmerButton>
       </div>
     </form>
   );
