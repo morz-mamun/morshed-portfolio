@@ -6,6 +6,7 @@ import Experience from "@/components/home/experience/experience"
 import TerminalWidget from "@/components/terminal-widget/terminal-widget"
 import MySkills from "@/components/home/mySkills/mySkills"
 import Projects from "@/components/home/my-works/projects"
+import ContactMe from "@/components/home/contact-me/contact-me"
 
 
 export default function Home () {
@@ -19,6 +20,7 @@ export default function Home () {
       <TerminalWidget />
       <MySkills />
       <Projects />
+      <ContactMe />
     </main>
   )
 }

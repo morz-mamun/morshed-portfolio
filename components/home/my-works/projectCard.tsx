@@ -5,6 +5,7 @@ import { ArrowBigRight, ExternalLink, Github, Slice } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { BorderBeam } from "@/components/magicui/border-beam";
 export default function ProjectCard({ project, index }: any) {
   return (
     <motion.div
@@ -13,7 +14,7 @@ export default function ProjectCard({ project, index }: any) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className={`rounded-xl overflow-hidden border group`}
+      className={`relative rounded-xl overflow-hidden border group`}
     >
       <div className="relative overflow-hidden">
         <div className="w-full h-48">
@@ -53,7 +54,7 @@ export default function ProjectCard({ project, index }: any) {
           {project.title}
         </h3>
         <p className={`mb-4 text-textPrimary dark:text-textPrimary`}>
-          {project.shortDescription }
+          {project.shortDescription}
         </p>
         {/* Core Technologies */}
         <div className="flex justify-between items-center">
@@ -78,10 +79,21 @@ export default function ProjectCard({ project, index }: any) {
           </div>
           {/* see project details button */}
           <Link href={`/projects/${project.id}`}>
-            <Badge variant="outline" className="bg-brand/10 border-border hover:bg-brand/20 hover:text-brand hover:border-brand/50 transition-colors px-2 py-1">See Project <ArrowBigRight size={16} /></Badge>
+            <Badge
+              variant="outline"
+              className="bg-brand/10 border-border hover:bg-brand/20 hover:text-brand hover:border-brand/50 transition-colors px-2 py-1"
+            >
+              See Project <ArrowBigRight size={16} />
+            </Badge>
           </Link>
         </div>
       </div>
+      <BorderBeam
+        duration={8}
+        delay={3}
+        size={200}
+        className="from-transparent via-blue-500 to-transparent"
+      />
     </motion.div>
   );
 }
