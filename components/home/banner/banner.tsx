@@ -3,21 +3,16 @@
 import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import { ArrowDown, Github, Linkedin, Twitter } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { useTheme } from "next-themes"
 import { BackgroundBeams } from "../../ui/background-beams"
 import SparklesPreview from "./sparklesPreview"
 import { Typewriter } from "react-simple-typewriter"
 import { ConfettiButton } from "@/components/magicui/confetti"
-import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button"
 
 export default function Hero() {
   const [scrollY, setScrollY] = useState(0)
-  const [mounted, setMounted] = useState(false)
-  const { resolvedTheme } = useTheme()
 
   useEffect(() => {
-    setMounted(true)
+    // setMounted(true)
     const handleScroll = () => {
       setScrollY(window.scrollY)
     }
@@ -27,7 +22,7 @@ export default function Hero() {
   }, [])
 
   // 🛑 Don't render until mounted to avoid hydration mismatch
-  if (!mounted) return null
+  // if (!mounted) return null
 
   return (
     <section className="relative h-[calc(100vh-6rem)] flex flex-col justify-center items-center px-4 overflow-hidden">
@@ -46,8 +41,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className={`text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r ${resolvedTheme === "dark" ? "from-white to-gray-400" : "from-gray-900 to-gray-600"
-            }`}
+          className={`text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400`}
         >
           Hi, I'm <span className="text-brand/70">Morshed Alam</span>
           <br />
@@ -83,15 +77,6 @@ export default function Hero() {
             <ConfettiButton> View My Work</ConfettiButton>
           </div>
           <ConfettiButton>Contact Me</ConfettiButton>
-          {/* <Button
-            variant="outline"
-            className={`${resolvedTheme === "dark"
-              ? "border-zinc-700 text-white hover:bg-zinc-800"
-              : "border-zinc-300 text-zinc-800 hover:bg-zinc-100"
-              } px-8 py-6 clip-path-button-2 cursor-pointer`}
-          >
-            Contact Me
-          </Button> */}
         </motion.div>
 
         <motion.div
