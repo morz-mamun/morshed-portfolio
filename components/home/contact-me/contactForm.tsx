@@ -6,10 +6,7 @@ import { toast } from "sonner";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { ShimmerButton } from "@/components/magicui/shimmer-button";
-import { ArrowBigDown, ArrowBigRight } from "lucide-react";
-// import toast from "react-hot-toast";
-// import { ErrorSVG } from "../svg/toast/ErrorSVG";
-// import { SuccessSVG } from "../svg/toast/SuccessSVG";
+import { ArrowBigRight } from "lucide-react";
 
 export default function ContactForm() {
   const formRef = useRef<HTMLFormElement>(null);
