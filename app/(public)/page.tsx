@@ -7,6 +7,7 @@ import TerminalWidget from "@/components/terminal-widget/terminal-widget"
 import MySkills from "@/components/home/mySkills/mySkills"
 import Projects from "@/components/home/my-works/projects"
 import ContactMe from "@/components/home/contact-me/contact-me"
+import { ChatButton } from "@/components/chat-bot/chat-button"
 
 
 export default function Home () {
@@ -17,10 +18,11 @@ export default function Home () {
       <Banner />
       <AboutMe />
       <Experience />
-      <TerminalWidget />
       <MySkills />
       <Projects />
       <ContactMe />
+      {/* <TerminalWidget /> */}
+      <ChatButton />
     </main>
   )
 }
