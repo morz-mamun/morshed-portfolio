@@ -4,9 +4,9 @@ const personalData = [
     id: "about-me",
     name: "About Me",
     description:
-      "I'm a MERN stack developer with experience in building full-stack applications. I specialize in React, Tailwind CSS, MongoDB, and Express.",
+      "I'm a MERN stack developer with experience in building full-stack applications. I specialize in React, Next.js, Remix, Tailwind CSS, MongoDB, and Express.",
     details:
-      "Currently working as a frontend developer intern at Monster Studio. I love solving real-world problems with clean, scalable code and intuitive UI.",
+      "Currently working as a frontend developer at Monster Studio. I love solving real-world problems with clean, scalable code and intuitive UI. I'm always learning and eager to expand my knowledge in the ever-evolving world of web development. ",
   },
   {
     id: "skills",
@@ -15,10 +15,21 @@ const personalData = [
     features: [
       "React",
       "Next.js",
+      "TypeScript",
+      "Remix",
+      "Redux Toolkit",
+      "React Router",
       "Tailwind CSS",
       "Node.js",
       "Express.js",
       "MongoDB",
+      "Mongoose",
+      "JWT",
+      "Axios",
+      "Firebase",
+      "EmailJS",
+      "AI Integration",
+      "youtube API",
       "Socket.IO",
       "REST API",
       "Framer Motion",
@@ -51,7 +62,7 @@ const personalData = [
     name: "Services",
     description: "Services I can offer as a developer.",
     features: [
-      "Full-stack web development",
+      "MERN stack web development with Next.js and Remix",
       "Responsive UI design",
       "Custom API integrations",
       "Chatbot development",
