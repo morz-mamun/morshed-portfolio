@@ -17,7 +17,6 @@ export default function MySkills() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7 }}
-                // viewport={{ once: true }}
             >
                 <SparklesPreview title={"My Technical Skills"} />
                 <h2 className="absolute top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-4xl md:text-5xl font-bold">
@@ -33,7 +32,7 @@ export default function MySkills() {
                     initial={{ opacity: 0, x: -50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8 }}
-                    // viewport={{ once: true }}
+
                 >
                     <div className="columns-1 md:columns-2 gap-3 space-y-6 pt-2 px-2">
                         {skillCategories?.map((category) => (
@@ -56,7 +55,7 @@ export default function MySkills() {
                     initial={{ opacity: 0, x: 50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8 }}
-                    // viewport={{ once: true }}
+
                 >
                     <SkillsAnimation />
                 </motion.div>
