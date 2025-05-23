@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState, useEffect, useRef } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
+import { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
   ChevronRight,
   Command,
@@ -21,60 +21,62 @@ import {
   ArrowDown,
   ArrowUp,
   CornerDownLeft,
-} from "lucide-react"
+} from "lucide-react";
+import { ShimmerButton } from "../magicui/shimmer-button";
 
 export default function TerminalWidget() {
-  const [isTerminalOpen, setIsTerminalOpen] = useState(false)
-  const [terminalPosition, setTerminalPosition] = useState({ x: 0, y: 0 })
-  const [buttonPosition, setButtonPosition] = useState({ x: 0, y: 0 })
-  const buttonRef = useRef<HTMLButtonElement>(null)
+  const [isTerminalOpen, setIsTerminalOpen] = useState(false);
+  const [terminalPosition, setTerminalPosition] = useState({ x: 0, y: 0 });
+  const [buttonPosition, setButtonPosition] = useState({ x: 0, y: 0 });
+  const buttonRef = useRef<HTMLButtonElement>(null);
 
-  // Update button position when component mounts and on window resize
-  useEffect(() => {
-    const updateButtonPosition = () => {
-      if (buttonRef.current) {
-        const rect = buttonRef.current.getBoundingClientRect()
-        setButtonPosition({
-          x: rect.left + rect.width / 2,
-          y: rect.top + rect.height / 2,
-        })
-      }
-    }
+  // // Update button position when component mounts and on window resize
+  // useEffect(() => {
+  //   const updateButtonPosition = () => {
+  //     if (buttonRef.current) {
+  //       const rect = buttonRef.current.getBoundingClientRect()
+  //       setButtonPosition({
+  //         x: rect.left + rect.width / 2,
+  //         y: rect.top + rect.height / 2,
+  //       })
+  //     }
+  //   }
 
-    updateButtonPosition()
-    window.addEventListener("resize", updateButtonPosition)
-    return () => window.removeEventListener("resize", updateButtonPosition)
-  }, [])
+  //   updateButtonPosition()
+  //   window.addEventListener("resize", updateButtonPosition)
+  //   return () => window.removeEventListener("resize", updateButtonPosition)
+  // }, [])
 
   // Toggle terminal visibility
   const toggleTerminal = () => {
     if (!isTerminalOpen) {
       // Update terminal position to start from button position
       if (buttonRef.current) {
-        const rect = buttonRef.current.getBoundingClientRect()
+        const rect = buttonRef.current.getBoundingClientRect();
         setTerminalPosition({
           x: rect.left + rect.width / 2,
           y: rect.top + rect.height / 2,
-        })
+        });
       }
     }
-    setIsTerminalOpen(!isTerminalOpen)
-  }
+    setIsTerminalOpen(!isTerminalOpen);
+  };
 
   return (
     <>
       {/* Widget Button */}
-      <motion.button
+      <ShimmerButton
         ref={buttonRef}
-        className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-gray-900 dark:bg-gray-800 text-white shadow-lg flex items-center justify-center hover:bg-gray-800 dark:hover:bg-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
         onClick={toggleTerminal}
-        style={{ backgroundColor: "#08D9FE" }}
-        aria-label="Open Terminal"
+        className="w-fit flex items-center gap-2"
       >
-        <TerminalIcon className="h-6 w-6" />
-      </motion.button>
+        <div className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-brand dark:to-brand/50 lg:text-lg">
+          <div className="flex items-center gap-2 text-brand">
+            <TerminalIcon className="h-6 w-6" />
+            <p className="text-base">Play with Terminal</p>
+          </div>
+        </div>
+      </ShimmerButton>
 
       {/* Terminal */}
       <AnimatePresence>
@@ -87,7 +89,7 @@ export default function TerminalWidget() {
             onClick={(e) => {
               // Close terminal when clicking outside
               if (e.target === e.currentTarget) {
-                setIsTerminalOpen(false)
+                setIsTerminalOpen(false);
               }
             }}
           >
@@ -135,32 +137,32 @@ export default function TerminalWidget() {
         )}
       </AnimatePresence>
     </>
-  )
+  );
 }
 
 // Terminal Content Component
 function TerminalContent({ onClose }: { onClose: () => void }) {
-  const [input, setInput] = useState("")
-  const [history, setHistory] = useState<React.ReactNode[]>([])
-  const [commandHistory, setCommandHistory] = useState<string[]>([])
-  const [historyIndex, setHistoryIndex] = useState(-1)
-  const [isMinimized, setIsMinimized] = useState(false)
-  const [showCursor, setShowCursor] = useState(true)
-  const [initialAnimation, setInitialAnimation] = useState(true)
-  const [showSuggestions, setShowSuggestions] = useState(false)
-  const [selectedSuggestionIndex, setSelectedSuggestionIndex] = useState(0)
-  const [showHelpTip, setShowHelpTip] = useState(true)
-  const [typingAnimation, setTypingAnimation] = useState("")
-  const [isTypingAnimationActive, setIsTypingAnimationActive] = useState(true)
-  const inputRef = useRef<HTMLInputElement>(null)
-  const terminalRef = useRef<HTMLDivElement>(null)
-  const suggestionsRef = useRef<HTMLDivElement>(null)
+  const [input, setInput] = useState("");
+  const [history, setHistory] = useState<React.ReactNode[]>([]);
+  const [commandHistory, setCommandHistory] = useState<string[]>([]);
+  const [historyIndex, setHistoryIndex] = useState(-1);
+  const [isMinimized, setIsMinimized] = useState(false);
+  const [showCursor, setShowCursor] = useState(true);
+  const [initialAnimation, setInitialAnimation] = useState(true);
+  const [showSuggestions, setShowSuggestions] = useState(false);
+  const [selectedSuggestionIndex, setSelectedSuggestionIndex] = useState(0);
+  const [showHelpTip, setShowHelpTip] = useState(true);
+  const [typingAnimation, setTypingAnimation] = useState("");
+  const [isTypingAnimationActive, setIsTypingAnimationActive] = useState(true);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const terminalRef = useRef<HTMLDivElement>(null);
+  const suggestionsRef = useRef<HTMLDivElement>(null);
 
   // Brand color
-  const brandColor = "#08D9FE"
+  const brandColor = "#08D9FE";
 
   // Example commands for typing animation
-  const exampleCommands = ["help", "about", "skills", "projects", "contact"]
+  const exampleCommands = ["help", "about", "skills", "projects", "contact"];
 
   // Available commands with descriptions for suggestions
   const commandsWithDescriptions = {
@@ -173,19 +175,27 @@ function TerminalContent({ onClose }: { onClose: () => void }) {
               Available commands:
             </p>
             <ul className="pl-4 space-y-1 mt-1">
-              {Object.entries(commandsWithDescriptions).map(([cmd, details]) => (
-                <li key={cmd} className="flex items-start">
-                  <span className="text-yellow-300 min-w-[120px] inline-block">{cmd}</span>
-                  <span className="text-gray-400">- {details.description}</span>
-                </li>
-              ))}
+              {Object.entries(commandsWithDescriptions).map(
+                ([cmd, details]) => (
+                  <li key={cmd} className="flex items-start">
+                    <span className="text-yellow-300 min-w-[120px] inline-block">
+                      {cmd}
+                    </span>
+                    <span className="text-gray-400">
+                      - {details.description}
+                    </span>
+                  </li>
+                )
+              )}
             </ul>
             <p className="mt-2" style={{ color: brandColor }}>
-              Tip: Use <span className="bg-gray-700 px-1 rounded">Tab</span> to autocomplete commands and{" "}
-              <span className="bg-gray-700 px-1 rounded">↑/↓</span> to navigate command history
+              Tip: Use <span className="bg-gray-700 px-1 rounded">Tab</span> to
+              autocomplete commands and{" "}
+              <span className="bg-gray-700 px-1 rounded">↑/↓</span> to navigate
+              command history
             </p>
           </div>
-        )
+        );
       },
     },
     about: {
@@ -198,50 +208,73 @@ function TerminalContent({ onClose }: { onClose: () => void }) {
             </div>
             <div className="mt-2 leading-relaxed">
               <p>
-                Hello! I'm <span className="text-yellow-300 font-medium">Morshed Alam</span>, a passionate Full Stack
-                Developer with 7+ years of experience crafting web applications and digital experiences.
+                Hello! I'm{" "}
+                <span className="text-yellow-300 font-medium">
+                  Morshed Alam
+                </span>
+                , a passionate Full Stack Developer with 7+ years of experience
+                crafting web applications and digital experiences.
               </p>
               <p className="mt-2">
-                I specialize in building scalable, performant applications using modern technologies and best practices.
-                My approach combines technical expertise with a keen eye for user experience and business needs.
+                I specialize in building scalable, performant applications using
+                modern technologies and best practices. My approach combines
+                technical expertise with a keen eye for user experience and
+                business needs.
               </p>
               <p className="mt-2">
-                When I'm not coding, you can find me exploring new technologies, contributing to open-source projects,
-                or hiking in the mountains with my camera.
+                When I'm not coding, you can find me exploring new technologies,
+                contributing to open-source projects, or hiking in the mountains
+                with my camera.
               </p>
               <div className="mt-3 flex flex-wrap gap-2">
                 <Badge
                   variant="outline"
                   className="border-opacity-80"
-                  style={{ backgroundColor: `${brandColor}20`, color: brandColor, borderColor: brandColor }}
+                  style={{
+                    backgroundColor: `${brandColor}20`,
+                    color: brandColor,
+                    borderColor: brandColor,
+                  }}
                 >
                   Problem Solver
                 </Badge>
                 <Badge
                   variant="outline"
                   className="border-opacity-80"
-                  style={{ backgroundColor: `${brandColor}20`, color: brandColor, borderColor: brandColor }}
+                  style={{
+                    backgroundColor: `${brandColor}20`,
+                    color: brandColor,
+                    borderColor: brandColor,
+                  }}
                 >
                   UI/UX Enthusiast
                 </Badge>
                 <Badge
                   variant="outline"
                   className="border-opacity-80"
-                  style={{ backgroundColor: `${brandColor}20`, color: brandColor, borderColor: brandColor }}
+                  style={{
+                    backgroundColor: `${brandColor}20`,
+                    color: brandColor,
+                    borderColor: brandColor,
+                  }}
                 >
                   Open Source Contributor
                 </Badge>
                 <Badge
                   variant="outline"
                   className="border-opacity-80"
-                  style={{ backgroundColor: `${brandColor}20`, color: brandColor, borderColor: brandColor }}
+                  style={{
+                    backgroundColor: `${brandColor}20`,
+                    color: brandColor,
+                    borderColor: brandColor,
+                  }}
                 >
                   Continuous Learner
                 </Badge>
               </div>
             </div>
           </div>
-        )
+        );
       },
     },
     skills: {
@@ -256,7 +289,7 @@ function TerminalContent({ onClose }: { onClose: () => void }) {
           "Tailwind CSS",
           "Redux",
           "Framer Motion",
-        ]
+        ];
         const backendSkills = [
           "Node.js",
           "Express",
@@ -266,9 +299,24 @@ function TerminalContent({ onClose }: { onClose: () => void }) {
           "REST API Design",
           "PostgreSQL",
           "MongoDB",
-        ]
-        const devopsSkills = ["Docker", "CI/CD", "AWS", "Vercel", "Git", "GitHub Actions", "Linux"]
-        const otherSkills = ["UI/UX Design", "Figma", "Jest", "Testing Library", "Agile/Scrum", "Technical Writing"]
+        ];
+        const devopsSkills = [
+          "Docker",
+          "CI/CD",
+          "AWS",
+          "Vercel",
+          "Git",
+          "GitHub Actions",
+          "Linux",
+        ];
+        const otherSkills = [
+          "UI/UX Design",
+          "Figma",
+          "Jest",
+          "Testing Library",
+          "Agile/Scrum",
+          "Technical Writing",
+        ];
 
         return (
           <div className="py-2">
@@ -285,7 +333,10 @@ function TerminalContent({ onClose }: { onClose: () => void }) {
                     <Badge
                       key={index}
                       className="transition-colors"
-                      style={{ backgroundColor: `${brandColor}15`, color: brandColor }}
+                      style={{
+                        backgroundColor: `${brandColor}15`,
+                        color: brandColor,
+                      }}
                     >
                       {skill}
                     </Badge>
@@ -302,7 +353,10 @@ function TerminalContent({ onClose }: { onClose: () => void }) {
                     <Badge
                       key={index}
                       className="transition-colors"
-                      style={{ backgroundColor: `${brandColor}15`, color: brandColor }}
+                      style={{
+                        backgroundColor: `${brandColor}15`,
+                        color: brandColor,
+                      }}
                     >
                       {skill}
                     </Badge>
@@ -319,7 +373,10 @@ function TerminalContent({ onClose }: { onClose: () => void }) {
                     <Badge
                       key={index}
                       className="transition-colors"
-                      style={{ backgroundColor: `${brandColor}15`, color: brandColor }}
+                      style={{
+                        backgroundColor: `${brandColor}15`,
+                        color: brandColor,
+                      }}
                     >
                       {skill}
                     </Badge>
@@ -336,7 +393,10 @@ function TerminalContent({ onClose }: { onClose: () => void }) {
                     <Badge
                       key={index}
                       className="transition-colors"
-                      style={{ backgroundColor: `${brandColor}15`, color: brandColor }}
+                      style={{
+                        backgroundColor: `${brandColor}15`,
+                        color: brandColor,
+                      }}
                     >
                       {skill}
                     </Badge>
@@ -345,7 +405,7 @@ function TerminalContent({ onClose }: { onClose: () => void }) {
               </div>
             </div>
           </div>
-        )
+        );
       },
     },
     experience: {
@@ -376,7 +436,7 @@ function TerminalContent({ onClose }: { onClose: () => void }) {
               "Created responsive web applications and e-commerce solutions. Implemented CI/CD pipelines that reduced deployment time by 70%.",
             technologies: ["JavaScript", "HTML/CSS", "Vue.js", "Webpack"],
           },
-        ]
+        ];
 
         return (
           <div className="py-2">
@@ -385,7 +445,11 @@ function TerminalContent({ onClose }: { onClose: () => void }) {
             </div>
             <div className="mt-2 space-y-6">
               {experiences.map((exp, index) => (
-                <div key={index} className="border-l-2 pl-4 ml-2" style={{ borderColor: "rgb(55, 65, 81)" }}>
+                <div
+                  key={index}
+                  className="border-l-2 pl-4 ml-2"
+                  style={{ borderColor: "rgb(55, 65, 81)" }}
+                >
                   <div className="text-yellow-300 font-medium">{exp.role}</div>
                   <div className="flex justify-between">
                     <span style={{ color: brandColor }}>{exp.company}</span>
@@ -394,7 +458,11 @@ function TerminalContent({ onClose }: { onClose: () => void }) {
                   <p className="mt-1 text-gray-300">{exp.description}</p>
                   <div className="flex flex-wrap gap-1.5 mt-2">
                     {exp.technologies.map((tech, i) => (
-                      <Badge key={i} variant="outline" className="text-xs bg-gray-800/50">
+                      <Badge
+                        key={i}
+                        variant="outline"
+                        className="text-xs bg-gray-800/50"
+                      >
                         {tech}
                       </Badge>
                     ))}
@@ -403,7 +471,7 @@ function TerminalContent({ onClose }: { onClose: () => void }) {
               ))}
             </div>
           </div>
-        )
+        );
       },
     },
     projects: {
@@ -431,7 +499,7 @@ function TerminalContent({ onClose }: { onClose: () => void }) {
             technologies: ["Vue.js", "Express", "Socket.io", "Redis"],
             link: "#",
           },
-        ]
+        ];
 
         return (
           <div className="py-2">
@@ -440,8 +508,13 @@ function TerminalContent({ onClose }: { onClose: () => void }) {
             </div>
             <div className="mt-2 space-y-4">
               {projects.map((project, index) => (
-                <div key={index} className="border border-gray-700 rounded-md p-3 bg-gray-800/30">
-                  <div className="text-yellow-300 font-medium">{project.name}</div>
+                <div
+                  key={index}
+                  className="border border-gray-700 rounded-md p-3 bg-gray-800/30"
+                >
+                  <div className="text-yellow-300 font-medium">
+                    {project.name}
+                  </div>
                   <p className="mt-1 text-gray-300">{project.description}</p>
                   <div className="flex flex-wrap gap-1.5 mt-2 mb-3">
                     {project.technologies.map((tech, i) => (
@@ -463,7 +536,7 @@ function TerminalContent({ onClose }: { onClose: () => void }) {
               ))}
             </div>
           </div>
-        )
+        );
       },
     },
     education: {
@@ -476,17 +549,27 @@ function TerminalContent({ onClose }: { onClose: () => void }) {
             </div>
             <div className="mt-2 space-y-4">
               <div>
-                <div className="text-yellow-300 font-medium">Master of Science in Computer Science</div>
+                <div className="text-yellow-300 font-medium">
+                  Master of Science in Computer Science
+                </div>
                 <div style={{ color: brandColor }}>Stanford University</div>
                 <div className="text-gray-400">2014 - 2016</div>
-                <p className="mt-1 text-gray-300">Specialized in Artificial Intelligence and Machine Learning</p>
+                <p className="mt-1 text-gray-300">
+                  Specialized in Artificial Intelligence and Machine Learning
+                </p>
               </div>
 
               <div>
-                <div className="text-yellow-300 font-medium">Bachelor of Science in Software Engineering</div>
-                <div style={{ color: brandColor }}>University of Washington</div>
+                <div className="text-yellow-300 font-medium">
+                  Bachelor of Science in Software Engineering
+                </div>
+                <div style={{ color: brandColor }}>
+                  University of Washington
+                </div>
                 <div className="text-gray-400">2010 - 2014</div>
-                <p className="mt-1 text-gray-300">Minor in Human-Computer Interaction</p>
+                <p className="mt-1 text-gray-300">
+                  Minor in Human-Computer Interaction
+                </p>
               </div>
 
               <div className="pt-2">
@@ -501,7 +584,7 @@ function TerminalContent({ onClose }: { onClose: () => void }) {
               </div>
             </div>
           </div>
-        )
+        );
       },
     },
     contact: {
@@ -513,11 +596,18 @@ function TerminalContent({ onClose }: { onClose: () => void }) {
               $ echo $CONTACT_INFO
             </div>
             <div className="mt-2 space-y-3">
-              <p>I'm always open to discussing new projects, opportunities, or partnerships.</p>
+              <p>
+                I'm always open to discussing new projects, opportunities, or
+                partnerships.
+              </p>
 
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4" style={{ color: brandColor }} />
-                <a href="mailto:morshed@example.com" className="hover:underline" style={{ color: brandColor }}>
+                <a
+                  href="mailto:morshed@example.com"
+                  className="hover:underline"
+                  style={{ color: brandColor }}
+                >
                   morshed@example.com
                 </a>
               </div>
@@ -525,7 +615,9 @@ function TerminalContent({ onClose }: { onClose: () => void }) {
               <div className="flex items-center gap-2">
                 <Command className="h-4 w-4" style={{ color: brandColor }} />
                 <span>
-                  Based in <span style={{ color: brandColor }}>San Francisco, CA</span> (Open to Remote)
+                  Based in{" "}
+                  <span style={{ color: brandColor }}>San Francisco, CA</span>{" "}
+                  (Open to Remote)
                 </span>
               </div>
 
@@ -542,7 +634,7 @@ function TerminalContent({ onClose }: { onClose: () => void }) {
               </div>
             </div>
           </div>
-        )
+        );
       },
     },
     social: {
@@ -567,7 +659,7 @@ function TerminalContent({ onClose }: { onClose: () => void }) {
             url: "https://twitter.com/morshedalam",
             username: "@morshedalam",
           },
-        ]
+        ];
 
         return (
           <div className="py-2">
@@ -588,23 +680,26 @@ function TerminalContent({ onClose }: { onClose: () => void }) {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      {social.name}: <span className="text-gray-300">{social.username}</span>
+                      {social.name}:{" "}
+                      <span className="text-gray-300">{social.username}</span>
                     </a>
                   </div>
                 ))}
               </div>
 
-              <p className="mt-2 text-gray-400 text-sm">I usually respond within 24 hours.</p>
+              <p className="mt-2 text-gray-400 text-sm">
+                I usually respond within 24 hours.
+              </p>
             </div>
           </div>
-        )
+        );
       },
     },
     clear: {
       description: "Clear the terminal",
       execute: () => {
-        setHistory([])
-        return null
+        setHistory([]);
+        return null;
       },
     },
     "easter-egg": {
@@ -627,35 +722,47 @@ function TerminalContent({ onClose }: { onClose: () => void }) {
 `}
             </pre>
             <p className="mt-2">
-              Thanks for exploring my terminal portfolio! Let's connect and build something amazing together.
+              Thanks for exploring my terminal portfolio! Let's connect and
+              build something amazing together.
             </p>
           </div>
-        )
+        );
       },
     },
     all: {
       description: "Run all commands in sequence",
       execute: () => {
         // Execute all commands in sequence
-        const allCommands = ["about", "skills", "experience", "projects", "education", "contact", "social"]
+        const allCommands = [
+          "about",
+          "skills",
+          "experience",
+          "projects",
+          "education",
+          "contact",
+          "social",
+        ];
         const allOutput = allCommands.map((cmd) => {
-          const output = commandsWithDescriptions[cmd as keyof typeof commandsWithDescriptions].execute()
+          const output =
+            commandsWithDescriptions[
+              cmd as keyof typeof commandsWithDescriptions
+            ].execute();
           return (
             <div key={cmd} className="mb-6">
               {output}
             </div>
-          )
-        })
+          );
+        });
 
-        return <div className="py-2">{allOutput}</div>
+        return <div className="py-2">{allOutput}</div>;
       },
     },
     exit: {
       description: "Close the terminal",
       execute: () => {
         setTimeout(() => {
-          onClose()
-        }, 500)
+          onClose();
+        }, 500);
         return (
           <div className="py-2">
             <div className="font-medium" style={{ color: brandColor }}>
@@ -663,169 +770,187 @@ function TerminalContent({ onClose }: { onClose: () => void }) {
             </div>
             <p className="mt-1">Closing terminal session...</p>
           </div>
-        )
+        );
       },
     },
-  }
+  };
 
   // Get filtered suggestions based on current input
   const getFilteredSuggestions = () => {
-    if (!input) return []
+    if (!input) return [];
 
-    const allCommands = Object.keys(commandsWithDescriptions)
-    return allCommands.filter((cmd) => cmd.startsWith(input.toLowerCase()))
-  }
+    const allCommands = Object.keys(commandsWithDescriptions);
+    return allCommands.filter((cmd) => cmd.startsWith(input.toLowerCase()));
+  };
 
   // Typing animation effect
   useEffect(() => {
     if (!input && isTypingAnimationActive) {
-      let currentCommandIndex = 0
-      let currentCharIndex = 0
-      let isDeleting = false
-      let typingSpeed = 150
-      const pauseTime = 1000
+      let currentCommandIndex = 0;
+      let currentCharIndex = 0;
+      let isDeleting = false;
+      let typingSpeed = 150;
+      const pauseTime = 1000;
 
       const typeNextCharacter = () => {
-        const currentCommand = exampleCommands[currentCommandIndex]
+        const currentCommand = exampleCommands[currentCommandIndex];
 
         if (isDeleting) {
           // Deleting characters
-          setTypingAnimation(currentCommand.substring(0, currentCharIndex - 1))
-          currentCharIndex--
-          typingSpeed = 50 // Faster when deleting
+          setTypingAnimation(currentCommand.substring(0, currentCharIndex - 1));
+          currentCharIndex--;
+          typingSpeed = 50; // Faster when deleting
 
           if (currentCharIndex === 0) {
-            isDeleting = false
-            currentCommandIndex = (currentCommandIndex + 1) % exampleCommands.length
-            typingSpeed = pauseTime // Pause before typing next command
+            isDeleting = false;
+            currentCommandIndex =
+              (currentCommandIndex + 1) % exampleCommands.length;
+            typingSpeed = pauseTime; // Pause before typing next command
           }
         } else {
           // Typing characters
-          setTypingAnimation(currentCommand.substring(0, currentCharIndex + 1))
-          currentCharIndex++
-          typingSpeed = 150 // Normal typing speed
+          setTypingAnimation(currentCommand.substring(0, currentCharIndex + 1));
+          currentCharIndex++;
+          typingSpeed = 150; // Normal typing speed
 
           if (currentCharIndex === currentCommand.length) {
-            isDeleting = true
-            typingSpeed = pauseTime // Pause before deleting
+            isDeleting = true;
+            typingSpeed = pauseTime; // Pause before deleting
           }
         }
-      }
+      };
 
-      const typingInterval = setTimeout(typeNextCharacter, typingSpeed)
-      return () => clearTimeout(typingInterval)
+      const typingInterval = setTimeout(typeNextCharacter, typingSpeed);
+      return () => clearTimeout(typingInterval);
     }
-  }, [typingAnimation, input, isTypingAnimationActive])
+  }, [typingAnimation, input, isTypingAnimationActive]);
 
   // Stop typing animation when user starts typing
   useEffect(() => {
     if (input) {
-      setIsTypingAnimationActive(false)
-      setTypingAnimation("")
+      setIsTypingAnimationActive(false);
+      setTypingAnimation("");
     } else {
-      setIsTypingAnimationActive(true)
+      setIsTypingAnimationActive(true);
     }
-  }, [input])
+  }, [input]);
 
   // Initial welcome message
   useEffect(() => {
     const welcomeMessage = (
       <div className="space-y-2">
-        <div className="font-bold text-xl flex items-center gap-2" style={{ color: brandColor }}>
-          <TerminalIcon className="h-5 w-5" /> Welcome to my interactive terminal!
+        <div
+          className="font-bold text-xl flex items-center gap-2"
+          style={{ color: brandColor }}
+        >
+          <TerminalIcon className="h-5 w-5" /> Welcome to my interactive
+          terminal!
         </div>
         <p>
-          Type <span className="text-yellow-300">help</span> to see available commands.
+          Type <span className="text-yellow-300">help</span> to see available
+          commands.
         </p>
-        <div className="text-gray-400 text-sm">v1.0.0 - Morshed Alam's Terminal Portfolio</div>
+        <div className="text-gray-400 text-sm">
+          v1.0.0 - Morshed Alam's Terminal Portfolio
+        </div>
         <div
           className="mt-2 px-3 py-2 rounded-md border border-opacity-50"
-          style={{ backgroundColor: `${brandColor}10`, borderColor: brandColor }}
+          style={{
+            backgroundColor: `${brandColor}10`,
+            borderColor: brandColor,
+          }}
         >
-          <p className="flex items-center gap-1.5" style={{ color: brandColor }}>
+          <p
+            className="flex items-center gap-1.5"
+            style={{ color: brandColor }}
+          >
             <Info className="h-4 w-4" />
-            <span className="font-medium">Pro Tip:</span> Start typing to see command suggestions!
+            <span className="font-medium">Pro Tip:</span> Start typing to see
+            command suggestions!
           </p>
         </div>
       </div>
-    )
+    );
 
-    setHistory([welcomeMessage])
+    setHistory([welcomeMessage]);
 
     // Blink cursor
     const cursorInterval = setInterval(() => {
-      setShowCursor((prev) => !prev)
-    }, 500)
+      setShowCursor((prev) => !prev);
+    }, 500);
 
     // Auto-type "help" command after a delay
     if (initialAnimation) {
       setTimeout(() => {
-        const helpText = "help"
-        let i = 0
+        const helpText = "help";
+        let i = 0;
 
         const typeInterval = setInterval(() => {
           if (i < helpText.length) {
-            setInput(helpText.substring(0, i + 1))
-            i++
+            setInput(helpText.substring(0, i + 1));
+            i++;
           } else {
-            clearInterval(typeInterval)
+            clearInterval(typeInterval);
             setTimeout(() => {
-              handleCommand(helpText)
-              setInitialAnimation(false)
-            }, 500)
+              handleCommand(helpText);
+              setInitialAnimation(false);
+            }, 500);
           }
-        }, 100)
-      }, 1000)
+        }, 100);
+      }, 1000);
     }
 
-    return () => clearInterval(cursorInterval)
-  }, [])
+    return () => clearInterval(cursorInterval);
+  }, []);
 
   // Focus input when clicking on terminal
   useEffect(() => {
     const handleClick = () => {
       if (inputRef.current) {
-        inputRef.current.focus()
+        inputRef.current.focus();
       }
-    }
+    };
 
     if (terminalRef.current) {
-      terminalRef.current.addEventListener("click", handleClick)
+      terminalRef.current.addEventListener("click", handleClick);
     }
 
     return () => {
       if (terminalRef.current) {
-        terminalRef.current.removeEventListener("click", handleClick)
+        terminalRef.current.removeEventListener("click", handleClick);
       }
-    }
-  }, [])
+    };
+  }, []);
 
   // Handle input changes and show/hide suggestions
   useEffect(() => {
-    const filteredSuggestions = getFilteredSuggestions()
-    setShowSuggestions(input.length > 0 && filteredSuggestions.length > 0)
-    setSelectedSuggestionIndex(0)
-  }, [input])
+    const filteredSuggestions = getFilteredSuggestions();
+    setShowSuggestions(input.length > 0 && filteredSuggestions.length > 0);
+    setSelectedSuggestionIndex(0);
+  }, [input]);
 
   // Handle clicks outside suggestions to close them
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (suggestionsRef.current && !suggestionsRef.current.contains(event.target as Node)) {
-        setShowSuggestions(false)
+      if (
+        suggestionsRef.current &&
+        !suggestionsRef.current.contains(event.target as Node)
+      ) {
+        setShowSuggestions(false);
       }
-    }
+    };
 
-    document.addEventListener("mousedown", handleClickOutside)
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside)
-    }
-  }, [])
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   // Handle command execution
   const handleCommand = (cmd: string) => {
-    const trimmedCmd = cmd.trim().toLowerCase()
+    const trimmedCmd = cmd.trim().toLowerCase();
 
-    if (trimmedCmd === "") return
+    if (trimmedCmd === "") return;
 
     // Add command to history
     const commandElement = (
@@ -833,143 +958,168 @@ function TerminalContent({ onClose }: { onClose: () => void }) {
         <span style={{ color: brandColor }}>visitor@portfolio:~$</span>
         <span>{trimmedCmd}</span>
       </div>
-    )
+    );
 
     // Add to command history for up/down navigation
-    setCommandHistory((prev) => [...prev, trimmedCmd])
-    setHistoryIndex(-1)
+    setCommandHistory((prev) => [...prev, trimmedCmd]);
+    setHistoryIndex(-1);
 
     // Process command
-    let output
+    let output;
     if (trimmedCmd in commandsWithDescriptions) {
-      output = commandsWithDescriptions[trimmedCmd as keyof typeof commandsWithDescriptions].execute()
+      output =
+        commandsWithDescriptions[
+          trimmedCmd as keyof typeof commandsWithDescriptions
+        ].execute();
     } else {
       output = (
         <div className="py-2">
           <p className="text-red-400">Command not found: {trimmedCmd}</p>
           <p>
-            Type <span className="text-yellow-300">help</span> to see available commands.
+            Type <span className="text-yellow-300">help</span> to see available
+            commands.
           </p>
         </div>
-      )
+      );
     }
 
-    setHistory((prev) => [...prev, commandElement, output])
-    setInput("")
-    setShowSuggestions(false)
-    setShowHelpTip(false)
+    setHistory((prev) => [...prev, commandElement, output]);
+    setInput("");
+    setShowSuggestions(false);
+    setShowHelpTip(false);
 
     // Scroll to bottom
     setTimeout(() => {
       if (terminalRef.current) {
-        terminalRef.current.scrollTop = terminalRef.current.scrollHeight
+        terminalRef.current.scrollTop = terminalRef.current.scrollHeight;
       }
-    }, 100)
-  }
+    }, 100);
+  };
 
   // Handle suggestion selection
   const handleSuggestionClick = (suggestion: string) => {
-    setInput(suggestion)
-    setShowSuggestions(false)
+    setInput(suggestion);
+    setShowSuggestions(false);
     if (inputRef.current) {
-      inputRef.current.focus()
+      inputRef.current.focus();
     }
-  }
+  };
 
   // Execute selected suggestion
   const executeSelectedSuggestion = () => {
-    const filteredSuggestions = getFilteredSuggestions()
+    const filteredSuggestions = getFilteredSuggestions();
     if (filteredSuggestions.length > 0) {
-      const selectedSuggestion = filteredSuggestions[selectedSuggestionIndex]
-      handleCommand(selectedSuggestion)
+      const selectedSuggestion = filteredSuggestions[selectedSuggestionIndex];
+      handleCommand(selectedSuggestion);
     }
-  }
+  };
 
   // Handle key press
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    const filteredSuggestions = getFilteredSuggestions()
+    const filteredSuggestions = getFilteredSuggestions();
 
     if (e.key === "Enter") {
       if (showSuggestions && filteredSuggestions.length > 0) {
-        executeSelectedSuggestion()
+        executeSelectedSuggestion();
       } else {
-        handleCommand(input)
+        handleCommand(input);
       }
     } else if (e.key === "ArrowUp") {
-      e.preventDefault()
+      e.preventDefault();
       if (showSuggestions) {
-        setSelectedSuggestionIndex((prev) => (prev > 0 ? prev - 1 : filteredSuggestions.length - 1))
-      } else if (commandHistory.length > 0 && historyIndex < commandHistory.length - 1) {
-        const newIndex = historyIndex + 1
-        setHistoryIndex(newIndex)
-        setInput(commandHistory[commandHistory.length - 1 - newIndex])
+        setSelectedSuggestionIndex((prev) =>
+          prev > 0 ? prev - 1 : filteredSuggestions.length - 1
+        );
+      } else if (
+        commandHistory.length > 0 &&
+        historyIndex < commandHistory.length - 1
+      ) {
+        const newIndex = historyIndex + 1;
+        setHistoryIndex(newIndex);
+        setInput(commandHistory[commandHistory.length - 1 - newIndex]);
       }
     } else if (e.key === "ArrowDown") {
-      e.preventDefault()
+      e.preventDefault();
       if (showSuggestions) {
-        setSelectedSuggestionIndex((prev) => (prev < filteredSuggestions.length - 1 ? prev + 1 : 0))
+        setSelectedSuggestionIndex((prev) =>
+          prev < filteredSuggestions.length - 1 ? prev + 1 : 0
+        );
       } else if (historyIndex > 0) {
-        const newIndex = historyIndex - 1
-        setHistoryIndex(newIndex)
-        setInput(commandHistory[commandHistory.length - 1 - newIndex])
+        const newIndex = historyIndex - 1;
+        setHistoryIndex(newIndex);
+        setInput(commandHistory[commandHistory.length - 1 - newIndex]);
       } else if (historyIndex === 0) {
-        setHistoryIndex(-1)
-        setInput("")
+        setHistoryIndex(-1);
+        setInput("");
       }
     } else if (e.key === "Tab") {
-      e.preventDefault()
+      e.preventDefault();
       if (filteredSuggestions.length === 1) {
-        setInput(filteredSuggestions[0])
-        setShowSuggestions(false)
+        setInput(filteredSuggestions[0]);
+        setShowSuggestions(false);
       } else if (filteredSuggestions.length > 1) {
-        setInput(filteredSuggestions[selectedSuggestionIndex])
-        setShowSuggestions(false)
+        setInput(filteredSuggestions[selectedSuggestionIndex]);
+        setShowSuggestions(false);
       }
     } else if (e.key === "Escape") {
-      setShowSuggestions(false)
+      setShowSuggestions(false);
     }
-  }
+  };
 
   // Clear terminal and reset state
   const clearTerminal = () => {
-    setHistory([])
-    setInput("")
-    setShowSuggestions(false)
-    setShowHelpTip(true)
-    setIsTypingAnimationActive(true)
+    setHistory([]);
+    setInput("");
+    setShowSuggestions(false);
+    setShowHelpTip(true);
+    setIsTypingAnimationActive(true);
 
     // Add welcome message back
     const welcomeMessage = (
       <div className="space-y-2">
-        <div className="font-bold text-xl flex items-center gap-2" style={{ color: brandColor }}>
-          <TerminalIcon className="h-5 w-5" /> Welcome to my interactive terminal!
+        <div
+          className="font-bold text-xl flex items-center gap-2"
+          style={{ color: brandColor }}
+        >
+          <TerminalIcon className="h-5 w-5" /> Welcome to my interactive
+          terminal!
         </div>
         <p>
-          Type <span className="text-yellow-300">help</span> to see available commands.
+          Type <span className="text-yellow-300">help</span> to see available
+          commands.
         </p>
-        <div className="text-gray-400 text-sm">v1.0.0 - Morshed Alam's Terminal Portfolio</div>
+        <div className="text-gray-400 text-sm">
+          v1.0.0 - Morshed Alam's Terminal Portfolio
+        </div>
         <div
           className="mt-2 px-3 py-2 rounded-md border border-opacity-50"
-          style={{ backgroundColor: `${brandColor}10`, borderColor: brandColor }}
+          style={{
+            backgroundColor: `${brandColor}10`,
+            borderColor: brandColor,
+          }}
         >
-          <p className="flex items-center gap-1.5" style={{ color: brandColor }}>
+          <p
+            className="flex items-center gap-1.5"
+            style={{ color: brandColor }}
+          >
             <Info className="h-4 w-4" />
-            <span className="font-medium">Pro Tip:</span> Start typing to see command suggestions!
+            <span className="font-medium">Pro Tip:</span> Start typing to see
+            command suggestions!
           </p>
         </div>
       </div>
-    )
+    );
 
-    setHistory([welcomeMessage])
-  }
+    setHistory([welcomeMessage]);
+  };
 
   // Toggle minimize
   const toggleMinimize = () => {
-    setIsMinimized(!isMinimized)
-  }
+    setIsMinimized(!isMinimized);
+  };
 
   // Get filtered suggestions
-  const filteredSuggestions = getFilteredSuggestions()
+  const filteredSuggestions = getFilteredSuggestions();
 
   return (
     <div className="w-full h-full flex flex-col rounded-lg overflow-hidden border border-gray-700 shadow-xl bg-gray-900">
@@ -998,7 +1148,9 @@ function TerminalContent({ onClose }: { onClose: () => void }) {
           </div>
           <div className="ml-2 flex items-center gap-1.5">
             <TerminalIcon className="h-4 w-4 text-gray-400" />
-            <span className="text-sm font-medium text-gray-300">morshed-alam-portfolio ~ terminal</span>
+            <span className="text-sm font-medium text-gray-300">
+              morshed-alam-portfolio ~ terminal
+            </span>
           </div>
         </div>
 
@@ -1051,7 +1203,9 @@ function TerminalContent({ onClose }: { onClose: () => void }) {
             <div className="flex-1 relative">
               {/* Typing animation when input is empty */}
               {!input && typingAnimation && (
-                <div className="absolute inset-0 text-gray-500 pointer-events-none">{typingAnimation}</div>
+                <div className="absolute inset-0 text-gray-500 pointer-events-none">
+                  {typingAnimation}
+                </div>
               )}
 
               {/* Actual input field */}
@@ -1077,7 +1231,9 @@ function TerminalContent({ onClose }: { onClose: () => void }) {
 
             {/* Blinking cursor */}
             <span
-              className={`w-2 h-5 ${showCursor ? "opacity-100" : "opacity-0"} transition-opacity`}
+              className={`w-2 h-5 ${
+                showCursor ? "opacity-100" : "opacity-0"
+              } transition-opacity`}
               style={{ backgroundColor: brandColor }}
             ></span>
 
@@ -1117,19 +1273,33 @@ function TerminalContent({ onClose }: { onClose: () => void }) {
                   key={suggestion}
                   className={`
                     px-3 py-2 cursor-pointer flex items-center justify-between
-                    ${index === selectedSuggestionIndex ? "" : "hover:bg-gray-700/50"}
+                    ${
+                      index === selectedSuggestionIndex
+                        ? ""
+                        : "hover:bg-gray-700/50"
+                    }
                   `}
                   style={{
-                    backgroundColor: index === selectedSuggestionIndex ? `${brandColor}30` : "",
+                    backgroundColor:
+                      index === selectedSuggestionIndex
+                        ? `${brandColor}30`
+                        : "",
                   }}
                   onClick={() => handleSuggestionClick(suggestion)}
                 >
                   <div className="flex items-center gap-2">
-                    <ChevronRight className="h-3 w-3" style={{ color: brandColor }} />
+                    <ChevronRight
+                      className="h-3 w-3"
+                      style={{ color: brandColor }}
+                    />
                     <span className="text-yellow-300">{suggestion}</span>
                   </div>
                   <span className="text-gray-400 text-xs">
-                    {commandsWithDescriptions[suggestion as keyof typeof commandsWithDescriptions].description}
+                    {
+                      commandsWithDescriptions[
+                        suggestion as keyof typeof commandsWithDescriptions
+                      ].description
+                    }
                   </span>
                 </div>
               ))}
@@ -1138,33 +1308,47 @@ function TerminalContent({ onClose }: { onClose: () => void }) {
         )}
 
         {/* Help tip for new users */}
-        {showHelpTip && !showSuggestions && input === "" && !typingAnimation && (
-          <div className="mt-4 px-3 py-2 bg-gray-800/30 border border-gray-700/50 rounded text-xs text-gray-400">
-            <div className="flex items-center gap-1.5 mb-1" style={{ color: brandColor }}>
-              <Info className="h-3.5 w-3.5" />
-              <span>Start typing a command to see suggestions</span>
+        {showHelpTip &&
+          !showSuggestions &&
+          input === "" &&
+          !typingAnimation && (
+            <div className="mt-4 px-3 py-2 bg-gray-800/30 border border-gray-700/50 rounded text-xs text-gray-400">
+              <div
+                className="flex items-center gap-1.5 mb-1"
+                style={{ color: brandColor }}
+              >
+                <Info className="h-3.5 w-3.5" />
+                <span>Start typing a command to see suggestions</span>
+              </div>
+              <div className="grid grid-cols-2 gap-x-4 gap-y-1 mt-1">
+                <div className="flex items-center gap-1">
+                  <span className="bg-gray-700 px-1 rounded text-gray-300">
+                    Tab
+                  </span>
+                  <span>Complete suggestion</span>
+                </div>
+                <div className="flex items-center gap-1">
+                  <span className="bg-gray-700 px-1 rounded text-gray-300">
+                    Enter
+                  </span>
+                  <span>Execute command</span>
+                </div>
+                <div className="flex items-center gap-1">
+                  <span className="bg-gray-700 px-1 rounded text-gray-300">
+                    ↑/↓
+                  </span>
+                  <span>Navigate history/suggestions</span>
+                </div>
+                <div className="flex items-center gap-1">
+                  <span className="bg-gray-700 px-1 rounded text-gray-300">
+                    Esc
+                  </span>
+                  <span>Close suggestions</span>
+                </div>
+              </div>
             </div>
-            <div className="grid grid-cols-2 gap-x-4 gap-y-1 mt-1">
-              <div className="flex items-center gap-1">
-                <span className="bg-gray-700 px-1 rounded text-gray-300">Tab</span>
-                <span>Complete suggestion</span>
-              </div>
-              <div className="flex items-center gap-1">
-                <span className="bg-gray-700 px-1 rounded text-gray-300">Enter</span>
-                <span>Execute command</span>
-              </div>
-              <div className="flex items-center gap-1">
-                <span className="bg-gray-700 px-1 rounded text-gray-300">↑/↓</span>
-                <span>Navigate history/suggestions</span>
-              </div>
-              <div className="flex items-center gap-1">
-                <span className="bg-gray-700 px-1 rounded text-gray-300">Esc</span>
-                <span>Close suggestions</span>
-              </div>
-            </div>
-          </div>
-        )}
+          )}
       </div>
     </div>
-  )
+  );
 }
