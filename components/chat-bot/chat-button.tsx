@@ -3,28 +3,29 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet"
-import { MessageCircle } from "lucide-react"
+import { BotMessageSquare, MessageCircle } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { Chat } from "./chat"
+import { SiChatbot } from "react-icons/si"
+import { MovingBorder } from "../ui/moving-border"
 
 export function ChatButton() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
     <>
-      <Button
+      <button
         onClick={() => setIsOpen(true)}
-        size="lg"
         className={cn(
-          "fixed bottom-4 right-4 rounded-full shadow-lg z-50 p-4 h-14 w-14",
+          "fixed bottom-4 right-4 rounded-full shadow-lg z-50 p-3 border-2 border-brand/50 bg-brand/10 backdrop-blur-md cursor-pointer",
           "flex items-center justify-center",
           "transition-all duration-300 hover:scale-105",
           isOpen ? "opacity-0 pointer-events-none" : "opacity-100",
         )}
       >
-        <MessageCircle className="h-6 w-6" />
-      </Button>
+        <BotMessageSquare size={28} className="text-brand" /> 
+      </button>
 
       <Sheet open={isOpen} onOpenChange={setIsOpen}>
         <SheetContent className="px-3 pt-4 sm:max-w-[400px] w-full h-[calc(100vh-7rem)] border border-brand/20 rounded-lg top-24 overflow-auto">

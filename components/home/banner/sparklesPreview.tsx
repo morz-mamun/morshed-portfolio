@@ -9,7 +9,7 @@ import React from "react";
 export default function SparklesPreview({title} : any) {
     const { resolvedTheme } = useTheme();
     return (
-        <div className=" w-full dark:bg-black flex flex-col items-center justify-center overflow-hidden rounded-md">
+        <div className="w-full dark:bg-black flex flex-col items-center justify-center overflow-hidden rounded-md">
             {/* moving border button */}
            <div>
              <Button className="text-sm px-4 py-[7px] rounded-full font-medium bg-emerald-500/10 text-textPrimary dark:text-textPrimary border border-emerald-500/20 clip-path-badge inline-block">
