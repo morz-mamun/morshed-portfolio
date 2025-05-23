@@ -1,17 +1,14 @@
 "use client";
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowBigRight, ExternalLink, Github, Slice } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import { BorderBeam } from "@/components/magicui/border-beam";
 export default function ProjectCard({ project, index }: any) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      // viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className={`relative rounded-xl overflow-hidden border group`}
     >
