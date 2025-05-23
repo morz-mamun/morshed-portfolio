@@ -12,7 +12,7 @@ export default function AboutMe() {
   const secondRow = skills.slice(skills.length / 2);
 
   return (
-    <section className="container mx-auto flex items-center justify-center mb-20">
+    <section id="about" className="container mx-auto flex items-center justify-center mb-20">
       <motion.div
         className="relative w-full max-w-6xl"
         initial={{ opacity: 0, y: 40 }}

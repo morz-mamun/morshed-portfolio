@@ -17,6 +17,7 @@ import { useTheme } from "next-themes";
 import { cn } from "@/lib/utils";
 import { navLinks } from "@/constants/navLinks";
 import { usePathname } from "next/navigation";
+import { scrollToSection } from "@/utils/scrollToSection";
 
 export default function Navbar() {
   const [mounted, setMounted] = useState(false);
@@ -45,6 +46,8 @@ export default function Navbar() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // handle nav
+
   return (
     <header
       className={cn(
@@ -71,9 +74,9 @@ export default function Navbar() {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6">
           {navLinks.map((link, index) => (
-            <Link
+            <button
               key={link.name}
-              href={link.href}
+              onClick={() => scrollToSection(link?.id)}
               className={`${
                 pathname === link.href
                   ? "text-primary dark:text-brand after:w-full"
@@ -91,7 +94,7 @@ export default function Navbar() {
               `}
             >
               {link.name}
-            </Link>
+            </button>
           ))}
           {/* Theme change button */}
 

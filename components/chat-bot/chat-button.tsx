@@ -27,7 +27,7 @@ export function ChatButton() {
       </Button>
 
       <Sheet open={isOpen} onOpenChange={setIsOpen}>
-        <SheetContent className="px-3 pt-4 sm:max-w-[400px] w-full h-[calc(100vh-7rem)] border border-brand/20 rounded-lg top-24">
+        <SheetContent className="px-3 pt-4 sm:max-w-[400px] w-full h-[calc(100vh-7rem)] border border-brand/20 rounded-lg top-24 overflow-auto">
            <SheetTitle>
              <div className="flex items-center gap-2">
                 <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
