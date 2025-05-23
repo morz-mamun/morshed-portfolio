@@ -18,7 +18,6 @@ export default function AboutMe() {
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        // viewport={{ once: true }}
       >
         <div className="absolute inset-0 h-full w-full scale-[0.9] transform rounded-full bg-red-500 bg-gradient-to-r from-blue-500 to-teal-500 blur-3xl" />
         <div className="relative h-full overflow-hidden rounded-2xl border border-gray-800 bg-gray-900 px-4 py-8 shadow-xl">
