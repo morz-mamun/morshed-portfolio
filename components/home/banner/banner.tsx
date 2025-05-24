@@ -90,22 +90,25 @@ export default function Hero() {
           className="flex justify-center gap-6 mt-12"
         >
           <a
-            href="#"
+            href="https://github.com/morz-mamun"
+            target="_blank"
             className="text-zinc-400 hover:text-white transition-colors clip-path-icon-container"
           >
-            <Github size={24} className="clip-path-icon" />
+            <Github size={24} className="clip-path-icon hover:text-brand" />
           </a>
           <a
-            href="#"
+            href="https://www.linkedin.com/in/md-morshed-alam-2324022a4"
+            target="_blank"
             className="text-zinc-400 hover:text-white transition-colors clip-path-icon-container"
           >
-            <Linkedin size={24} className="clip-path-icon" />
+            <Linkedin size={24} className="clip-path-icon hover:text-brand" />
           </a>
           <a
-            href="#"
+            href="https://x.com/morzMamun"
+            target="_blank"
             className="text-zinc-400 hover:text-white transition-colors clip-path-icon-container"
           >
-            <Twitter size={24} className="clip-path-icon" />
+            <Twitter size={24} className="clip-path-icon hover:text-brand" />
           </a>
         </motion.div>
       </div>
