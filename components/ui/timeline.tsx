@@ -40,7 +40,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
     >
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center gap-2 mb-4">
-          <Calendar className="h-7 w-7 text-brand dark:text-brand" />
+          <Calendar className="h-7 w-7 text-primary dark:text-brand" />
           <h1 className="text-xl md:text-3xl font-bold text-black dark:text-white">
             Professional Timeline
           </h1>
