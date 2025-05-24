@@ -58,9 +58,9 @@ export default function Navbar() {
       >
         <Link href="/" className="flex items-center gap-2 text-xl font-bold">
           <div className="clip-path-icon-box bg- p-1">
-            <Frame className="h-8 w-8 text-primary dark:text-brand" />
+            <Frame className="h-6 w-6 text-primary dark:text-brand" />
           </div>
-          <span className="text-primary dark:text-brand font-bold">
+          <span className="text-primary dark:text-brand font-semibold">
             Morshed Alam
           </span>
         </Link>
@@ -75,7 +75,7 @@ export default function Navbar() {
                 pathname === link.href
                   ? "text-primary font-semibold dark:text-brand after:w-full"
                   : "text-primary dark:text-textPrimary "
-              } hover:text-[#000] transition-colors relative overflow-hidden
+              } hover:text-[#000] transition-colors relative overflow-hidden cursor-pointer
                 ${
                   index % 2 === 0
                     ? "after:clip-path-button-1"
@@ -111,7 +111,7 @@ export default function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button className="cursor-pointer text-primary bg-primary/10 hover:bg-primary/20  text-sm px-4 py-[7px] rounded-full font-medium clip-path-badge dark:text-brand dark:bg-brand/10 dark:hover:bg-brand/20">
+            <Button className="cursor-pointer text-primary bg-primary/10 hover:bg-primary/20 text-sm px-4 py-[7px] rounded-full font-medium clip-path-badge dark:text-brand dark:bg-brand/10 dark:hover:bg-brand/20">
               View Resume
             </Button>
           </a>
