@@ -46,19 +46,13 @@ export default function Navbar() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // handle nav
-
   return (
-    <header
-      className={cn(
-        "container mx-auto sticky top-2 z-[9999] my-3"
-      )}
-    >
+    <header className={cn("container mx-auto sticky top-2 z-[9999] my-3")}>
       <div
         className={cn(
           "flex justify-between items-center transition-all transform ease-in-out duration-300",
           !isMobile && scrolled
-            ? "scale-90 px-4 py-3 rounded-full bg-brand/10 backdrop-blur-lg backdrop-filter"
+            ? "scale-90 px-4 py-3 rounded-full bg-primary/10 dark:bg-brand/10 backdrop-blur-lg backdrop-filter"
             : "scale-100"
         )}
       >
@@ -79,7 +73,7 @@ export default function Navbar() {
               onClick={() => scrollToSection(link?.id)}
               className={`${
                 pathname === link.href
-                  ? "text-primary dark:text-brand after:w-full"
+                  ? "text-primary font-semibold dark:text-brand after:w-full"
                   : "text-primary dark:text-textPrimary "
               } hover:text-[#000] transition-colors relative overflow-hidden
                 ${
@@ -89,7 +83,7 @@ export default function Navbar() {
                 }
                 after:absolute after:bottom-0 after:left-0 ${
                   pathname === link.href ? "after:w-full" : "after:w-0"
-                } after:h-0.5 after:bg-brand dark:after:bg-brand/80
+                } after:h-0.5 after:dark:bg-brand after:bg-primary dark:after:bg-brand/80
                 hover:after:w-full after:transition-all after:duration-400
               `}
             >
@@ -102,7 +96,7 @@ export default function Navbar() {
             variant="ghost"
             size="icon"
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="rounded-full clip-path-icon"
+            className="rounded-full clip-path-icon hover:bg-primary/10 dark:hover:bg-brand/10 cursor-pointer"
             aria-label="Toggle theme"
           >
             {mounted && theme === "dark" ? (
@@ -111,9 +105,16 @@ export default function Navbar() {
               <Moon size={20} />
             )}
           </Button>
-          <Button className="cursor-pointer text-brand bg-brand/10 hover:bg-brand/20 text-sm px-4 py-[7px] rounded-full font-medium clip-path-badge">
-            Download CV
-          </Button>
+          {/* view resume */}
+          <a
+            href="https://drive.google.com/file/d/113Y7WRGj9Jr4oCYhN3OzLpnweT1AfnDp/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button className="cursor-pointer text-primary bg-primary/10 hover:bg-primary/20  text-sm px-4 py-[7px] rounded-full font-medium clip-path-badge dark:text-brand dark:bg-brand/10 dark:hover:bg-brand/20">
+              View Resume
+            </Button>
+          </a>
         </nav>
       </div>
     </header>
