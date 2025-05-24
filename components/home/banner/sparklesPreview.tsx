@@ -12,7 +12,7 @@ export default function SparklesPreview({title} : any) {
         <div className="w-full dark:bg-black flex flex-col items-center justify-center overflow-hidden rounded-md">
             {/* moving border button */}
            <div>
-             <Button className="text-sm px-4 py-[7px] rounded-full font-medium bg-emerald-500/10 text-textPrimary dark:text-textPrimary border border-emerald-500/20 clip-path-badge inline-block">
+             <Button className="text-sm px-4 py-[7px] rounded-full font-medium bg-white dark:bg-emerald-500/10 text-textPrimary dark:text-textPrimary border border-primary/10 dark:border-emerald-500/20 clip-path-badge inline-block">
                <HyperText className="text-sm">{title}</HyperText>
             </Button>
            </div>

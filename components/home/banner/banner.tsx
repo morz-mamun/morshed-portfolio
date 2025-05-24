@@ -30,7 +30,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="mb-6"
+          className=""
         >
           <SparklesPreview title={"MERN Stack Developer"} />
         </motion.div>
@@ -39,11 +39,11 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className={`text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400`}
+          className={`text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-black to-gray-200 dark:bg-gradient-to-r dark:from-white dark:to-gray-600`}
         >
-          Hi, I'm <span className="text-brand/70">Morshed Alam</span>
+          Hi, I'm <span>Morshed Alam</span>
           <br />
-          <span className="text-4xl font-normal text-zinc-400">
+          <span className="text-3xl font-normal text-textPrimary dark:text-textPrimary">
             <Typewriter
               words={["Frontend Developer", "MERN Stack Developer"]}
               loop={Infinity}
@@ -59,7 +59,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-lg md:text-xl text-textPrimary dark:text-textPrimary mb-8 max-w-2xl mx-auto"
+          className="text-base md:text-lg text-textPrimary dark:text-textPrimary mb-8 max-w-xl mx-auto"
         >
           MERN Stack developer specializing in MongoDB, Express, React, Remix,
           and Node.js. Creating responsive, performant, and beautiful web
@@ -92,23 +92,23 @@ export default function Hero() {
           <a
             href="https://github.com/morz-mamun"
             target="_blank"
-            className="text-zinc-400 hover:text-white transition-colors clip-path-icon-container"
+            className="text-primary/70 hover:text-primary dark:hover:text-brand transition-colors clip-path-icon-container"
           >
-            <Github size={24} className="clip-path-icon hover:text-brand" />
+            <Github size={24} />
           </a>
           <a
             href="https://www.linkedin.com/in/md-morshed-alam-2324022a4"
             target="_blank"
-            className="text-zinc-400 hover:text-white transition-colors clip-path-icon-container"
+            className="text-primary/70 hover:text-primary dark:hover:text-brand transition-colors clip-path-icon-container"
           >
-            <Linkedin size={24} className="clip-path-icon hover:text-brand" />
+            <Linkedin size={24} />
           </a>
           <a
             href="https://x.com/morzMamun"
             target="_blank"
-            className="text-zinc-400 hover:text-white transition-colors clip-path-icon-container"
+            className="text-primary/70 hover:text-primary dark:hover:text-brand transition-colors clip-path-icon-container"
           >
-            <Twitter size={24} className="clip-path-icon hover:text-brand" />
+            <Twitter size={24} />
           </a>
         </motion.div>
       </div>
@@ -133,7 +133,7 @@ export default function Hero() {
           opacity: { duration: 0.3 },
         }}
       >
-        <ArrowDown className="text-brand" size={24} />
+        <ArrowDown className="dark:text-brand" size={24} />
       </motion.div>
     </section>
   );

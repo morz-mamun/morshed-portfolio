@@ -70,7 +70,7 @@ export default function TerminalWidget() {
         onClick={toggleTerminal}
         className="w-fit flex items-center gap-2"
       >
-        <div className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-brand dark:to-brand/50 lg:text-lg">
+        <div className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white lg:text-lg">
           <div className="flex items-center gap-2 text-brand">
             <TerminalIcon className="h-6 w-6" />
             <p className="text-base">Play with Terminal</p>
@@ -101,7 +101,7 @@ export default function TerminalWidget() {
             />
 
             <motion.div
-              className="relative z-50 w-full max-w-4xl h-[600px] max-h-[80vh] rounded-lg overflow-hidden shadow-2xl"
+              className="relative z-50 w-full max-w-4xl h-[650px] max-h-[80vh] rounded-lg overflow-hidden shadow-2xl"
               initial={{
                 opacity: 0,
                 scale: 0.3,
