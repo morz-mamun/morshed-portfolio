@@ -21,7 +21,6 @@ export default function Home () {
       <MySkills />
       <Projects />
       <ContactMe />
-      {/* <TerminalWidget /> */}
       <ChatButton />
     </main>
   )

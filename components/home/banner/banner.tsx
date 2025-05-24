@@ -70,7 +70,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="flex flex-col items-center gap-4"
+          className="flex flex-col items-center gap-8"
         >
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <div onClick={() => scrollToSection("projects")}>
@@ -87,7 +87,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="flex justify-center gap-6 mt-12"
+          className="flex justify-center gap-6 mt-12 w-fit mx-auto px-5 py-3 rounded-full shadow-xl shadow-primary/70 dark:shadow-brand/70"
         >
           <a
             href="https://github.com/morz-mamun"
