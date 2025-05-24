@@ -25,7 +25,7 @@ export default function Hero() {
   return (
     <section id="banner" className="relative h-[calc(100vh-6rem)] flex flex-col justify-center items-center px-4 overflow-hidden">
       {/* Content */}
-      <div className="z-10 text-center max-w-4xl">
+      <div className="w-full md:max-w-4xl z-10 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -39,11 +39,11 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className={`text-3xl md:text-5xl lg:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-black to-gray-200 dark:bg-gradient-to-r dark:from-white dark:to-gray-600`}
+          className={`text-3xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-6 bg-clip-text text-transparent bg-gradient-to-r from-black to-gray-200 dark:bg-gradient-to-r dark:from-white dark:to-gray-600`}
         >
           Hi, I'm <span>Morshed Alam</span>
           <br />
-          <span className="text-3xl font-normal text-textPrimary dark:text-textPrimary">
+          <span className="text-lg md:text-3xl font-normal text-textPrimary dark:text-textPrimary">
             <Typewriter
               words={["Frontend Developer", "MERN Stack Developer"]}
               loop={Infinity}
@@ -59,7 +59,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="max-w-md lg:max-w-xl mx-auto text-sm lg:text-lg text-textPrimary dark:text-textPrimary mb-8"
+          className="w-full lg:max-w-xl mx-auto text-sm lg:text-lg text-textPrimary dark:text-textPrimary mb-8"
         >
           MERN Stack developer specializing in MongoDB, Express, React, Remix,
           and Node.js. Creating responsive, performant, and beautiful web
@@ -72,7 +72,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="flex flex-col items-center gap-8"
         >
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex gap-4 justify-center">
             <div onClick={() => scrollToSection("projects")}>
               <ConfettiButton> View My Work</ConfettiButton>
             </div>

@@ -16,7 +16,7 @@ export default function SparklesPreview({title} : any) {
                <HyperText className="text-sm">{title}</HyperText>
             </Button>
            </div>
-            <div className="w-[40rem] h-24 relative">
+            <div className="w-full md:max-w-4xl h-20 md:h-24 relative">
                 {/* Gradients */}
                 <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
                 <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
