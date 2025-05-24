@@ -18,7 +18,7 @@ const Circle = forwardRef<
     <div
       ref={ref}
       className={cn(
-        "z-10 flex size-12 items-center justify-center rounded-full border-2 border-border bg-[#0f1524] p-2 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]",
+        "z-10 flex size-12 items-center justify-center rounded-full border-2 border-border bg-gray-200 dark:bg-[#0f1524] p-2 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]",
         className,
       )}
     >
@@ -152,15 +152,15 @@ export function SkillsAnimation({
 }
 
 export const Icons = {
-  vscode: () => <VscVscodeInsiders className="text-blue-500" size={40} />,
-  react: () => <FaReact className="text-cyan-400" size={24} />,
-  remix: () => <SiRemix className="text-blue-500" size={24} />,
-  nextjs: () => <RiNextjsFill className="text-white" size={24} />,
-  nodejs: () => <SiNodedotjs className="text-green-500" size={24} />,
-  expressjs: () => <SiExpress  className="text-white" size={24} />,
-  tailwindcss: () => <SiTailwindcss className="text-cyan-400" size={24} />,
-  github: () => <SiGithub className="text-white" size={24} />,
-  javascript: () => <SiJavascript className="text-yellow-500" size={24} />,
-  typescript: () => <SiTypescript className="text-blue-500" size={24} />,
-  user: () => <FaUserTie className="text-brand" size={32} />
+  vscode: () => <VscVscodeInsiders className="text-textPrimary dark:text-blue-500" size={40} />,
+  react: () => <FaReact className="text-textPrimary dark:text-cyan-400" size={24} />,
+  remix: () => <SiRemix className="text-textPrimary dark:text-blue-500" size={24} />,
+  nextjs: () => <RiNextjsFill className="text-textPrimary dark:text-white" size={24} />,
+  nodejs: () => <SiNodedotjs className="text-textPrimary dark:text-green-500" size={24} />,
+  expressjs: () => <SiExpress  className="text-textPrimary dark:text-white" size={24} />,
+  tailwindcss: () => <SiTailwindcss className="text-textPrimary dark:text-cyan-400" size={24} />,
+  github: () => <SiGithub className="text-textPrimary dark:text-white" size={24} />,
+  javascript: () => <SiJavascript className="text-textPrimary dark:text-yellow-500" size={24} />,
+  typescript: () => <SiTypescript className="text-textPrimary dark:text-blue-500" size={24} />,
+  user: () => <FaUserTie className="text-textPrimary dark:text-brand" size={32} />
 };

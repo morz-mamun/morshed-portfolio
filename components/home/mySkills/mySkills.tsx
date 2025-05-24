@@ -22,10 +22,11 @@ export default function MySkills() {
                 <h2 className="absolute top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-4xl md:text-5xl font-bold">
                     Skill Highlights
                 </h2>
+                <p className="text-sm text-textPrimary dark:text-textPrimary">Key technical and professional strengths at a glance.</p>
             </motion.div>
 
             {/* content */}
-            <div className="flex justify-betwen item-center">
+            <div className="flex justify-between item-center">
                 {/* skills cards */}
                 <motion.div
                     className="relative overflow-hidden rounded-xl"
