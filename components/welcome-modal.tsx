@@ -3,11 +3,9 @@
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { X } from "lucide-react"
-import { useTheme } from "next-themes"
 
 export default function WelcomeModal() {
   const [isVisible, setIsVisible] = useState(false)
-  const { theme } = useTheme()
 
   useEffect(() => {
     // Show banner after a short delay
@@ -37,18 +35,18 @@ export default function WelcomeModal() {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -100, opacity: 0 }}
           transition={{ duration: 0.5 }}
-          className={`fixed top-20 left-1/2 transform -translate-x-1/2 z-50 px-6 py-3 rounded-lg shadow-lg border border-t-2 border-t-brand max-w-md w-full mx-auto`}
+          className={`fixed top-20 left-1/2 transform -translate-x-1/2 z-50 px-6 py-3 rounded-lg shadow-lg border border-t-2 dark:border-t-brand max-w-md w-full mx-auto`}
         >
           <div className="flex items-start justify-between">
             <div className="flex-1 pr-4">
-              <h3 className="font-bold text-lg mb-1 text-brand">Welcome to my portfolio!</h3>
+              <h3 className="font-bold text-lg mb-1 dark:text-brand">Welcome to my portfolio!</h3>
               <p className={`text-sm `}>
                 Thanks for visiting! Feel free to explore my projects and get in touch if you'd like to work together.
               </p>
             </div>
             <button
               onClick={handleClose}
-              className={`p-1 rounded-full ${theme === "dark" ? "hover:bg-zinc-700" : "hover:bg-zinc-100"}`}
+              className={`p-1 rounded-full bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-800 dark:hover:bg-zinc-700`}
               aria-label="Close welcome message"
             >
               <X size={16} className="text-zinc-400" />
