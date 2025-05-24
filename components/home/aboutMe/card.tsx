@@ -1,12 +1,15 @@
+"use client"
 import { MagicCard } from "@/components/magicui/magic-card";
+import { useTheme } from "next-themes";
 import React from "react";
 
 export default function Card({ skill }) {
     const { icon, iconColor, title, description } = skill;
+    const { theme } = useTheme();
 
     return (
-        <MagicCard className="rounded-lg h-full">
-            <div className="shadow-sm px-3 py-5 hover:shadow-md transition duration-300">
+        <MagicCard  gradientColor={theme === "dark" ? "#262626" : "#D9D9D955"} className="rounded-lg h-full overflow-hidden">
+            <div className="shadow-md px-3 py-5 transition duration-300">
                 <div className="flex items-center gap-2 mb-3">
                     <div className={``}>
                         {React.cloneElement(icon, { className: `h-6 w-6 ${iconColor}` })}

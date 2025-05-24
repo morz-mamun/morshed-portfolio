@@ -12,15 +12,18 @@ export default function AboutMe() {
   const secondRow = skills.slice(skills.length / 2);
 
   return (
-    <section id="about" className="container mx-auto flex items-center justify-center mb-20">
+    <section
+      id="about"
+      className="container mx-auto flex items-center justify-center mb-20"
+    >
       <motion.div
         className="relative w-full max-w-6xl"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
-        <div className="absolute inset-0 h-full w-full scale-[0.9] transform rounded-full bg-red-500 bg-gradient-to-r from-blue-500 to-teal-500 blur-3xl" />
-        <div className="relative h-full overflow-hidden rounded-2xl border border-gray-800 bg-gray-900 px-4 py-8 shadow-xl">
+        <div className="absolute inset-0 h-full w-full scale-[0.9] transform rounded-full dark:bg-red-500 dark:bg-gradient-to-r dark:from-blue-500 dark:to-teal-500 blur-3xl" />
+        <div className="relative h-full overflow-hidden rounded-2xl dark:border dark:border-gray-800 dark:bg-gray-900 px-4 py-8 dark:shadow-xl ">
           <div className="flex flex-col items-center">
             {/* HEADING */}
             <motion.div
@@ -29,7 +32,7 @@ export default function AboutMe() {
               transition={{ duration: 0.8 }}
             >
               <TypewriterEffectSmooth
-                cursorClassName="bg-brand"
+                cursorClassName="bg-primary dark:bg-brand text-primary"
                 words={words}
               />
             </motion.div>
@@ -69,7 +72,6 @@ export default function AboutMe() {
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.6, delay: 0.1 * i }}
-      
                     >
                       {text}
                     </motion.p>
@@ -90,7 +92,7 @@ export default function AboutMe() {
 
               {/* Skills Marquee */}
               <motion.div
-                className="relative flex h-[520px] w-full flex-row items-center justify-center overflow-hidden rounded-lg bg-background/10 p-4 shadow-md"
+                className="relative flex h-[520px] w-full flex-row items-center justify-center overflow-hidden rounded-lg bg-background/10 dark:shadow-md"
                 initial={{ opacity: 0, x: 40 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
