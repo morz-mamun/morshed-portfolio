@@ -36,21 +36,22 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // * Update window width state.
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    handleResize(); // initial check
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
   return (
-    <header className={cn("container mx-auto sticky top-2 z-[9999] my-3")}>
+    <header className={cn("container mx-auto sticky top-2 z-[9999]")}>
+      <div className="md:hidden flex justify-end">
+        <Button
+          variant="ghost"
+          size="icon"
+          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+          className="rounded-full clip-path-icon hover:bg-primary/10 dark:hover:bg-brand/10 cursor-pointer"
+          aria-label="Toggle theme"
+        >
+          {mounted && theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+        </Button>
+      </div>
       <div
         className={cn(
-          "flex justify-between items-center transition-all transform ease-in-out duration-300",
+          "hidden md:flex justify-between items-center transition-all transform ease-in-out duration-300",
           !isMobile && scrolled
             ? "scale-90 px-4 py-3 rounded-full bg-primary/10 dark:bg-brand/10 backdrop-blur-lg backdrop-filter"
             : "scale-100"
@@ -66,7 +67,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="flex items-center gap-6">
           {navLinks.map((link, index) => (
             <button
               key={link.name}

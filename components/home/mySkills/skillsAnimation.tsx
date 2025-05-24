@@ -50,7 +50,7 @@ export function SkillsAnimation({
   return (
     <div
       className={cn(
-        "relative flex h-full w-full items-center justify-center overflow-hidden px-10",
+        "relative flex h-full w-full items-center justify-center overflow-hidden",
         className,
       )}
       ref={containerRef}

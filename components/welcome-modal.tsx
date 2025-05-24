@@ -35,7 +35,7 @@ export default function WelcomeModal() {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -100, opacity: 0 }}
           transition={{ duration: 0.5 }}
-          className={`fixed top-20 left-1/2 transform -translate-x-1/2 z-50 px-6 py-3 rounded-lg shadow-lg border border-t-2 dark:border-t-brand max-w-md w-full mx-auto`}
+          className={`fixed top-10 left-1/2 transform -translate-x-1/2 z-50 px-6 py-3 rounded-lg shadow-lg border border-t-2 dark:border-t-brand max-w-md w-full mx-auto`}
         >
           <div className="flex items-start justify-between">
             <div className="flex-1 pr-4">

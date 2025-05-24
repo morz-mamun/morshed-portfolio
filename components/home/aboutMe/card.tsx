@@ -5,10 +5,10 @@ import React from "react";
 
 export default function Card({ skill }) {
     const { icon, iconColor, title, description } = skill;
-    const { theme } = useTheme();
+    const { resolvedTheme } = useTheme();
 
     return (
-        <MagicCard  gradientColor={theme === "dark" ? "#262626" : "#D9D9D955"} className="rounded-lg h-full overflow-hidden">
+        <MagicCard  gradientColor={resolvedTheme === "dark" ? "#262626" : "#D9D9D955"} className="rounded-lg h-full overflow-hidden">
             <div className="shadow-md px-3 py-5 transition duration-300">
                 <div className="flex items-center gap-2 mb-3">
                     <div className={``}>

@@ -39,7 +39,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className={`text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-black to-gray-200 dark:bg-gradient-to-r dark:from-white dark:to-gray-600`}
+          className={`text-3xl md:text-5xl lg:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-black to-gray-200 dark:bg-gradient-to-r dark:from-white dark:to-gray-600`}
         >
           Hi, I'm <span>Morshed Alam</span>
           <br />
@@ -59,7 +59,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-base md:text-lg text-textPrimary dark:text-textPrimary mb-8 max-w-xl mx-auto"
+          className="max-w-md lg:max-w-xl mx-auto text-sm lg:text-lg text-textPrimary dark:text-textPrimary mb-8"
         >
           MERN Stack developer specializing in MongoDB, Express, React, Remix,
           and Node.js. Creating responsive, performant, and beautiful web

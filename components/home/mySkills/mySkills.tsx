@@ -26,7 +26,7 @@ export default function MySkills() {
             </motion.div>
 
             {/* content */}
-            <div className="flex justify-between item-center">
+            <div className="flex flex-col md:flex-row justify-between item-center gap-10">
                 {/* skills cards */}
                 <motion.div
                     className="relative overflow-hidden rounded-xl"
@@ -50,7 +50,7 @@ export default function MySkills() {
                     />
                 </motion.div>
 
-                {/*  */}
+                {/* skills animation */}
                 <motion.div
                     className="w-full flex items-center justify-center"
                     initial={{ opacity: 0, x: 50 }}

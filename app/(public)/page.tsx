@@ -12,7 +12,7 @@ import { ChatButton } from "@/components/chat-bot/chat-button"
 
 export default function Home () {
   return (
-    <main className="container mx-auto py-8">
+    <main className="container mx-auto md:py-8 py-0 overflow-hidden">
       <CelebrationEffect />
       <WelcomeModal />
       <Banner />
