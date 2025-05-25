@@ -21,7 +21,11 @@ export default function Home() {
       <div className="xl:px-0 md:px-7 px-3">
         <Experience />
         <MySkills />
-        <Projects />
+      </div>
+       <div className="xl:px-0 md:px-3 px-3">
+         <Projects />
+       </div>
+      <div className="xl:px-0 md:px-7 px-3">
         <ContactMe />
       </div>
       <ChatButton />

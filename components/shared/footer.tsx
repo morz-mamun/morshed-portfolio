@@ -99,7 +99,7 @@ export default function Footer() {
               onClick={() => scrollToSection("banner")}
               className="cursor-pointer flex items-center gap-2 hover:text-primary hover:text-brand transition-colors rounded-full px-4 py-3 shadow-lg shadow-primary/70 dark:shadow-brand/50"
             >
-              <ArrowUp size={28} className="dark:text-brand animate-bounce" />
+              <ArrowUpToLine size={24} className="dark:text-brand animate-bounce" />
               Back to Top
             </button>
           </div>
@@ -108,9 +108,9 @@ export default function Footer() {
           <div className="lg:hidden flex justify-center items-center mt-4">
             <button
               onClick={() => scrollToSection("banner")}
-              className="cursor-pointer flex items-center gap-2 hover:text-primary hover:text-brand transition-colors rounded-full px-4 py-3 shadow-lg shadow-brand/50"
+              className="cursor-pointer flex items-center gap-2 hover:text-primary hover:text-brand transition-colors rounded-full px-4 py-3 shadow-lg shadow-primary/70 dark:shadow-brand/50"
             >
-              <ArrowUp size={28} className="text-brand animate-bounce" />
+              <ArrowUp size={24} className="text-primary dark:text-brand animate-bounce" />
               Back to Top
             </button>
           </div>

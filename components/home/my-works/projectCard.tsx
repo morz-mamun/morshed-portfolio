@@ -4,6 +4,7 @@ import { ArrowBigRight, ExternalLink, Github, Slice } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 import { BorderBeam } from "@/components/magicui/border-beam";
+import Image from "next/image";
 export default function ProjectCard({ project, index }: any) {
   return (
     <motion.div
@@ -14,10 +15,13 @@ export default function ProjectCard({ project, index }: any) {
     >
       <div className="relative overflow-hidden">
         <div className="w-full h-48">
-          <img
+          <Image
             src={project.images[0]}
             alt={project.title}
             className="w-full h-full transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-3 overflow-hidden"
+            width={500}
+            height={500}
+            priority
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-between p-4">

@@ -33,12 +33,12 @@ export default function Projects() {
 
          {/* see all projects button */}
         <div className="flex justify-end mb-8">
-          <Button asChild>
+          <button className="flex items-center shadow-lg shadow-primary/60 dark:shadow-brand/60 rounded-full px-5 py-4 hover:scale-105 transition-all duration-300 cursor-pointer">
             <Link href="/projects" className="flex items-center gap-2">
               <span>See all projects</span>
               <ExternalLink size={20} />
             </Link>
-          </Button>
+          </button>
         </div>
 
           {/* all projects show as grid */}

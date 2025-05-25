@@ -53,7 +53,7 @@ export default function Navbar() {
         className={cn(
           "hidden md:flex justify-between items-center transition-all transform ease-in-out duration-300",
           !isMobile && scrolled
-            ? "scale-95 lg:scale-90 px-4 py-3 rounded-full bg-primary/10 dark:bg-brand/10 backdrop-blur-lg backdrop-filter"
+            ? "scale-95 xl:scale-90 px-4 py-3 rounded-full bg-primary/10 dark:bg-brand/10 backdrop-blur-lg backdrop-filter"
             : "scale-100"
         )}
       >

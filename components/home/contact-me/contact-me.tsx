@@ -39,7 +39,7 @@ export default function ContactMe() {
             transition={{ duration: 0.6 }}
             className="lg:col-span-1 space-y-8"
           >
-            <div className="flex lg:flex-col md:flex-row md:justify-between md:items-end flex-col">
+            <div className="flex lg:flex-col lg:items-start md:flex-row md:justify-between md:items-end flex-col">
               {/* Contact Info */}
               <div className="space-y-5">
                 <h1 className="text-textPrimary dark:text-textSecondary uppercase font-bold text-2xl">

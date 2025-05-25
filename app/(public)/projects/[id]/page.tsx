@@ -8,8 +8,6 @@ import { Separator } from "@/components/ui/separator";
 import { projects } from "@/constants/projectsData";
 import ImageSlider from "@/components/home/my-works/image-slider";
 import { Badge } from "@/components/ui/badge";
-// import { projects } from "@/constant/projectData";
-// import ImageSlider from "@/components/shared/ImageSlider";
 
 export default function ProjectPage() {
   const { id } = useParams();
@@ -18,16 +16,16 @@ export default function ProjectPage() {
   if (!project) notFound();
 
   return (
-    <main className="container mx-auto my-10">
+    <main className="container mx-auto my-10 xl:px-0 md:px-7 px-3">
       <div className="mb-4 max-w-4xl">
-        <Button variant="ghost" asChild className="mb-4">
-          <Link href="/projects">
+        <button className="mb-8 text-primary dark:text-brand hover:scale-105">
+          <Link className="flex items-center" href="/projects">
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back to Projects
           </Link>
-        </Button>
+        </button>
 
-        <h1 className="text-3xl font-bold tracking-tight">{project.title}</h1>
+        <h1 className="text-2xl md:text-3xl font-bold tracking-tight">{project.title}</h1>
         <p className="text-muted-foreground mt-2 text-lg">
           {project.shortDescription}
         </p>
