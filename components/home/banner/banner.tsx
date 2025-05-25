@@ -59,7 +59,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="w-full lg:max-w-xl mx-auto text-sm lg:text-lg text-textPrimary dark:text-textPrimary mb-8"
+          className="w-full md:max-w-md lg:max-w-xl mx-auto text-sm lg:text-lg text-textPrimary dark:text-textPrimary mb-8"
         >
           MERN Stack developer specializing in MongoDB, Express, React, Remix,
           and Node.js. Creating responsive, performant, and beautiful web

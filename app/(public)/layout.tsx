@@ -9,7 +9,7 @@ export default function PublicLayout ({
   children: React.ReactNode
 }>) {
   return (
-    <main className='min-h-screen mx-auto xl:px-0 px-3'>
+    <main className='min-h-screen mx-auto'>
       {/* navbar */}
       <Navbar />
 

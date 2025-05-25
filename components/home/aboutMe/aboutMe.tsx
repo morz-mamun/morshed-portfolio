@@ -23,7 +23,7 @@ export default function AboutMe() {
         transition={{ duration: 1 }}
       >
         <div className="absolute inset-0 h-full w-full scale-[0.9] transform rounded-full dark:bg-red-500 dark:bg-gradient-to-r dark:from-blue-500 dark:to-teal-500 blur-3xl" />
-        <div className="relative h-full overflow-hidden rounded-2xl dark:border dark:border-gray-800 dark:bg-gray-900 px-4 py-8 dark:shadow-xl ">
+        <div className="relative h-full overflow-hidden rounded-2xl dark:border dark:border-gray-800 dark:bg-gray-900 px-3 md:px-4 py-8 dark:shadow-xl ">
           <div className="flex flex-col items-center">
             {/* HEADING */}
             <motion.div
@@ -42,7 +42,7 @@ export default function AboutMe() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="max-w-2xl text-center text-textPrimary dark:text-textPrimary"
+              className="w-full md:max-w-2xl text-start md:text-center text-textPrimary dark:text-textPrimary"
             >
               I'm a passionate MERN Stack Developer with expertise in building
               modern, responsive web applications. Combining strong frontend
