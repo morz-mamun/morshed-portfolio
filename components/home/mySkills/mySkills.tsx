@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 export default function MySkills() {
 
     return (
-        <section className="py-16 max-w-7xl mx-auto">
+        <section className="my-40 max-w-7xl mx-auto">
             {/* Section heading */}
             <motion.div
                 className="relative text-center mb-12"
@@ -19,14 +19,14 @@ export default function MySkills() {
                 transition={{ duration: 0.7 }}
             >
                 <SparklesPreview title={"My Technical Skills"} />
-                <h2 className="absolute top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-4xl md:text-5xl font-bold">
+                <h2 className="absolute top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-3xl md:text-5xl font-bold w-[375px] mx-auto">
                     Skill Highlights
                 </h2>
                 <p className="text-sm text-textPrimary dark:text-textPrimary">Key technical and professional strengths at a glance.</p>
             </motion.div>
 
             {/* content */}
-            <div className="flex flex-col md:flex-row justify-between item-center gap-10">
+            <div className="flex flex-col lg:flex-row justify-between item-center gap-10">
                 {/* skills cards */}
                 <motion.div
                     className="relative overflow-hidden rounded-xl"

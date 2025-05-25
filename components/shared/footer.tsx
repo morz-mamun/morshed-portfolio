@@ -114,7 +114,7 @@ export default function Footer() {
               Back to Top
             </button>
           </div>
-        <div className="border-t border-zinc-800 mt-5 lg:mt-12 pt-8 text-center text-zinc-500">
+        <div className="border-t border-zinc-800 mt-5 lg:mt-12 pt-8 text-center md:text-base text-sm text-zinc-500">
           <p>© {currentYear} Morshed Alam. All rights reserved.</p>
         </div>
       </div>

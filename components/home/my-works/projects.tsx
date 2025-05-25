@@ -12,17 +12,17 @@ import Link from "next/link";
 export default function Projects() {
   return (
     <BackgroundBeamsWithCollision>
-      <section id="projects" className="max-w-7xl mx-auto px-4">
+      <section id="projects" className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center"
         >
-          <div className="relative text-center mb-12">
+          <div className="relative text-center mb-12 xl:mt-0 lg:mt-16">
             <SparklesPreview title={"My works"} />
-            <h2 className="absolute top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-4xl md:text-5xl font-bold">
-              Featured Projects
+            <h2 className="absolute top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-3xl md:text-5xl font-bold w-[375px] md:w-[450px] mx-auto">
+            Featured Projects
             </h2>
             <p className="text-sm text-textPrimary dark:text-textSecondary">
               {" "}

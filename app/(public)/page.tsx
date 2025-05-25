@@ -14,11 +14,11 @@ export default function Home() {
     <main className="container mx-auto md:py-8 py-0 overflow-hidden">
       <CelebrationEffect />
       <WelcomeModal />
-      <div className="md:px-0 px-3">
+      <div className="xl:px-0 px-3">
         <Banner />
       </div>
       <AboutMe />
-      <div className="md:px-0 px-3">
+      <div className="xl:px-0 md:px-7 px-3">
         <Experience />
         <MySkills />
         <Projects />

@@ -23,7 +23,7 @@ export default function AboutMe() {
         transition={{ duration: 1 }}
       >
         <div className="absolute inset-0 h-full w-full scale-[0.9] transform rounded-full dark:bg-red-500 dark:bg-gradient-to-r dark:from-blue-500 dark:to-teal-500 blur-3xl" />
-        <div className="relative h-full overflow-hidden rounded-2xl dark:border dark:border-gray-800 dark:bg-gray-900 px-3 md:px-4 py-8 dark:shadow-xl ">
+        <div className="relative h-full overflow-hidden rounded-2xl dark:border dark:border-gray-800 dark:bg-gray-900 px-3 md:px-7 py-8 dark:shadow-xl ">
           <div className="flex flex-col items-center">
             {/* HEADING */}
             <motion.div

@@ -45,15 +45,15 @@ export default function ProjectCard({ project, index }: any) {
           </div>
         </div>
       </div>
-      <div className="p-6">
+      <div className="xl:p-6 p-4">
         <h3 className="text-xl font-bold mb-2 group-hover:text-brand transition-colors">
           {project.title}
         </h3>
-        <p className={`mb-4 text-textPrimary dark:text-textPrimary`}>
-          {project.shortDescription}
+        <p className={`mb-4 text-sm xl:text-base text-textPrimary dark:text-textPrimary`}>
+          {project?.shortDescription.length > 150 ? `${project?.shortDescription.slice(0, 150)}...` : project?.shortDescription}
         </p>
         {/* Core Technologies */}
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between">
           <div className="flex flex-wrap gap-2">
             {project?.coreTechnology?.slice(0, 2).map((tech: string) => (
               <Badge

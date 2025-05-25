@@ -84,9 +84,9 @@ export const projects = [
     ],
     coreTechnology: [
       "React",
+      "Express",
       "React Router",
       "Tailwind CSS",
-      "Express",
       "MongoDB",
       "JWT",
       "Stripe API",
@@ -137,9 +137,9 @@ export const projects = [
     ],
     coreTechnology: [
       "React",
+      "Express",
       "React Router",
       "Tailwind CSS",
-      "Express",
       "MongoDB",
       "Axios",
       "Firebase",

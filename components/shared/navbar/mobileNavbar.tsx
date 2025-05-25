@@ -1,5 +1,6 @@
 'use client'
 import { navLinks } from '@/constants/navLinks'
+import { scrollToSection } from '@/utils/scrollToSection'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
@@ -75,13 +76,13 @@ export default function MobileNavbar () {
       }`}
     >
       <ul className='flex justify-around items-center py-2'>
-        {navLinks.map((link, index) => (
+        {navLinks?.map((link, index) => (
           <li key={link.name}>
-            <Link
-              href={link.href}
+            <button
+              onClick={() => scrollToSection(link?.id)}
               className={`${
                 pathname === link.href
-                  ? 'text-emerald-500 dark:text-emerald-400 font-light after:w-full'
+                  ? 'text-primary dark:text-brand font-light after:w-full'
                   : 'text-primary dark:text-primary dark:font-light'
               } hover:text-emerald-400 transition-colors relative overflow-hidden
                 ${
@@ -96,7 +97,7 @@ export default function MobileNavbar () {
               `}
             >
               {link.name}
-            </Link>
+            </button>
           </li>
         ))}
       </ul>
