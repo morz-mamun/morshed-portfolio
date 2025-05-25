@@ -87,7 +87,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="flex justify-center gap-6 mt-12 w-fit mx-auto px-7 py-4 rounded-full shadow-xl shadow-primary/70 dark:shadow-brand/60"
+          className="flex justify-center gap-6 mt-12 w-fit mx-auto px-7 py-4 rounded-full shadow-xl shadow-primary/60 dark:shadow-brand/60"
         >
           <a
             href="https://github.com/morz-mamun"
