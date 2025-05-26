@@ -5,11 +5,12 @@ import { motion } from "framer-motion";
 
 export default function Experience() {
     return (
-        <div className="relative w-full overflow-clip pt-20">
+        <div className="w-full overflow-clip pt-20">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
+                className="relative"
             >
                 <Timeline data={data} />
             </motion.div>
