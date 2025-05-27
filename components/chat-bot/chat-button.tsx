@@ -28,7 +28,7 @@ export function ChatButton() {
       </button>
 
       <Sheet open={isOpen} onOpenChange={setIsOpen}>
-        <SheetContent className="px-3 pt-4 sm:max-w-[400px] w-full h-[calc(100vh-7rem)] border border-brand/20 rounded-lg top-24 overflow-auto">
+        <SheetContent className="px-3 pt-4 sm:max-w-[400px] w-full h-[calc(100vh-7rem)] border border-brand/20 rounded-lg top-24 bg-background/90 backdrop-blur-md shadow-md shadow-primary/70 dark:shadow-brand/70">
            <SheetTitle>
              <div className="flex items-center gap-2">
                 <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
@@ -37,7 +37,7 @@ export function ChatButton() {
                 <h3 className="font-semibold">AI Assistance</h3>
               </div>
            </SheetTitle>
-          <div className="flex flex-col h-full">
+          <div className="flex flex-col h-full overflow-hidden">
             <div className="flex-1 overflow-hidden">
               <Chat />
             </div>

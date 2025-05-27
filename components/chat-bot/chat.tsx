@@ -37,8 +37,8 @@ export function Chat() {
 
   return (
     <div className="flex flex-col h-full">
-      <div className="flex-1 overflow-y-auto p-0">
-        {messages.map((message) => (
+      <div className="flex-1 overflow-y-auto pr-1">
+        {messages?.map((message) => (
           <ChatMessage key={message.id} message={message} />
         ))}
         {errorMessage && <div className="p-3 my-2 bg-destructive/10 text-destructive rounded-lg">{errorMessage}</div>}
@@ -58,7 +58,7 @@ export function Chat() {
             <Send className="h-4 w-4" />
           </Button>
         </div>
-        {isLoading && <p className="text-xs text-muted-foreground mt-2">DeepSeek R1 is thinking...</p>}
+        {isLoading && <p className="text-xs text-muted-foreground mt-2">loading...</p>}
       </form>
     </div>
   )
