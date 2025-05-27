@@ -21,7 +21,6 @@ import { scrollToSection } from "@/utils/scrollToSection";
 
 export default function Navbar() {
   const [mounted, setMounted] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
   const { theme, setTheme } = useTheme();
@@ -52,7 +51,7 @@ export default function Navbar() {
       <div
         className={cn(
           "hidden md:flex justify-between items-center transition-all transform ease-in-out duration-300",
-          !isMobile && scrolled
+          scrolled
             ? "scale-95 xl:scale-90 px-4 py-3 rounded-full bg-primary/10 dark:bg-brand/10 backdrop-blur-lg backdrop-filter"
             : "scale-100"
         )}
@@ -71,7 +70,13 @@ export default function Navbar() {
           {navLinks.map((link, index) => (
             <button
               key={link.name}
-              onClick={() => scrollToSection(link?.id)}
+              onClick={() => {
+                if (pathname !== "/") {
+                  window.location.href = `/#${link.id}`;
+                } else {
+                  scrollToSection(link.id);
+                }
+              }}
               className={`${
                 pathname === link.href
                   ? "text-primary font-semibold dark:text-brand after:w-full"

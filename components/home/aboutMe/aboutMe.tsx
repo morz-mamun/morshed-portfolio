@@ -14,7 +14,7 @@ export default function AboutMe() {
   return (
     <section
       id="about"
-      className="container mx-auto flex items-center justify-center mb-20"
+      className="container mx-auto flex items-center justify-center my-20"
     >
       <motion.div
         className="relative w-full max-w-6xl"
