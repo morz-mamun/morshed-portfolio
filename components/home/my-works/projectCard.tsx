@@ -8,7 +8,7 @@ import Image from "next/image";
 export default function ProjectCard({ project, index }: any) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 1, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className={`relative rounded-xl overflow-hidden border group`}
@@ -54,7 +54,7 @@ export default function ProjectCard({ project, index }: any) {
           {project.title}
         </h3>
         <p className={`mb-4 text-sm xl:text-base text-textPrimary dark:text-textPrimary`}>
-          {project?.shortDescription.length > 150 ? `${project?.shortDescription.slice(0, 150)}...` : project?.shortDescription}
+          {project?.shortDescription.length > 110 ? `${project?.shortDescription.slice(0, 110)}...` : project?.shortDescription}
         </p>
         {/* Core Technologies */}
         <div className="flex justify-between">

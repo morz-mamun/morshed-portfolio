@@ -7,7 +7,7 @@ export default function Loading() {
         {/* Animated logo/avatar */}
         <div className="relative w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent animate-spin-slow" />
-          <span className="text-3xl font-bold text-primary">MA</span>
+          <span className="text-3xl font-bold text-primary dark:text-brand">MA</span>
         </div>
 
         {/* Loading text with animation */}
@@ -17,7 +17,7 @@ export default function Loading() {
 
         {/* Progress bar */}
         <div className="w-full bg-muted rounded-full h-2.5 mb-2 overflow-hidden">
-          <div className="bg-primary h-2.5 rounded-full animate-progress"></div>
+          <div className="bg-primary dark:bg-brand h-2.5 rounded-full animate-progress"></div>
         </div>
 
         {/* Random loading messages */}
