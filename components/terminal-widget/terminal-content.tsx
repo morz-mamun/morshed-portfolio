@@ -1,4 +1,3 @@
-
 import type React from "react";
 
 import { useState, useEffect, useRef } from "react";
@@ -38,6 +37,7 @@ export default function TerminalContent({ onClose }: { onClose: () => void }) {
   const inputRef = useRef<HTMLInputElement>(null);
   const terminalRef = useRef<HTMLDivElement>(null);
   const suggestionsRef = useRef<HTMLDivElement>(null);
+  const hasRunRef = useRef(false);
 
   // Brand color
   const brandColor = "#08D9FE";
@@ -89,23 +89,26 @@ export default function TerminalContent({ onClose }: { onClose: () => void }) {
             </div>
             <div className="mt-2 leading-relaxed">
               <p>
-                Hello! I'm{" "}
+                Hello! I'm
                 <span className="text-yellow-300 font-medium">
                   Morshed Alam
                 </span>
-                , a passionate Full Stack Developer with 7+ years of experience
-                crafting web applications and digital experiences.
+                , a MERN stack developer with experience in building full-stack
+                applications. I specialize in React, Next.js, Remix, Tailwind
+                CSS, MongoDB, and Express.
               </p>
               <p className="mt-2">
-                I specialize in building scalable, performant applications using
-                modern technologies and best practices. My approach combines
-                technical expertise with a keen eye for user experience and
-                business needs.
+                Currently, I'm looking for a full-time position as a frontend
+                developer or MERN stack developer. Previously, I worked as a
+                frontend developer at Monster Studio. I love solving real-world
+                problems with clean, scalable code and intuitive UI. I'm always
+                learning and eager to expand my knowledge in the ever-evolving
+                world of web development.
               </p>
               <p className="mt-2">
                 When I'm not coding, you can find me exploring new technologies,
-                contributing to open-source projects, or hiking in the mountains
-                with my camera.
+                or spending time with friends and family and playing cricket
+                sometimes.
               </p>
               <div className="mt-3 flex flex-wrap gap-2">
                 <Badge
@@ -117,7 +120,7 @@ export default function TerminalContent({ onClose }: { onClose: () => void }) {
                     borderColor: brandColor,
                   }}
                 >
-                  Problem Solver
+                  MERN Stack Developer
                 </Badge>
                 <Badge
                   variant="outline"
@@ -128,18 +131,7 @@ export default function TerminalContent({ onClose }: { onClose: () => void }) {
                     borderColor: brandColor,
                   }}
                 >
-                  UI/UX Enthusiast
-                </Badge>
-                <Badge
-                  variant="outline"
-                  className="border-opacity-80"
-                  style={{
-                    backgroundColor: `${brandColor}20`,
-                    color: brandColor,
-                    borderColor: brandColor,
-                  }}
-                >
-                  Open Source Contributor
+                  Frontend Developer
                 </Badge>
                 <Badge
                   variant="outline"
@@ -163,41 +155,25 @@ export default function TerminalContent({ onClose }: { onClose: () => void }) {
       execute: () => {
         const frontendSkills = [
           "React",
+          "Remix",
           "Next.js",
           "TypeScript",
           "JavaScript",
-          "HTML5/CSS3",
           "Tailwind CSS",
           "Redux",
           "Framer Motion",
+          "etc.",
         ];
         const backendSkills = [
           "Node.js",
           "Express",
-          "Python",
-          "Django",
-          "GraphQL",
           "REST API Design",
-          "PostgreSQL",
           "MongoDB",
+          "Mongoose",
+          "JWT",
         ];
-        const devopsSkills = [
-          "Docker",
-          "CI/CD",
-          "AWS",
-          "Vercel",
-          "Git",
-          "GitHub Actions",
-          "Linux",
-        ];
-        const otherSkills = [
-          "UI/UX Design",
-          "Figma",
-          "Jest",
-          "Testing Library",
-          "Agile/Scrum",
-          "Technical Writing",
-        ];
+
+        const otherSkills = ["Git", "GitHub", "npm", "pnpm"];
 
         return (
           <div className="py-2">
@@ -247,26 +223,6 @@ export default function TerminalContent({ onClose }: { onClose: () => void }) {
 
               <div>
                 <div className="font-medium mb-1" style={{ color: brandColor }}>
-                  DevOps:
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {devopsSkills.map((skill, index) => (
-                    <Badge
-                      key={index}
-                      className="transition-colors"
-                      style={{
-                        backgroundColor: `${brandColor}15`,
-                        color: brandColor,
-                      }}
-                    >
-                      {skill}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <div className="font-medium mb-1" style={{ color: brandColor }}>
                   Other:
                 </div>
                 <div className="flex flex-wrap gap-2">
@@ -294,28 +250,20 @@ export default function TerminalContent({ onClose }: { onClose: () => void }) {
       execute: () => {
         const experiences = [
           {
-            role: "Senior Full Stack Developer",
-            company: "TechNova Solutions",
-            period: "2021 - Present",
-            description:
-              "Leading development of enterprise SaaS applications. Architected and implemented microservices infrastructure that improved scalability by 300%.",
-            technologies: ["React", "Node.js", "GraphQL", "AWS"],
-          },
-          {
-            role: "Full Stack Developer",
-            company: "Digital Innovations Inc.",
-            period: "2018 - 2021",
-            description:
-              "Developed and maintained multiple client applications. Reduced load times by 40% through performance optimizations.",
-            technologies: ["React", "TypeScript", "Express", "PostgreSQL"],
-          },
-          {
             role: "Frontend Developer",
-            company: "WebCraft Studios",
-            period: "2016 - 2018",
+            company: "Monster Studio",
+            period: "Nov 2024 – Apr 2025",
             description:
-              "Created responsive web applications and e-commerce solutions. Implemented CI/CD pipelines that reduced deployment time by 70%.",
-            technologies: ["JavaScript", "HTML/CSS", "Vue.js", "Webpack"],
+              "Leading frontend team. Developed and maintained a large-scale MERN stack e-commerce platform with WhatsApp Cloud API and Discord Bot integrations. Built reusable components, REST APIs, and managed a Nx monorepo.",
+            technologies: ["React", "Remix", "Node.js", "MongoDB", "express"],
+          },
+          {
+            role: "Intern Frontend Developer",
+            company: "Delta Coder",
+            period: "Aug 2024 – Nov 2024",
+            description:
+              "Gained practical experience with React.js, Tailwind CSS, and modern frontend workflows. Participated in UI implementation, responsive design, and component architecture basics. Collaborated with designers to ensure pixel-perfect implementation of UI designs. Learned about version control using Git and GitHub for collaborative development. Worked on a large-scale e-commerce platform, enhancing user experience and performance.",
+            technologies: ["React", "Tailwind CSS", "Git", "GitHub"],
           },
         ];
 
@@ -360,24 +308,54 @@ export default function TerminalContent({ onClose }: { onClose: () => void }) {
       execute: () => {
         const projects = [
           {
-            name: "E-commerce Platform",
+            name: "Delta Translator (Translator)",
             description:
-              "Full-stack e-commerce solution with real-time inventory, payment processing, and analytics dashboard.",
-            technologies: ["Next.js", "TypeScript", "Stripe", "PostgreSQL"],
-            link: "#",
+              "Delta Translator aims to be a user-friendly language translation platform offering seamless translation services while prioritizing accessibility, convenience, and user engagement. It strives to enhance cross-linguistic communication and empower users with efficient translation capabilities.",
+            technologies: [
+              "React",
+              "Express",
+              "MongoDB",
+              "React Router",
+              "Tailwind CSS",
+              "Framer Motion",
+              "Redux Toolkit",
+              "React Hook Form",
+              "TanStack Query",
+              "MUI",
+              "Ant Design",
+              "Axios",
+              "Firebase",
+              "EmailJS",
+              "Charting Libraries (Recharts, MUI X Charts)",
+              "PDF Handling (react-pdf, pdfjs)",
+              "Speech Recognition (react-speech-kit, react-speech-recognition)",
+            ],
+            link: "https://delta-translator-ac8d6.web.app",
           },
           {
-            name: "AI Content Generator",
+            name: "Morze (RealState Platform)",
             description:
-              "Web application that leverages AI to generate marketing content, with customization options and export capabilities.",
-            technologies: ["React", "Node.js", "OpenAI API", "MongoDB"],
-            link: "#",
+              "MorZE is a Real Estate Website. Browse through a diverse range of properties, from cozy apartments to spacious homes you can buy, sell.",
+            technologies: [
+              "React",
+              "Express",
+              "React Router",
+              "Tailwind CSS",
+              "MongoDB",
+              "JWT",
+              "Stripe API",
+              "Axios",
+              "Firebase",
+              "EmailJS",
+              "@emailjs/browser",
+            ],
+            link: "https://morze-bb5a5.web.app",
           },
           {
             name: "Task Management System",
             description:
               "Collaborative project management tool with real-time updates, role-based permissions, and automated reporting.",
-            technologies: ["Vue.js", "Express", "Socket.io", "Redis"],
+            technologies: ["React", "Express", "React Router", "Tailwind CSS"],
             link: "#",
           },
         ];
@@ -431,29 +409,12 @@ export default function TerminalContent({ onClose }: { onClose: () => void }) {
             <div className="mt-2 space-y-4">
               <div>
                 <div className="text-yellow-300 font-medium">
-                  Master of Science in Computer Science
+                  Studying Textile Engineering and pursuing web development as a career path.
                 </div>
-                <div style={{ color: brandColor }}>Stanford University</div>
-                <div className="text-gray-400">2014 - 2016</div>
-                <p className="mt-1 text-gray-300">
-                  Specialized in Artificial Intelligence and Machine Learning
-                </p>
+                <div style={{ color: brandColor }}>Chittagong National Engineering College.</div>
+                <div className="text-gray-400">2019 - Present</div>
               </div>
-
-              <div>
-                <div className="text-yellow-300 font-medium">
-                  Bachelor of Science in Software Engineering
-                </div>
-                <div style={{ color: brandColor }}>
-                  University of Washington
-                </div>
-                <div className="text-gray-400">2010 - 2014</div>
-                <p className="mt-1 text-gray-300">
-                  Minor in Human-Computer Interaction
-                </p>
-              </div>
-
-              <div className="pt-2">
+              {/* <div className="pt-2">
                 <div className="font-medium mb-1" style={{ color: brandColor }}>
                   Certifications:
                 </div>
@@ -462,7 +423,7 @@ export default function TerminalContent({ onClose }: { onClose: () => void }) {
                   <li>Google Cloud Professional Developer</li>
                   <li>MongoDB Certified Developer</li>
                 </ul>
-              </div>
+              </div> */}
             </div>
           </div>
         );
@@ -489,7 +450,7 @@ export default function TerminalContent({ onClose }: { onClose: () => void }) {
                   className="hover:underline"
                   style={{ color: brandColor }}
                 >
-                  morshed@example.com
+                  morzmamun@gmail.com
                 </a>
               </div>
 
@@ -497,7 +458,7 @@ export default function TerminalContent({ onClose }: { onClose: () => void }) {
                 <Command className="h-4 w-4" style={{ color: brandColor }} />
                 <span>
                   Based in{" "}
-                  <span style={{ color: brandColor }}>San Francisco, CA</span>{" "}
+                  <span style={{ color: brandColor }}>Chittagong, Bangladesh.</span>{" "}
                   (Open to Remote)
                 </span>
               </div>
@@ -525,20 +486,20 @@ export default function TerminalContent({ onClose }: { onClose: () => void }) {
           {
             name: "GitHub",
             icon: <Github className="h-4 w-4" />,
-            url: "https://github.com/morshedalamdev",
-            username: "morshedalamdev",
+            url: "https://github.com/morz-mamun",
+            username: "morz-mamun",
           },
           {
             name: "LinkedIn",
             icon: <Linkedin className="h-4 w-4" />,
-            url: "https://linkedin.com/in/morshedalam",
-            username: "morshedalam",
+            url: "https://www.linkedin.com/in/md-morshed-alam-2324022a4/",
+            username: "Md Morshed Alam",
           },
           {
             name: "Twitter",
             icon: <Twitter className="h-4 w-4" />,
-            url: "https://twitter.com/morshedalam",
-            username: "@morshedalam",
+            url: "https://x.com/home",
+            username: "@morzMamun",
           },
         ];
 
@@ -720,13 +681,13 @@ export default function TerminalContent({ onClose }: { onClose: () => void }) {
   useEffect(() => {
     const welcomeMessage = (
       <div className="space-y-2">
-        <div
+        {/* <div
           className="font-bold text-xl flex items-center gap-2"
           style={{ color: brandColor }}
         >
           <TerminalIcon className="h-5 w-5" /> Welcome to my interactive
           terminal!
-        </div>
+        </div> */}
         <p>
           Type <span className="text-yellow-300">help</span> to see available
           commands.
@@ -735,7 +696,7 @@ export default function TerminalContent({ onClose }: { onClose: () => void }) {
           v1.0.0 - Morshed Alam's Terminal Portfolio
         </div>
         <div
-          className="mt-2 px-3 py-2 rounded-md border border-opacity-50"
+          className="mt-2 px-3 py-2 rounded-md flex items-center justify-center gap-2"
           style={{
             backgroundColor: `${brandColor}10`,
             borderColor: brandColor,
@@ -755,33 +716,27 @@ export default function TerminalContent({ onClose }: { onClose: () => void }) {
 
     setHistory([welcomeMessage]);
 
-    // Blink cursor
-    const cursorInterval = setInterval(() => {
-      setShowCursor((prev) => !prev);
-    }, 500);
-
     // Auto-type "help" command after a delay
-    if (initialAnimation) {
+    if (initialAnimation && !hasRunRef.current) {
+      hasRunRef.current = true;
+
       setTimeout(() => {
         const helpText = "help";
         let i = 0;
 
-        const typeInterval = setInterval(() => {
+        const typeHelp = () => {
           if (i < helpText.length) {
             setInput(helpText.substring(0, i + 1));
             i++;
+            setTimeout(typeHelp, 100);
           } else {
-            clearInterval(typeInterval);
-            setTimeout(() => {
-              handleCommand(helpText);
-              setInitialAnimation(false);
-            }, 500);
+            handleCommand(helpText); // Safe to call once
           }
-        }, 100);
+        };
+
+        typeHelp();
       }, 1000);
     }
-
-    return () => clearInterval(cursorInterval);
   }, []);
 
   // Focus input when clicking on terminal
@@ -947,52 +902,6 @@ export default function TerminalContent({ onClose }: { onClose: () => void }) {
     }
   };
 
-  // Clear terminal and reset state
-  const clearTerminal = () => {
-    setHistory([]);
-    setInput("");
-    setShowSuggestions(false);
-    setShowHelpTip(true);
-    setIsTypingAnimationActive(true);
-
-    // Add welcome message back
-    const welcomeMessage = (
-      <div className="space-y-2">
-        <div
-          className="font-bold text-xl flex items-center gap-2"
-          style={{ color: brandColor }}
-        >
-          <TerminalIcon className="h-5 w-5" /> Welcome to my interactive
-          terminal!
-        </div>
-        <p>
-          Type <span className="text-yellow-300">help</span> to see available
-          commands.
-        </p>
-        <div className="text-gray-400 text-sm">
-          v1.0.0 - Morshed Alam's Terminal Portfolio
-        </div>
-        <div
-          className="mt-2 px-3 py-2 rounded-md border border-opacity-50"
-          style={{
-            backgroundColor: `${brandColor}10`,
-            borderColor: brandColor,
-          }}
-        >
-          <p
-            className="flex items-center gap-1.5"
-            style={{ color: brandColor }}
-          >
-            <Info className="h-4 w-4" />
-            <span className="font-medium">Pro Tip:</span> Start typing to see
-            command suggestions!
-          </p>
-        </div>
-      </div>
-    );
-
-    setHistory([welcomeMessage]);
-  };
 
   // Toggle minimize
   const toggleMinimize = () => {
@@ -1030,12 +939,12 @@ export default function TerminalContent({ onClose }: { onClose: () => void }) {
           <div className="ml-2 flex items-center gap-1.5">
             <TerminalIcon className="h-4 w-4 text-gray-400" />
             <span className="text-sm font-medium text-gray-300">
-              morshed-alam-portfolio ~ terminal
+              morshed-alam ~ terminal
             </span>
           </div>
         </div>
 
-        <div className="flex gap-2">
+        {/* <div className="flex gap-2">
           <button
             onClick={toggleMinimize}
             className="text-gray-400 hover:text-gray-200 transition-colors"
@@ -1052,7 +961,7 @@ export default function TerminalContent({ onClose }: { onClose: () => void }) {
           >
             <X className="h-4 w-4" />
           </button>
-        </div>
+        </div> */}
       </div>
 
       {/* Terminal content */}
@@ -1110,14 +1019,6 @@ export default function TerminalContent({ onClose }: { onClose: () => void }) {
               )}
             </div>
 
-            {/* Blinking cursor */}
-            <span
-              className={`w-2 h-5 ${
-                showCursor ? "opacity-100" : "opacity-0"
-              } transition-opacity`}
-              style={{ backgroundColor: brandColor }}
-            ></span>
-
             {/* Command suggestion help indicator */}
             {input && filteredSuggestions.length > 0 && (
               <div className="ml-2 flex items-center gap-1 text-gray-500 text-xs">
@@ -1168,7 +1069,10 @@ export default function TerminalContent({ onClose }: { onClose: () => void }) {
                   }}
                   onClick={() => handleSuggestionClick(suggestion)}
                 >
-                  <div className="flex items-center gap-2">
+                  <div
+                    onClick={() => handleCommand(suggestion)}
+                    className="flex items-center gap-2"
+                  >
                     <ChevronRight
                       className="h-3 w-3"
                       style={{ color: brandColor }}
