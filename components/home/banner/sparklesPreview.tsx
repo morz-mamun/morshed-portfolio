@@ -6,7 +6,7 @@ import { useTheme } from "next-themes";
 import React from "react";
 
 
-export default function SparklesPreview({title} : any) {
+export default function SparklesPreview({title} : {title : string}) {
     const { resolvedTheme } = useTheme();
     return (
         <div className="w-full dark:bg-black flex flex-col items-center justify-center overflow-hidden rounded-md">
