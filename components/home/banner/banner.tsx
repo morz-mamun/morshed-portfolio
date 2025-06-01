@@ -23,14 +23,16 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="banner" className="relative h-[calc(100vh-6rem)] flex flex-col justify-center items-center px-4 overflow-hidden">
+    <section
+      id="banner"
+      className="relative h-[calc(100vh-6rem)] flex flex-col justify-center items-center px-4 overflow-hidden"
+    >
       {/* Content */}
       <div className="w-full md:max-w-4xl z-10 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className=""
         >
           <SparklesPreview title={"MERN Stack Developer"} />
         </motion.div>
@@ -41,7 +43,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className={`text-3xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-6 bg-clip-text text-transparent bg-gradient-to-r from-black to-gray-200 dark:bg-gradient-to-r dark:from-white dark:to-gray-600`}
         >
-          Hi, I'm <span>Morshed Alam</span>
+          Hi, I&apos;m <span>Morshed Alam</span>
           <br />
           <span className="text-lg md:text-3xl font-normal text-textPrimary dark:text-textPrimary">
             <Typewriter
