@@ -44,7 +44,7 @@ export default function AboutMe() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="w-full md:max-w-2xl text-start md:text-center text-textPrimary dark:text-textPrimary"
             >
-              I'm a passionate MERN Stack Developer with expertise in building
+              I&apos;m a passionate MERN Stack Developer with expertise in building
               modern, responsive web applications. Combining strong frontend
               skills with backend knowledge, I create seamless user experiences
               backed by robust server architectures. I enjoy turning complex
@@ -64,7 +64,7 @@ export default function AboutMe() {
                   {[
                     " My journey in web development began with a simple curiosity about how websites work, which soon grew into a deep passion for building clean, functional, and beautiful digital experiences.",
                     " During the COVID-19 pandemic, I faced immense personal loss, including the passing of my big brother. In those difficult times, I turned to programming as a way to heal and grow. Though I struggled with focus and consistency at first, everything changed in 2023 when I enrolled in the “Complete Web Development” course by Programming Hero, while juggling a part-time marketing job and tutoring to support myself.",
-                    " With dedication and the help of their Job Placement team, I landed my first role as a MERN stack developer. Since then, I’ve worked with amazing teams, built real-world applications, and continue to expand my skills—especially in React, Next.js, Remix, and backend development.",
+                    " With dedication and the help of their Job Placement team, I landed my first role as a MERN stack developer. Since then, I've worked with amazing teams, built real-world applications, and continue to expand my skills—especially in React, Next.js, Remix, and backend development.",
                     "Each line of code I write is a step forward in a journey shaped by resilience, purpose, and a love for creating meaningful web experiences.",
                   ].map((text, i) => (
                     <motion.p
