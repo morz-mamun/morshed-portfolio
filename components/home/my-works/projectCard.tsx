@@ -6,21 +6,21 @@ import Link from "next/link";
 import { BorderBeam } from "@/components/magicui/border-beam";
 import Image from "next/image";
 
-export type TProject = {
-  id: string;
-  title: string;
-  shortDescription: string;
-  description: string;
-  images: string[];
-  coreFeatures: string[];
-  coreTechnology: string[];
-  challengesFaced: string[];
-  futurePlans: string[];
-  versionInfo: string[];
-  liveLink: string;
-  repositoryLink: string;
-}
-export default function ProjectCard({ project, index }: { project :TProject, index: number}) {
+// export type TProject = {
+//   id: string;
+//   title: string;
+//   shortDescription: string;
+//   description: string;
+//   images: string[];
+//   coreFeatures: string[];
+//   coreTechnology: string[];
+//   challengesFaced: string[];
+//   futurePlans: string[];
+//   versionInfo: string[];
+//   liveLink: string;
+//   repositoryLink: string;
+// }
+export default function ProjectCard({ project, index }: { project: any; index: number }) {
   return (
     <motion.div
       initial={{ opacity: 1, y: 20 }}

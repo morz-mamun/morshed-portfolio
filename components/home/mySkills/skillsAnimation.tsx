@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 import { AnimatedBeam } from "@/components/magicui/animated-beam";
 import { VscVscodeInsiders } from "react-icons/vsc";
 import { FaReact, FaUserTie } from "react-icons/fa";
-import { SiExpress, SiGithub, SiJavascript, SiMongodb, SiMongoose, SiNodedotjs, SiRemix, SiTailwindcss, SiTypescript } from "react-icons/si";
+import { SiExpress, SiGithub, SiJavascript, SiNodedotjs, SiRemix, SiTailwindcss, SiTypescript } from "react-icons/si";
 import { RiNextjsFill } from "react-icons/ri";
 
 

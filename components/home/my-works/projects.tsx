@@ -1,8 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ExternalLink, Github } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ExternalLink } from "lucide-react";
 import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
 import SparklesPreview from "../banner/sparklesPreview";
 import ProjectCard from "./projectCard";
