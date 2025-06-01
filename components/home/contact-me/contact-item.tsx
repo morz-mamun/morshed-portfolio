@@ -1,5 +1,14 @@
 "use client"
-export default function ContactItem({ icon: Icon, title, content, isLink } : any){
+
+import { LucideIcon } from "lucide-react";
+export type ContactItem = {
+  id?: number;
+  icon: LucideIcon;
+  title: string;
+  content: string;
+  isLink: boolean;
+};
+export default function ContactItem({ icon: Icon, title, content, isLink } : ContactItem) {
     return (
          <div className="flex gap-5 items-start">
       <div className="h-fit p-2 rounded-full shadow-2xl flex items-center justify-center text-3xl">

@@ -1,11 +1,26 @@
 "use client";
 import { motion } from "framer-motion";
-import { ArrowBigRight, ExternalLink, Github, Slice } from "lucide-react";
+import { ArrowBigRight, ExternalLink, Github } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 import { BorderBeam } from "@/components/magicui/border-beam";
 import Image from "next/image";
-export default function ProjectCard({ project, index }: any) {
+
+export type TProject = {
+  id: string;
+  title: string;
+  shortDescription: string;
+  description: string;
+  images: string[];
+  coreFeatures: string[];
+  coreTechnology: string[];
+  challengesFaced: string[];
+  futurePlans: string[];
+  versionInfo: string[];
+  liveLink: string;
+  repositoryLink: string;
+}
+export default function ProjectCard({ project, index }: { project :TProject, index: number}) {
   return (
     <motion.div
       initial={{ opacity: 1, y: 20 }}
@@ -53,8 +68,12 @@ export default function ProjectCard({ project, index }: any) {
         <h3 className="text-xl font-bold mb-2 group-hover:text-brand transition-colors">
           {project.title}
         </h3>
-        <p className={`mb-4 text-sm xl:text-base text-textPrimary dark:text-textPrimary`}>
-          {project?.shortDescription.length > 110 ? `${project?.shortDescription.slice(0, 110)}...` : project?.shortDescription}
+        <p
+          className={`mb-4 text-sm xl:text-base text-textPrimary dark:text-textPrimary`}
+        >
+          {project?.shortDescription.length > 110
+            ? `${project?.shortDescription.slice(0, 110)}...`
+            : project?.shortDescription}
         </p>
         {/* Core Technologies */}
         <div className="flex justify-between">
