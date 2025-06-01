@@ -1,4 +1,6 @@
-export default function SkillCard({ category }: { category: any }) {
+import { Skill, SkillCategory } from "@/constants/my-skills-data";
+
+export default function SkillCard({ category }: { category: SkillCategory }) {
     return (
         <div className="bg-gray-200 dark:bg-[#0f1524] backdrop-blur-md   rounded-xl p-6 transition-all duration-300 dark:hover:bg-[#151b2e]">
             <div className="flex items-center gap-3 mb-5">
@@ -7,7 +9,7 @@ export default function SkillCard({ category }: { category: any }) {
             </div>
 
             <div className="flex flex-wrap gap-2">
-                {category.skills.map((skill: any) => (
+                {category.skills.map((skill: Skill) => (
                     <div
                         key={`${category.name}-${skill.name}`}
                         className={`flex items-center gap-2 p-3 rounded-md bg-gray-100 dark:bg-[#1a1f2e] transition-all duration-300 }`}

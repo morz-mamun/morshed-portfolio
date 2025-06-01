@@ -1,7 +1,6 @@
 'use client'
 import { navLinks } from '@/constants/navLinks'
 import { scrollToSection } from '@/utils/scrollToSection'
-import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 

@@ -4,13 +4,13 @@ import { FaNodeJs, FaReact } from "react-icons/fa";
 import { SiNextdotjs, SiRemix, SiTailwindcss, SiRedux, SiAntdesign, SiFramer, SiShadcnui, SiExpress, SiMongodb, SiMongoose, SiJavascript, SiTypescript, SiNpm, SiPnpm, SiGithub, SiPostman } from "react-icons/si";
 import { TbApi } from "react-icons/tb";   
    
-   interface Skill {
+  export interface Skill {
        name: string
        icon: JSX.Element | string
        color?: string
    }
    
-   interface SkillCategory {
+   export interface SkillCategory {
        name: string
        icon: JSX.Element
        skills: Skill[]

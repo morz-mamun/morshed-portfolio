@@ -11,10 +11,8 @@ import {
   Github,
   Linkedin,
   Mail,
-  Minimize2,
   TerminalIcon,
   Twitter,
-  X,
   Info,
   ArrowDown,
   ArrowUp,
@@ -27,8 +25,9 @@ export default function TerminalContent({ onClose }: { onClose: () => void }) {
   const [commandHistory, setCommandHistory] = useState<string[]>([]);
   const [historyIndex, setHistoryIndex] = useState(-1);
   const [isMinimized, setIsMinimized] = useState(false);
-  const [showCursor, setShowCursor] = useState(true);
-  const [initialAnimation, setInitialAnimation] = useState(true);
+  // const [showCursor, setShowCursor] = useState(true);
+  // const [initialAnimation, setInitialAnimation] = useState(true);
+  const initialAnimation = true;
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [selectedSuggestionIndex, setSelectedSuggestionIndex] = useState(0);
   const [showHelpTip, setShowHelpTip] = useState(true);
@@ -89,7 +88,7 @@ export default function TerminalContent({ onClose }: { onClose: () => void }) {
             </div>
             <div className="mt-2 leading-relaxed">
               <p>
-                Hello! I'm
+                Hello! I&apos;m
                 <span className="text-yellow-300 font-medium">
                   Morshed Alam
                 </span>
@@ -98,15 +97,15 @@ export default function TerminalContent({ onClose }: { onClose: () => void }) {
                 CSS, MongoDB, and Express.
               </p>
               <p className="mt-2">
-                Currently, I'm looking for a full-time position as a frontend
+                Currently, I&apos;m looking for a full-time position as a frontend
                 developer or MERN stack developer. Previously, I worked as a
                 frontend developer at Monster Studio. I love solving real-world
-                problems with clean, scalable code and intuitive UI. I'm always
+                problems with clean, scalable code and intuitive UI. I&apos;m always
                 learning and eager to expand my knowledge in the ever-evolving
                 world of web development.
               </p>
               <p className="mt-2">
-                When I'm not coding, you can find me exploring new technologies,
+                When I&apos;m not coding, you can find me exploring new technologies,
                 or spending time with friends and family and playing cricket
                 sometimes.
               </p>
@@ -439,7 +438,7 @@ export default function TerminalContent({ onClose }: { onClose: () => void }) {
             </div>
             <div className="mt-2 space-y-3">
               <p>
-                I'm always open to discussing new projects, opportunities, or
+                I&apos;m always open to discussing new projects, opportunities, or
                 partnerships.
               </p>
 
@@ -564,7 +563,7 @@ export default function TerminalContent({ onClose }: { onClose: () => void }) {
 `}
             </pre>
             <p className="mt-2">
-              Thanks for exploring my terminal portfolio! Let's connect and
+              Thanks for exploring my terminal portfolio! Let&apos;s connect and
               build something amazing together.
             </p>
           </div>
@@ -681,19 +680,19 @@ export default function TerminalContent({ onClose }: { onClose: () => void }) {
   useEffect(() => {
     const welcomeMessage = (
       <div className="space-y-2">
-        {/* <div
-          className="font-bold text-xl flex items-center gap-2"
+        <div
+          className="font-bold text-lg flex items-center gap-2"
           style={{ color: brandColor }}
         >
           <TerminalIcon className="h-5 w-5" /> Welcome to my interactive
           terminal!
-        </div> */}
+        </div>
         <p>
           Type <span className="text-yellow-300">help</span> to see available
           commands.
         </p>
         <div className="text-gray-400 text-sm">
-          v1.0.0 - Morshed Alam's Terminal Portfolio
+          v1.0.0 - Morshed Alam&apos;s Terminal Portfolio
         </div>
         <div
           className="mt-2 px-3 py-2 rounded-md flex items-center justify-center gap-2"

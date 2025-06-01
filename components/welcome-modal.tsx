@@ -41,7 +41,7 @@ export default function WelcomeModal() {
             <div className="flex-1 pr-4">
               <h3 className="font-bold text-lg mb-1 dark:text-brand">Welcome to my portfolio!</h3>
               <p className={`text-sm `}>
-                Thanks for visiting! Feel free to explore my projects and get in touch if you'd like to work together.
+                Thanks for visiting! Feel free to explore my projects and get in touch if you&apos;d like to work together.
               </p>
             </div>
             <button

@@ -2,16 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import {
-  Menu,
-  X,
-  Github,
-  Linkedin,
-  Twitter,
-  Frame,
-  Sun,
-  Moon,
-} from "lucide-react";
+import { Frame, Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "next-themes";
 import { cn } from "@/lib/utils";

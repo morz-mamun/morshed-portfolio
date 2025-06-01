@@ -17,7 +17,7 @@ import React, {
   useRef,
 } from "react";
 
-import { Button, ButtonProps } from "@/components/ui/button";
+import { ButtonProps } from "@/components/ui/button";
 import { InteractiveHoverButton } from "./interactive-hover-button";
 
 type Api = {
@@ -141,7 +141,7 @@ const ConfettiButtonComponent = ({
   };
 
   return (
-    <InteractiveHoverButton className="" onClick={handleClick} {...props}>
+    <InteractiveHoverButton onClick={handleClick} {...props}>
       {children}
     </InteractiveHoverButton>
   );

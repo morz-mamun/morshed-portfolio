@@ -1,6 +1,6 @@
 "use client";
 import type React from "react";
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { TerminalIcon } from "lucide-react";
 import { ShimmerButton } from "../magicui/shimmer-button";
@@ -9,7 +9,8 @@ import TerminalContent from "./terminal-content";
 export default function TerminalWidget() {
   const [isTerminalOpen, setIsTerminalOpen] = useState(false);
   const [terminalPosition, setTerminalPosition] = useState({ x: 0, y: 0 });
-  const [buttonPosition, setButtonPosition] = useState({ x: 0, y: 0 });
+  // const [buttonPosition, setButtonPosition] = useState({ x: 0, y: 0 });
+  const buttonPosition = { x: 0, y: 0 };
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   // Toggle terminal visibility

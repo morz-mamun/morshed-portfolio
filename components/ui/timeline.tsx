@@ -1,7 +1,6 @@
 "use client";
 import { Calendar } from "lucide-react";
 import {
-  useMotionValueEvent,
   useScroll,
   useTransform,
   motion,
@@ -46,7 +45,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
           </h1>
         </div>
         <p className="text-textPrimary dark:text-textPrimary text-sm md:text-base max-w-sm">
-         With almost a year and a half in tech, here are highlights from my journey. I'm always eager for new challenges and collaborations—feel free to reach out!
+         With almost a year and a half in tech, here are highlights from my journey. I&apos;m always eager for new challenges and collaborations—feel free to reach out!
         </p>
       </div>
 
