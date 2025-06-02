@@ -1,5 +1,20 @@
-
-export const projects = [
+export type TProject = {
+  id: string;
+  title: string;
+  shortDescription: string;
+  description: string;
+  images: string[];
+  coreFeatures: string[];
+  coreTechnology: string[];
+  challengesFaced: string[];
+  futurePlans: string[];
+  versionInfo: {
+    [key: string]: string;
+  };
+  liveLink: string;
+  repositoryLink: string;
+};
+export const projects: TProject[] = [
   {
     id: "1",
     title: "Delta Translator (Translator)",
@@ -155,7 +170,7 @@ export const projects = [
       "Integrate Notifications API for real-time notifications for job updates",
     ],
     versionInfo: {
-     React: "^18.2.0",
+      React: "^18.2.0",
       "React Router": "^6.20.0",
       "Tailwind CSS": "^3.3.5",
       express: "^4.18.2",

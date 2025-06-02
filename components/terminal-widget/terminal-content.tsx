@@ -362,7 +362,7 @@ export default function TerminalContent({ onClose }: { onClose: () => void }) {
         return (
           <div className="py-2">
             <div className="font-medium" style={{ color: brandColor }}>
-              $ ls -la projects/ | grep -i "featured"
+              $ ls -la projects/ | grep -i &quot;featured&quot;
             </div>
             <div className="mt-2 space-y-4">
               {projects.map((project, index) => (
