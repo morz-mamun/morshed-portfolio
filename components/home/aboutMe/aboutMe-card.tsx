@@ -1,9 +1,10 @@
 "use client"
 import { MagicCard } from "@/components/magicui/magic-card";
+import { TSkill } from "@/constants/aboutme/cardConstants";
 import { useTheme } from "next-themes";
 import React, { useEffect, useState } from "react";
 
-export default function Card({ skill }) {
+export default function AboutMeCard({ skill } : { skill: TSkill }) {
     const [mounted, setMounted] = useState(false);
     const { icon, iconColor, title, description } = skill;
     const { resolvedTheme } = useTheme();

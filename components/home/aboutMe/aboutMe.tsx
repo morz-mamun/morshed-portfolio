@@ -2,10 +2,10 @@
 import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
 import { words } from "@/constants/aboutme/aboutMe";
 import { skills } from "@/constants/aboutme/cardConstants";
-import Card from "./card";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/moving-border";
 import { Marquee } from "@/components/magicui/marquee";
+import AboutMeCard from "./aboutMe-card";
 
 export default function AboutMe() {
   const firstRow = skills.slice(0, skills.length / 2);
@@ -99,7 +99,7 @@ export default function AboutMe() {
               >
                 <Marquee pauseOnHover vertical className="[--duration:20s]">
                   {firstRow?.map((skill, index) => (
-                    <Card key={index} skill={skill} />
+                    <AboutMeCard key={index} skill={skill} />
                   ))}
                 </Marquee>
                 <Marquee
@@ -109,7 +109,7 @@ export default function AboutMe() {
                   className="[--duration:20s]"
                 >
                   {secondRow?.map((skill, index) => (
-                    <Card key={index} skill={skill} />
+                    <AboutMeCard key={index} skill={skill} />
                   ))}
                 </Marquee>
                 <div className="pointer-events-none absolute inset-x-0 top-0 h-1/4 bg-gradient-to-b from-background"></div>

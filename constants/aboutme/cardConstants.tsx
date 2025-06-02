@@ -1,6 +1,13 @@
 import { Code, Database, Layers, Palette, Shield, Users } from "lucide-react";
+import { JSX } from "react";
 
-export const skills = [
+export type TSkill = {
+  icon: JSX.Element;
+  iconColor: string;
+  title: string;
+  description: string;
+}
+export const skills : TSkill[] = [
   {
     icon: <Code />,
     iconColor: "text-violet-600",
