@@ -14,7 +14,7 @@ export function ChatButton() {
       <button
         onClick={() => setIsOpen(true)}
         className={cn(
-          "fixed bottom-4 right-4 rounded-full shadow-xl shadow-primary/70 dark:shadow-brand/70 z-50 p-3 border-2 dark:border-brand/20 dark:border-brand/50 dark:bg-brand/10 backdrop-blur-md cursor-pointer",
+          "fixed bottom-10 right-3 md:bottom-4 md:right-4 rounded-full shadow-xl shadow-primary/70 dark:shadow-brand/70 z-50 p-3 border-2 dark:border-brand/20 dark:border-brand/50 dark:bg-brand/10 backdrop-blur-md cursor-pointer",
           "flex items-center justify-center",
           "transition-all duration-300 hover:scale-105",
           isOpen ? "opacity-0 pointer-events-none" : "opacity-100"
