@@ -1,33 +1,27 @@
-"use client"
-import Footer from '@/components/shared/footer'
-import MobileNavbar from '@/components/shared/navbar/mobileNavbar'
-import Navbar from '@/components/shared/navbar/navbar'
+"use client";
+import { ChatButton } from "@/components/chat-bot/chat-button";
+import Footer from "@/components/shared/footer";
+import MobileNavbar from "@/components/shared/navbar/mobileNavbar";
+import Navbar from "@/components/shared/navbar/navbar";
 
-export default function PublicLayout ({
-  children
+export default function PublicLayout({
+  children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
-    <main className='min-h-screen mx-auto'>
+    <main className="min-h-screen mx-auto">
       {/* navbar */}
       <Navbar />
 
       {/* main content */}
-      <div className=''>{children}</div>
-
-      {/* scroll to top button */}
-      {/* <button
-        onClick={() => window.scrollTo(0, 0)}
-        className='fixed bottom-4 right-4 p-2 bg-blue-500 text-white rounded-full shadow-lg'
-      >
-        Scroll to Top
-      </button> */}
-
+      <div className="">{children}</div>
       {/* mobile navbar */}
       <MobileNavbar />
+      {/* AI Assistance */}
+      <ChatButton />
       {/* footer */}
       <Footer />
     </main>
-  )
+  );
 }

@@ -39,7 +39,6 @@ useEffect(() => {
       <div className="xl:px-0 md:px-7 px-3">
         <ContactMe />
       </div>
-      <ChatButton />
     </main>
   );
 }

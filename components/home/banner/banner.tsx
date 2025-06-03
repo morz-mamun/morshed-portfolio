@@ -63,9 +63,9 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="w-full md:max-w-md lg:max-w-xl mx-auto text-sm lg:text-lg text-textPrimary dark:text-textPrimary mb-8"
         >
-          MERN Stack developer specializing in MongoDB, Express, React, Remix,
-          and Node.js. Creating responsive, performant, and beautiful web
-          applications.
+          MERN Stack Developer specialize in frontend development. Skilled in
+          React, Remix, Next.js, and building fast, responsive web apps with
+          Node.js, Express, MongoDB and Mongoose.
         </motion.p>
 
         <motion.div
