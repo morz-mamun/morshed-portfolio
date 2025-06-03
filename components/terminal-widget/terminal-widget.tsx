@@ -48,7 +48,7 @@ export default function TerminalWidget() {
       <AnimatePresence>
         {isTerminalOpen && (
           <motion.div
-            className="fixed inset-0 z-40 flex items-center justify-center"
+            className="fixed inset-0 z-40 flex items-center justify-center xl:mx-0 lg:mx-3 md:mx-8 mx-3"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -105,4 +105,3 @@ export default function TerminalWidget() {
     </>
   );
 }
-

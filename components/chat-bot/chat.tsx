@@ -58,7 +58,7 @@ export function Chat() {
             <Send className="h-4 w-4" />
           </Button>
         </div>
-        {isLoading && <p className="text-xs text-muted-foreground mt-2">loading...</p>}
+        {isLoading && <p className="text-xs text-muted-foreground mt-2">Thinking...</p>}
       </form>
     </div>
   )
