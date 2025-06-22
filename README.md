@@ -61,3 +61,24 @@ Create a .env.local file at the root of the project and add the following (if yo
 NEXT_PUBLIC_OPENAI_API_KEY=your_api_key
 ```
 Adjust the variable name according to your implementation (OpenAI SDK or Ollama endpoint).
+
+### 4. Run the Development Server
+```bash
+pnpm run dev
+```
+Visit http://localhost:3000 to view the website.
+
+---
+
+### 🤖 AI Chatbot Details
+The built-in chatbot uses AI to:
+
+- **Answer frequently asked questions about my experience and work**
+
+- **Provide general tech help (frontend/backend concepts)**
+
+- **Engage visitors in a personalized way**
+
+- **It’s like talking to me — but quicker 😉**
+
+---
