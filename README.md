@@ -46,3 +46,11 @@ To run the project locally:
 ```bash
 git clone https://github.com/morz-mamun/morshed-portfolio
 cd morshed-portfolio
+
+2. Install Dependencies
+Make sure you have Node.js and npm installed.
+
+bash
+Copy
+Edit
+npm install
