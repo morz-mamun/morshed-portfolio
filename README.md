@@ -98,3 +98,11 @@ If you visit the website, **please leave feedback** on:
 Feel free to open an issue or message me directly!
 
 ---
+
+---
+
+### 📫 Contact
+
+- **Email:** morshedweb.dev@gmail.com  
+- **LinkedIn:** [linkedin.com/in/morshedweb](https://www.linkedin.com/in/md-morshed-alam-2324022a4/)  
+- **GitHub:** [github.com/morz-mamun](https://github.com/morz-mamun)
