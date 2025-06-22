@@ -49,7 +49,15 @@ cd morshed-portfolio
 ```
 
 ### 2. Install Dependencies
-Make sure you have Node.js and npm installed.
+Make sure you have Node.js and pnpm installed.
 
 ```bash
-npm install
+pnpm install
+```
+### 3. Set Up Environment Variables
+Create a .env.local file at the root of the project and add the following (if you use an AI API):
+
+```bash
+NEXT_PUBLIC_OPENAI_API_KEY=your_api_key
+```
+Adjust the variable name according to your implementation (OpenAI SDK or Ollama endpoint).
