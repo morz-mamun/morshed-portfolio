@@ -82,3 +82,19 @@ The built-in chatbot uses AI to:
 - **It’s like talking to me — but quicker 😉**
 
 ---
+
+---
+
+### 📝 Feedback
+I'm always looking to improve.
+If you visit the website, **please leave feedback** on:
+
+- **What you liked**
+
+- **What can be improved**
+
+- **Any ideas for new features**
+
+Feel free to open an issue or message me directly!
+
+---
