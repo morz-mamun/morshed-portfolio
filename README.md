@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 💼 Morshed's Portfolio Website
 
-## Getting Started
+Welcome to my personal portfolio website! This project showcases my work, skills, and experience as a **MERN Stack Developer**. What makes this portfolio stand out is the integration of a smart **AI Assistant Chatbot** 🤖, allowing users to interact with an AI that can answer questions about me, my projects, and even general tech topics.
 
-First, run the development server:
+## 🌐 Live Site
+
+👉 [Visit the Portfolio](https://morshed-portfolio-xvwz.vercel.app/)
+
+---
+
+## 🚀 Features
+
+- 🧠 **AI Assistant Chatbot**  
+  Ask the chatbot anything about me, my projects, my tech stack — or even get help with general development questions.
+
+- 🛠 **Project Showcase**  
+  Explore some of my key projects, technologies used, and the problems they solve.
+
+- 📄 **About Me**  
+  A short story about who I am, my goals, and the technologies I love.
+
+- 🖥️ **Responsive Design**  
+  Fully optimized for all screen sizes — from desktop to mobile.
+
+- ✨ **Smooth Animations**  
+  Polished with Framer Motion for elegant transitions and effects.
+
+---
+
+## 🧰 Tech Stack
+
+- **Frontend:** Next.js, React, Tailwind CSS  
+- **Backend (Chatbot API):** gemini-2.0-flash (Free)  
+- **State Management:** React Context  
+- **Styling:** Tailwind CSS  
+- **Hosting:** Vercel
+
+---
+
+## 🔧 Installation Instructions
+
+To run the project locally:
+
+### 1. Clone the Repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+git clone https://github.com/morz-mamun/morshed-portfolio
+cd morshed-portfolio
