@@ -25,10 +25,10 @@ export default function Hero() {
   return (
     <section
       id="banner"
-      className="relative h-[calc(100vh-6rem)] flex flex-col justify-center items-center px-4 overflow-hidden"
+      className="relative min-h-screen flex flex-col justify-center items-center px-4 overflow-hidden"
     >
       {/* Content */}
-      <div className="w-full md:max-w-4xl z-10 text-center">
+      <div className="w-full z-10 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -121,7 +121,7 @@ export default function Hero() {
 
       {/* Scroll down indicator */}
       <motion.div
-        className="absolute bottom-5"
+        className="absolute bottom-12"
         animate={{
           y: [0, 10, 0],
           opacity: scrollY > 100 ? 0 : 1,

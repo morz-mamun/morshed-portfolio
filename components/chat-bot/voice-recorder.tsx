@@ -164,7 +164,7 @@ export function VoiceRecorder({
         </Button>
       </div>
       {transcript && (
-        <div className="text-xs text-muted-foreground max-w-[200px] truncate border">
+        <div className="text-xs text-muted-foreground w-full truncate border">
           {transcript}
         </div>
       )}
