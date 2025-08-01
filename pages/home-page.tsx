@@ -1,7 +1,7 @@
 "use client";
 import Banner from "@/components/home/banner/banner";
 import CelebrationEffect from "@/components/celebration-effect";
-import WelcomeModal from "@/components/welcome-modal";
+// import WelcomeModal from "@/components/welcome-modal";
 import AboutMe from "@/components/home/aboutMe/aboutMe";
 import Experience from "@/components/home/experience/experience";
 import MySkills from "@/components/home/mySkills/mySkills";
@@ -20,9 +20,9 @@ useEffect(() => {
   }
 }, []);
   return (
-    <main className="container mx-auto md:py-8 py-0 overflow-hidden">
+    <main className="container mx-auto overflow-hidden">
       <CelebrationEffect />
-      <WelcomeModal />
+      {/* <WelcomeModal /> */}
       <div className="xl:px-0 px-3">
         <Banner />
       </div>
