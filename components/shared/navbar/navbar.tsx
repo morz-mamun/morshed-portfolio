@@ -104,7 +104,8 @@ export default function Navbar() {
           </Button>
           {/* view resume */}
           <a
-            href="https://drive.google.com/file/d/1Nb95ppNH86plNWNy8hy6tivIhHqSoAaM/view?usp=sharing"
+            // href="https://drive.google.com/file/d/1Nb95ppNH86plNWNy8hy6tivIhHqSoAaM/view?usp=sharing"
+            href="https://drive.google.com/file/d/1ZcO51hJYCBDgEjmbGp6FfiOOorHMNAOP/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
           >
