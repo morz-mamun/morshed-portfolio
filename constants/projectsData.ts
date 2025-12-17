@@ -140,8 +140,62 @@ export const projects: TProject[] = [
   liveLink: "https://course-master-beige.vercel.app/",
   repositoryLink: "https://github.com/morz-mamun/Course-Master",
 },
+{
+  id: "3",
+  title: "App Market (SaaS App Listing Platform)",
+  shortDescription:
+    "App Market is a modern web platform for showcasing and discovering applications, built with Next.js and a clean, animation-rich UI.",
+  description:
+    "App Market is a high-performance web platform designed to list, showcase, and promote applications in a visually engaging way. Built with the latest Next.js and React, it focuses on smooth user experience, responsive design, and reusable UI components. The project follows modern frontend best practices and is optimized for scalability and performance.",
+  images: [
+    "/app-market/am-1.png",
+    "/app-market/am-2.png",
+    "/app-market/am-3.png",
+    "/app-market/am-4.png",
+  ],
+  coreFeatures: [
+    "Modern app listing and showcase layout",
+    "Fully responsive design for all devices",
+    "Reusable UI components using Radix UI",
+    "Smooth animations and transitions with Framer Motion",
+    "Optimized performance using Next.js Turbopack",
+    "Clean and scalable component architecture",
+    "SEO-friendly page structure",
+  ],
+  coreTechnology: [
+    "Next.js 15",
+    "React 19",
+    "TypeScript",
+    "Tailwind CSS",
+    "Radix UI",
+    "Framer Motion",
+    "Class Variance Authority (CVA)",
+    "Lucide Icons",
+  ],
+  challengesFaced: [
+    "Designing reusable and scalable UI components",
+    "Maintaining animation performance across devices",
+    "Ensuring consistent styling using utility-first CSS",
+  ],
+  futurePlans: [
+    "Add backend integration for dynamic app data",
+    "Implement authentication and user profiles",
+    "Add search, filters, and categories",
+    "Integrate analytics for app performance tracking",
+  ],
+  versionInfo: {
+    NextJS: "15.5.4",
+    React: "19.1.0",
+    TypeScript: "^5",
+    TailwindCSS: "^4",
+    FramerMotion: "^12.23.22",
+  },
+  liveLink: "https://app-market-seven.vercel.app",
+  repositoryLink: "https://github.com/morz-mamun/app-market",
+},
+
   {
-    id: "3",
+    id: "4",
     title: "Delta Translator (Translator)",
     shortDescription:
       "Delta Translator is a user-friendly platform that offers fast, accessible, and engaging translation services to enhance cross-language communication.",
@@ -208,7 +262,7 @@ export const projects: TProject[] = [
     repositoryLink: "https://github.com/deltatranslator",
   },
   {
-    id: "4",
+    id: "5",
     title: "Morze (RealState Platform)",
     shortDescription:
       "MorZE is a Real Estate Website. Browse through a diverse range of properties, from cozy apartments to spacious homes you can buy, sell.",
