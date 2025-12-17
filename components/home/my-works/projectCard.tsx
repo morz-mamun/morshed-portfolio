@@ -13,10 +13,10 @@ export default function ProjectCard({ project, index }: { project: TProject; ind
       initial={{ opacity: 1, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className={`relative rounded-xl overflow-hidden border group`}
+      className={` relative rounded-xl overflow-hidden border group border-border bg-cardShadow hover:shadow-lg hover:shadow-brand/20 transition-shadow`}
     >
       <div className="relative overflow-hidden">
-        <div className="w-full h-48">
+        <div className="w-full h-52">
           <Image
             src={project.images[0]}
             alt={project.title}
@@ -51,15 +51,15 @@ export default function ProjectCard({ project, index }: { project: TProject; ind
           </div>
         </div>
       </div>
-      <div className="xl:p-6 p-4">
-        <h3 className="text-xl font-bold mb-2 group-hover:text-brand transition-colors">
+      <div className="px-3 py-6">
+        <h3 className="text-base font-bold mb-2 group-hover:text-brand transition-colors">
           {project.title}
         </h3>
         <p
-          className={`mb-4 text-sm xl:text-base text-textPrimary dark:text-textPrimary`}
+          className={`mb-4 text-sm text-textPrimary dark:text-textPrimary`}
         >
-          {project?.shortDescription.length > 110
-            ? `${project?.shortDescription.slice(0, 110)}...`
+          {project?.shortDescription.length > 100
+            ? `${project?.shortDescription.slice(0, 100)}...`
             : project?.shortDescription}
         </p>
         {/* Core Technologies */}
