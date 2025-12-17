@@ -17,6 +17,69 @@ export type TProject = {
 export const projects: TProject[] = [
   {
     id: "1",
+    title: "Company Portfolio Website",
+    shortDescription:
+      "A modern, high-performance company portfolio website built with Next.js, showcasing services, products, and brand identity with smooth animations and scalable architecture.",
+    description:
+      "This company portfolio website is built using the latest Next.js App Router and modern frontend tooling. It focuses on performance, scalability, and user experience, featuring responsive layouts, smooth animations, theme switching, rich UI components, and AI-ready integrations. The project follows best practices for code quality, linting, formatting, and maintainability, making it suitable for professional company branding and long-term growth.",
+    images: [
+      "/portfolio/portfolio-1.png",
+      "/portfolio/portfolio-2.png",
+      "/portfolio/portfolio-3.png",
+    ],
+    coreFeatures: [
+      "Modern company portfolio with responsive design",
+      "Next.js App Router with Turbopack for fast development",
+      "Reusable UI components using Radix UI and Tailwind CSS",
+      "Smooth animations and transitions with Framer Motion",
+      "Dark & light theme support using next-themes",
+      "Form handling and validation with React Hook Form and Zod",
+      "AI-ready architecture with OpenAI, Google AI, and OpenRouter SDKs",
+      "Interactive components like carousels, dialogs, dropdowns, and accordions",
+      "SEO-friendly and performance-optimized pages",
+    ],
+    coreTechnology: [
+      "Next.js 15",
+      "React 19",
+      "TypeScript",
+      "Tailwind CSS",
+      "Shadcn/ui",
+      "Framer Motion",
+      "React Hook Form",
+      "Zod",
+      "AI SDK (OpenAI, Google AI, OpenRouter)",
+      "Axios",
+      "Lucide & Tabler Icons",
+      "Embla Carousel",
+    ],
+    challengesFaced: [
+      "Maintaining performance with complex animations",
+      "Designing reusable and scalable UI components",
+      "Configuring strict linting, formatting, and Git hooks",
+      "Integrating AI SDKs in a future-proof architecture",
+    ],
+    futurePlans: [
+      "Integrate CMS for dynamic content management",
+      "Add multilingual support",
+      "Enhance AI-powered features for user interaction",
+      "Implement advanced analytics and tracking",
+    ],
+    versionInfo: {
+      NextJS: "15.4.4",
+      React: "19.1.0",
+      TypeScript: "^5",
+      TailwindCSS: "^4",
+      FramerMotion: "^12.23.12",
+      Zod: "^4.1.3",
+      "React Hook Form": "^7.62.0",
+      OpenAI: "^5.11.0",
+    },
+    liveLink: "https://company-portfolio-website-liard.vercel.app",
+    repositoryLink: "https://github.com/morz-mamun/company-portfolio-website",
+  },
+
+  {
+    id: "2",
     title: "Delta Translator (Translator)",
     shortDescription:
       "Delta Translator is a user-friendly platform that offers fast, accessible, and engaging translation services to enhance cross-language communication.",
@@ -83,7 +146,7 @@ export const projects: TProject[] = [
     repositoryLink: "https://github.com/deltatranslator",
   },
   {
-    id: "2",
+    id: "3",
     title: "Morze (RealState Platform)",
     shortDescription:
       "MorZE is a Real Estate Website. Browse through a diverse range of properties, from cozy apartments to spacious homes you can buy, sell.",
@@ -136,51 +199,51 @@ export const projects: TProject[] = [
     liveLink: "https://morze-bb5a5.web.app",
     repositoryLink: "https://github.com/morz-mamun/Real-Estate-Project-Server",
   },
-  {
-    id: "3",
-    title: "Dream Job (Job Portal)",
-    shortDescription:
-      "Find The Right Jobs. The ultimate platform where job seekers and employers seamlessly connect and Discover tailored opportunities, showcase your talent, and take the next step.",
-    description:
-      "Find The Right Jobs – The ultimate platform where job seekers and employers seamlessly connect. Discover tailored opportunities, showcase your talent, and take the next step in your career journey. For employers, access a pool of qualified candidates and streamline your hiring process with ease. Empowering futures, one connection at a time.",
-    images: ["/morze/ss4.png", "/morze/ss4.png", "/morze/ss4.png"],
-    coreFeatures: [
-      "Users can browse jobs by category on the home page",
-      "Login or registration is required to bid on a job",
-      "Authenticated users can access private routes and view private details",
-      "Logged-in users can post jobs by category to hire employees",
-      "Users can view, update, and delete the jobs they have posted",
-    ],
-    coreTechnology: [
-      "React",
-      "Express",
-      "React Router",
-      "Tailwind CSS",
-      "MongoDB",
-      "Axios",
-      "Firebase",
-    ],
-    challengesFaced: [
-      "Filtering jobs by category",
-      "Implementing user authentication and authorization",
-    ],
-    futurePlans: [
-      "Integrate with external APIs for real-time data",
-      "Add a contact form for customer inquiries",
-      "Integrate Notifications API for real-time notifications for job updates",
-    ],
-    versionInfo: {
-      React: "^18.2.0",
-      "React Router": "^6.20.0",
-      "Tailwind CSS": "^3.3.5",
-      express: "^4.18.2",
-      mongodb: "^6.3.0",
-      Axios: "^1.6.2",
-      Firebase: "^10.6.0",
-    },
-    liveLink: "https://dream-job-finder.web.app",
-    repositoryLink: "https://github.com/morz-mamun/Dream-Job-Finder-Client",
-  },
+  // {
+  //   id: "3",
+  //   title: "Dream Job (Job Portal)",
+  //   shortDescription:
+  //     "Find The Right Jobs. The ultimate platform where job seekers and employers seamlessly connect and Discover tailored opportunities, showcase your talent, and take the next step.",
+  //   description:
+  //     "Find The Right Jobs – The ultimate platform where job seekers and employers seamlessly connect. Discover tailored opportunities, showcase your talent, and take the next step in your career journey. For employers, access a pool of qualified candidates and streamline your hiring process with ease. Empowering futures, one connection at a time.",
+  //   images: ["/morze/ss4.png", "/morze/ss4.png", "/morze/ss4.png"],
+  //   coreFeatures: [
+  //     "Users can browse jobs by category on the home page",
+  //     "Login or registration is required to bid on a job",
+  //     "Authenticated users can access private routes and view private details",
+  //     "Logged-in users can post jobs by category to hire employees",
+  //     "Users can view, update, and delete the jobs they have posted",
+  //   ],
+  //   coreTechnology: [
+  //     "React",
+  //     "Express",
+  //     "React Router",
+  //     "Tailwind CSS",
+  //     "MongoDB",
+  //     "Axios",
+  //     "Firebase",
+  //   ],
+  //   challengesFaced: [
+  //     "Filtering jobs by category",
+  //     "Implementing user authentication and authorization",
+  //   ],
+  //   futurePlans: [
+  //     "Integrate with external APIs for real-time data",
+  //     "Add a contact form for customer inquiries",
+  //     "Integrate Notifications API for real-time notifications for job updates",
+  //   ],
+  //   versionInfo: {
+  //     React: "^18.2.0",
+  //     "React Router": "^6.20.0",
+  //     "Tailwind CSS": "^3.3.5",
+  //     express: "^4.18.2",
+  //     mongodb: "^6.3.0",
+  //     Axios: "^1.6.2",
+  //     Firebase: "^10.6.0",
+  //   },
+  //   liveLink: "https://dream-job-finder.web.app",
+  //   repositoryLink: "https://github.com/morz-mamun/Dream-Job-Finder-Client",
+  // },
   // {
   //   id: "4",
   //   title: "Turborepo Starter Template with pnpm",
